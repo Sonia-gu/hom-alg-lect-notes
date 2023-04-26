@@ -1,0 +1,101 @@
+\documentclass[../hw_main.tex]{subfiles}
+
+\begin{document}
+\section{Расслоённые суммы и произведения}
+\begin{to_def}\label{A:pullback_def}
+Пусть в категории $\mathcal{C}$ дана пара морфизмов $f:X\to Z$, $g:Y\to Z$. Расслоённым произведением (pullback) $X\prod_Z Y$ называется объект $P$ и пара морфизмов $p_1:P \to X$, $p_2:P\to Y$, делающие диаграмму ниже коммутативной.
+\begin{equation}\label{A:pullback_comm}
+    \begin{tikzcd}
+	P & X \\
+	Y & Z
+	\arrow["g"', from=2-1, to=2-2]
+	\arrow["f", from=1-2, to=2-2]
+	\arrow["{p_1}", from=1-1, to=1-2]
+	\arrow["{p_2}"', from=1-1, to=2-1]
+\end{tikzcd}
+\end{equation}
+И обладающие следующим универсальным свойством. Для любого объекта $Q$ с парой морфизмов $q_1:Q\to X$, $q_2:Q\to Y$, дополняющих $(f, g)$ до коммутативного квадрата, существует единственный морфизм $u: Q\to P$, делающий диаграмму ниже коммутативной.
+\begin{equation}\label{A:pullback_univ}
+\begin{tikzcd}
+	Q \\
+	& P & X \\
+	& Y & Z
+	\arrow["{p_2}"', from=2-2, to=3-2]
+	\arrow["g"', from=3-2, to=3-3]
+	\arrow["f", from=2-3, to=3-3]
+	\arrow["{p_1}", from=2-2, to=2-3]
+	\arrow["{q_1}", bend left, from=1-1, to=2-3]
+	\arrow["{q_2}"', bend right, from=1-1, to=3-2]
+	\arrow["u", dashed, from=1-1, to=2-2]
+\end{tikzcd}
+\end{equation}
+\end{to_def}
+Дуальным к нему будет понятие расслоенной суммы (pushout). В абелевой категории есть более простое и конструктивное описание. Чтобы показать это, воспользуемся следующей теоремой.
+\begin{to_thr}\label{A:pull_as_coeq}
+Расслоённое произведение можно выразить как уравнитель пары морфизмов из произведения $X\prod Y$. Тогда $p_1 = \pi_X p$, $p_2 = \pi_Y p$.
+\begin{equation*}
+    \begin{tikzcd}
+	{X\prod_ZY} & {X\prod Y} & Z
+	\arrow["{f\pi_X}", shift left=1, from=1-2, to=1-3]
+	\arrow["{g\pi_Y}"', shift right=1, from=1-2, to=1-3]
+	\arrow["p", from=1-1, to=1-2]
+\end{tikzcd}
+\end{equation*}
+Дуально, расслоённую сумму можно выразить как коуравнитель пары морфизмов из копроизведения $X\coprod Y$. Тогда $p_1 = p\pi_X$, $p_2 = p\pi_Y$.
+\begin{equation*}
+    \begin{tikzcd}
+	Z & {X\coprod Y} & {X\coprod_Z Y}
+	\arrow["{i_X f}"', shift right=1, from=1-1, to=1-2]
+	\arrow["{i_Yg}", shift left=1, from=1-1, to=1-2]
+	\arrow["p", from=1-2, to=1-3]
+\end{tikzcd}
+\end{equation*}
+\end{to_thr}
+\begin{proof}
+Приведём доказательство для произведения. Доказательство для копроизвдения аналогично.
+\begin{equation*}
+\begin{tikzcd}
+	Q \\
+	{X\prod_Z Y} && X \\
+	& {X\prod Y} \\
+	Y && Z
+	\arrow["g"', from=4-1, to=4-3]
+	\arrow["f", from=2-3, to=4-3]
+	\arrow["{\pi_X}"{description}, two heads, from=3-2, to=2-3]
+	\arrow["{\pi_Y}"{description}, two heads, from=3-2, to=4-1]
+	\arrow["p"{description}, from=2-1, to=3-2]
+	\arrow["{p_1}"{description}, from=2-1, to=2-3]
+	\arrow["{p_2}"', from=2-1, to=4-1]
+	\arrow["{q_1}"{description}, from=1-1, to=2-3]
+	\arrow["{q_2}"{description}, bend right=90, from=1-1, to=4-1]
+	\arrow["q"{description, pos=0.3}, dashed, from=1-1, to=3-2]
+	\arrow["u"', dashed, from=1-1, to=2-1]
+\end{tikzcd}
+\end{equation*}
+По определению уравнителя $f\pi_Xp = g\pi_Yp$, откуда $fp_1 = f\pi_X p = g\pi_Yp = gp_2$ и диаграмма \eqref{A:pullback_comm} коммутирует. Докажем универсальное свойство.
+
+Пусть есть $Q$ с двумя морфизмами $q_1$, $q_2$ такими, что $fq_1 = gq_2$. Из универсального свойсва произведения существует $q$ такой, что $\pi_X q = q_1$ и $\pi_Y q = q_2$. Отсюда $f\pi_X q = g\pi_Y q$ и по универсальному свойству уравнителя получаем существование единственного $u$ делающего диаграмму \eqref{A:pullback_univ} коммутативной.
+\end{proof}
+\newpage
+\begin{to_con}\label{A:pull_in_ab}
+В абелевой категории расслоённое произведение является ядром морфизма $h:X\oplus Y \to Z$, $h = f\pi_X - g\pi_Y$. Иначе, в терминах модулей, это подмодуль $X\oplus Y$ такой, что $f(x) = g(y)$.
+\begin{equation*}
+    X\prod_Z Y \sim \Ker(f\pi_X - g\pi_Y).
+\end{equation*}
+Дуально для расслоённой суммы.
+\begin{equation*}
+X\coprod_Z Y \sim \coker(i_X f - i_Y g).
+\end{equation*}
+
+Также в абелевой категории существуют все расслоённые суммы и произведения.
+\end{to_con}
+\begin{proof}
+    Напомним, что в абелевой категории:
+    \begin{itemize}
+        \item Произведение и копроизведение изоморфны.
+        \item Уравнитель $f, g$ изоморфен $\Ker (f-g)$.
+        \item Все ядра и коядра существуют
+    \end{itemize}
+    Применение этих трёх фактов вместе с теоремой \ref{A:pull_as_coeq} даёт желаемое утверждение.
+\end{proof}
+\end{document}

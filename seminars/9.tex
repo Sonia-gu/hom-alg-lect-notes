@@ -1,0 +1,72 @@
+\documentclass[../hw_main.tex]{subfiles}
+\begin{document}
+\section{Класс приспособленных объектов, градуированная алгебра $Ext$}
+$\A, \mathcal{B} \in \Ab$. 
+\begin{tikzcd}
+\A \arrow[r]\arrow[rrr, bend right, "\Rn{n}{F}" '] & \Dr{A} \arrow[r, "\DrF{F}"] & \Dr{B} \arrow[r, "H^0\circ (n)" ] & \mathcal{B}
+\end{tikzcd}
+\begin{to_def}
+Объект $X$ называется $\F$--ацикличным, если $\Rn{n}{F}(X) = 0$ $\forall n\neq 0$.
+\end{to_def}
+Обозначим $\mathcal{Z}$ класс $\F$-- ацикличных объектов. До сих пор мы получали существование производного функтора из налчия приспособленного класса. Имеет место следующее частичное обращение этого рассуждения:
+\begin{to_claim}
+$\exists$ класс приспособленных к $\F$ объектов $\Leftrightarrow$
+    $\exists$ достаточно большой\footnote{$\forall$ $X \in \A$ является подобъектом $\F$--ацикличного (если $\F$-- точен слева), или факторобъектом ацикличного (если $\F$-- точен справа)} $\mathcal{Z}$.
+\end{to_claim}
+\begin{proof} Проведём доказательство для точного слева функтора $\F$.\\
+$\Leftarrow$ Пусть $\mathcal{R}$-- класс приспособленных к $\F$ объектов. Тогда $\DF{F}(X[0])\overset{qis}{\cong} \F(X)[0]$ $\forall X \in \mathcal{R}$, поэтому $\mathcal{R} \subset \mathcal{Z}$ и $\mathcal{Z}$-- достаточно большой, так как $\mathcal{R}$-- достаточно большой.\\
+$\Rightarrow$ Пусть теперь $\mathcal{R} \subset \mathcal{Z}$ -- достаточно большой подкласс $\mathcal{F}$-ацикличных объектов. Чтобы установить приспособленность достаточно показать, что $\F$ переводит ацикличные комплексы из $Kom^{\pm}(\mathcal{R})$ в ацикличные. Если мы имеем ацикличную тройку вида \begin{tikzcd}[sep=small] 0 \arrow[r]& K^0 \arrow[r] & K^1 \arrow[r] & K^2 \arrow[r] & 0 \end{tikzcd}, то точность \begin{tikzcd}[sep=small] 0 \arrow[r]& \F(K^0) \arrow[r] & \F(K^1) \arrow[r] & \F(K^2) \arrow[r] & 0 \end{tikzcd} следует из $\mathcal{R}^1\F(K^0)=0$. В общем случае можно отщиплять точные тройки следующим образом:
+\bee
+\begin{tikzcd}[sep=small]
+    0 \arrow[r]& K^0 \arrow[r, "d^0"] = X^0& K^1 \arrow[r, "d^1"]\arrow[rd]& K2 \arrow[r]& \ldots\\
+               &               &                            & im d^1 \arrow[u]=X^1       & \\
+               &               &                            & X^i = im d^i &
+\end{tikzcd}
+\eee
+Далее так как $X^i, K^{i+1} \in \mathcal{Z}$ $\Rightarrow$ $X^i \in \mathcal{Z}$ $\Rightarrow$ \begin{tikzcd}[sep=small] 0 \arrow[r]& \F(X^i) \arrow[r]& \F(K^{i+1})\arrow[r]& \F(X^{i+1}) \arrow[r] & 0 \end{tikzcd} -- точны $\Rightarrow$ $\F(K^\bullet)$ -- ацикличен.
+\end{proof}
+\begin{to_claim}
+$\forall$ достаточно большой $\mathcal{Z}$ приспособлен к $\F$\footnote{любой класс приспособленных лежит в достаточно большом $\mathcal{Z}$}
+\end{to_claim}
+\begin{to_claim}
+В достаточно большом $\mathcal{Z}$ лежат все инъективные\footnote{точный справа} и проективные \footnote{точный слева} объекты категории $\A$.
+\end{to_claim}
+Пусть есть расширение $Ext^1(C, A)$ и морфизм $\alpha\colon A\rightarrow X$. Если $\alpha$ продолжаем на $B$, то есть $\exists \alpha' \colon B \rightarrow X$, тогда можно построить диаграмму:
+\bee
+\begin{tikzcd}[sep=small]
+    0\arrow[r]& A \arrow[r]\arrow[d, "\alpha"] & B \arrow[r]\arrow[d, "(\alpha' \pi)"]& C \arrow[r]\arrow[d, "id"]& 0\\
+    0\arrow[r]& X \arrow[r] & X \oplus C \arrow[r]& C \arrow[r]& 0\\
+              &             & X \underset{A}{\coprod} B
+\end{tikzcd}
+\eee
+Таким образом можно сказать, что существование нетривиальных $Ext$' ов препятствует продолжению морфизмов.
+\subsection{Умножение $Ext$' ов}
+Пусть имеем 2 расширения длины 1 $\gamma \in Ext^1(C, A)$ и $\delta \in Ext^1(Z, C)$. Опустив $C$ в цепочке морфизмов мы получим некоторый элемент $Ext^2(Z, A)$.
+\bee
+\begin{tikzcd}[sep=small]
+    \gamma \colon & 0 \arrow[r] & A \arrow[r] & X \arrow[r] & C &\\
+    \delta \colon & 0 \arrow[r] & C \arrow[r] & Y \arrow[r] & Z &\\
+    \gamma * \delta \colon & A \arrow[r] & X \arrow[r] & \cancel{C} \arrow[r]& Y \arrow[r] & Z
+\end{tikzcd}
+\eee
+\[
+* \colon Ext^m (C, A) \times Ext^n(Z, C) \rightarrow Ext^{n+m}(Z, A)
+\]
+Таким образом может быть задана структура градуированного кольца\footnote{или градуированной $\Z$--алгебры} $Ext_{R}^\bullet (A, A)$, $A\in R-mod $.\\
+$Ext_{R}^\bullet(A, B)$ -- это модуль над $Ext_{R}^\bullet(A, A)$, $A, B \in R-mod $
+\begin{to_claim}
+\[Ext_{\A}^i(A, B) \cong Hom_{\D{A}}(A[0], B[i])\]
+\bee
+    \begin{tikzcd}
+        0\arrow[r]& B\arrow[r]\arrow[ld]& X_n\arrow[r]&\cdots\arrow[r]& X_1\arrow[r]\arrow[rd]& A\\
+        B[-n]     &                     &             &               &                       &A[0]
+    \end{tikzcd}
+\eee
+\end{to_claim}
+{\color{green} Про сцепление комплексов по общему крайнему члену писать пока лень... Потом добавлю}
+\begin{to_claim}
+\[
+Ext^n(A, -) = R^n Hom(A^\bullet, -)
+\]
+\end{to_claim}
+\end{document}

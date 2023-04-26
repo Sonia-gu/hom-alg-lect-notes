@@ -1,0 +1,19 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Введение, комплекс, резольвента, проективный объект}{2}{section.1}%
+\contentsline {section}{\numberline {2}Проективная резольвента, гомотопическая категория}{6}{section.2}%
+\contentsline {section}{\numberline {3}Конус}{8}{section.3}%
+\contentsline {section}{\numberline {4}Проективные резольвенты в гомотопической категории, абелевость гомотопической категории}{9}{section.4}%
+\contentsline {section}{\numberline {5}Локализация, условия Оре}{11}{section.5}%
+\contentsline {section}{\numberline {6}Локализация гомотопической категории и производная категория}{15}{section.6}%
+\contentsline {section}{\numberline {7}Производный функтор, приспособленный класс объектов, выделенные треугольники }{18}{section.7}%
+\contentsline {section}{\numberline {8}Производный функтор, классический $Ext$, сложение по Бэру}{22}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Производный функтор}{22}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Функтор $Ext$ по Йонеде}{24}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Сложение по Бэру}{25}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Сложение $Ext$ длины $n$}{26}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Класс приспособленных объектов, градуированная алгебра $Ext$}{27}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Умножение $Ext$' ов}{27}{subsection.9.1}%
+\contentsline {section}{\numberline {10}Ext, gldim, pd, фильтрованная категория}{29}{section.10}%
+\contentsline {section}{\numberline {11}Функтор $Tor$}{32}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Спектральные последовательности}{34}{subsection.11.1}%
+\contentsline {section}{\numberline {A}Расслоённые суммы и произведения}{35}{appendix.A}%

@@ -1,0 +1,261 @@
+\documentclass[../hw_main.tex]{subfiles}
+\begin{document}
+\section{Производный функтор, классический $Ext$, сложение по Бэру}
+\subsection{Производный функтор}
+Пусть $\mathcal{F}: \A \rightarrow \B$ -- точный слева или справа функтор между абелевыми категориями. Мы хотим продолжить его на производную категорию. Для этого нужно выбрать класс приспособленных объектов $\mathcal{R} \in \A$. Приспособленных объектов должно быть достаточно много \footnote{то есть любой комплекс в $\A$ должен ими накрываться}. Также под действием функтора ацикличный комплекс, состоящий из приспособленных объектов дожен переходить в ацикличный. Отсюда, в частности, следует, что этот функтор будет сохранять $qis$.\footnote{Точный справа (или слева) функтор сохраняет выделенные треугольники и конусы. Конус $qis$ ацикличен. Если под действием функтора конус остался ацкличным, то и $qis$ остался $qis$'ом.}
+Ранее была построена эквивалентность категорий.
+\bee
+\begin{tikzcd}[sep = small]
+    \Kl{R} \arrow[r, "\psi"] & \Dl{A}
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}[sep=small]
+    \Dl{A} \arrow[r, "\varphi"]\arrow[rrr, bend right, "\DlF{F}"'] & \Kl{R} \arrow[r, "\KlF{F}"] & \Kl{B} \arrow[r, "Q_{\B}"] & \Dl{B}
+\end{tikzcd}
+\eee
+\begin{to_com}
+При определении производного функтора мы делаем два неканонических  выбора. Во-первых, выбор эквивалентности $\varphi: \Dl{A} \rightarrow \Kl{A}$. Во-вторых, выбор класса приспособленных объектов $\mathcal{R}$\footnote{если в классе приспособленных объектов выделить достаточно большой подкласс, то он тоже будет приспособленным}.
+\end{to_com}
+Напоминание с определением производного функтора \ref{derived_functor}
+\begin{to_def}
+Производный функтор точного слева $\mathcal{F}$, действующего между двумя абелевыми категориями это \textbf{пара} $(\DlF{F}, \varepsilon_{\mathcal{F}})$ точного слева\footnote{в смысле производной категории, то есть переводящего выделенные треугольники в выделенные} функтора и естественного преобразования.\\
+\bee
+\begin{tikzcd}
+\Kl{R} \arrow[r, "\KlF{F}"]\arrow[d, "Q_{\A}"'] & \Kl{B} \arrow[d, "Q_{\B}"] \\
+\Dl{A} \arrow[r, "\DlF{F}"]\arrow[r, dashed, bend right, "G"'] & \Dl{B}
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}
+      Q_{\B}\KlF{F} \arrow[r, "\varepsilon_{\F}"]\arrow[rd] &\DlF{F} Q_{\A} \arrow[d, dashed, "\exists ! \eta"]\\
+     & G
+\end{tikzcd}
+\eee
+\end{to_def}
+Для компоненты по $X \in \Kl{A}$ определим естественное преобразование как  $Y = \varphi\psi (X)$. Применим к нему $Q_{\B}\KlF{F}$ и получим морфизм в $\Dl{B}$. Образ этого морфизма в $\Dl{B}$ не зависит от выбора расширения.
+\bee
+\begin{tikzcd}[sep=small]
+     & Z & \\
+    X\arrow[ru]\arrow[rd]\arrow[r]& Z''& Y\arrow[lu]\arrow[ld]\arrow[l] \\
+     & Z' &
+\end{tikzcd}
+\eee
+Доказательство естественности преобразования $\varepsilon_{\mathcal{F}}$\footnote{естественное преобразование коммутирует с морфизмами}
+\bee
+\begin{tikzcd}
+    X_1\arrow[r, "\alpha_X"]\arrow[d]& Y_1\arrow[d]\\
+    X_2\arrow[r]& Y_2
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}
+    Q_{\B}\KlF{F}(X_1)\arrow[r, "\varepsilon_{\mathcal{F}}"]\arrow[d]& \DlF{F}(Y_1)\arrow[d]\\
+    Q_{\B}\KlF{F}(X_2)\arrow[r, "\varepsilon_{\mathcal{F}}"]& \DlF{F}(Y_2)
+\end{tikzcd}
+\eee
+Теперь построим естественное преобразование $\eta$. $X\in\Kl{A}$
+\bee
+\begin{tikzcd}
+    X\arrow[d, "\cong"] & &Q_{\B}\KlF{F}(X)\arrow[d] \arrow[r, "\varepsilon_X"]& G(X) \arrow[d, "\overset{\theta}{\cong}"]\\
+    \phi\psi X         & &\underset{\DlF{F}(X)}{\underset{\cong}{Q_{\B}\KlF{F}(\phi Q_{\A} X)}} \arrow[ru, "\eta_X" description]\arrow[r, "\varepsilon_{Q_{\A}X}"]& G(\phi \psi X)
+\end{tikzcd}    
+ \eee
+ \begin{align*}
+     \eta_{X} = \theta^{-1}\varepsilon_{Q_{\A}X}
+ \end{align*}
+ \begin{to_claim}
+Если в $\A$ достаточно много инъективных(проективных) объектов, то их класс приспособлен к любому точному слева (справа) функтору.
+ \end{to_claim}
+ \begin{proof}
+ Нужно показать, что любой точный слева функтор ограниченные слева инъктивные комплексы переводит в ацикличные. Мы знаем, что любой морфизм из инъективного комплекса в ацикличный гомотопен 0. 
+ \begin{align*}
+     id_{I^\bullet} \sim 0 \Rightarrow id_{\mathcal{F}(I^\bullet)}\sim 0 \Rightarrow \mathcal{F}(I^\bullet) \text{ -- ацикличный.}
+ \end{align*}
+ \end{proof}
+ \begin{to_def}
+Функтор $\mathcal{H}: \D{A}\rightarrow\B$ называется когомологическим, если выделенные треугольники \begin{tikzcd}[sep=small]X \arrow[r]& Y \arrow[r]& Z \arrow[r]& X[1] \end{tikzcd} он переводит в длинные точные последовательности
+\begin{tikzcd}[sep=small]\ldots \arrow[r] & H(X[i]) \arrow[r]& H(Y[i]) \arrow[r]& H(Z[i]) \arrow[r]& H(X[i+1])\arrow[r]&\ldots \end{tikzcd}
+\end{to_def}
+\begin{to_ex}
+$ $
+\begin{itemize}
+    \item $H^0$ -- когомологический\footnote{snake lemma}
+    \item $\Hom(X, -)$ -- тоже.
+\end{itemize}
+\end{to_ex}
+ \begin{to_def}
+ \label{classicDerFunc}
+Классический производный функтор 
+\begin{align*}
+    \Ln{i}{F} = H^{-i}(\DlF{F})\\
+    \Rn{i}{F} = H^{i}(\DlF{F})\\
+    \Ln{i}{F}, \Rn{i}{F}: \A \rightarrow \B
+\end{align*}
+\end{to_def}
+
+\begin{to_claim}
+Пусть $\F$ -- точный слева функтор. \begin{tikzcd}[sep=small]0 \arrow[r]& Y \arrow[r]& Z \arrow[r]& 0 \end{tikzcd} -- короткая точная последовательность. Тогда $\exists$ длинная точная последовательность вида:
+\bee
+\begin{tikzcd}[sep=small]
+    0 \arrow[r] &\F(X) \arrow[r] &\F(Y)\arrow[r] &\F(Z)\arrow[r] &\Rn{1}{F}(X) \arrow[r] &\Rn{1}{F}(Y)\arrow[r] &\Rn{1}{F}(Z) \arrow[r]& \ldots  
+\end{tikzcd}
+\eee
+\end{to_claim}
+\begin{proof}
+Действуем по определению производного функтора. Для этого короткую точную последовательность мы погружаем в производную категорию и выбираем квазиизоморфные им комплексы с приспособленными членами. Далее мы подействуем почленно действуем производным функтором 
+Сделаем из короткой точной последовательности треугольник. Для этого в производной категории рассмотрим морфизм комплексов с когомологиями, сосредоточенными в нулевом члене\footnote{строго полное вложение в производную категорию}. Конусом данного морфизма будет являться комлекс с нулевой когомологией $C(f) \overset{qis}{\cong} Z[0]$. 
+\bee
+\begin{tikzcd}[sep=small]
+                    &                & 0                &\\
+X[0] \arrow[r, "f"] & Y[0] \arrow[r] & Y \arrow[u]      &C(f)\cong Z[0]\\
+                    &                & X \arrow[u, "f"'] &\\
+                    &                & 0 \arrow[u]      &\\
+\end{tikzcd}
+\eee
+Для каждого комплекса мы находим его резольвенту и заменяем исходный треугольник треугольником соответствующих резольвент.
+\bee
+\begin{tikzcd}[sep=small]
+    0\arrow[r]&\Rn{0}{}_X\arrow[r]&\Rn{1}{}_X\arrow[r]&\ldots = \Rn{\bullet}{}_X\\
+    0\arrow[r]&\Rn{0}{}_Y\arrow[r]&\Rn{1}{}_Y\arrow[r]&\ldots = \Rn{\bullet}{}_Y\\
+    0\arrow[r]&\Rn{0}{}_Z\arrow[r]&\Rn{1}{}_Z\arrow[r]&\ldots = \Rn{\bullet}{}_Z
+\end{tikzcd}
+\eee
+Так как производный функтор точендля класса приспособленных оъектов, мы получим выделенный треугольник после его применения к выделенному треугольнику, полученному на предыдущем шаге.
+\bee
+\begin{tikzcd}[sep=small]
+    \Rn{\bullet}{}_X \arrow[r]& \Rn{\bullet}{}_Y \arrow[r]&\Rn{\bullet}{}_Z \arrow[r]&\Rn{\bullet}{}_Z[1]\\
+    \KlF{}\Rn{\bullet}{}_X \arrow[r]& \KlF{}\Rn{\bullet}{}_Y \arrow[r]&\KlF{}\Rn{\bullet}{}_Z \arrow[r]&\KlF{}\Rn{\bullet}{}_Z[1]\\
+\end{tikzcd}
+\eee
+ Когомологический функтор $H^0$ сделает из выделенного треугольника длинную точную последовательность когомологий:
+ \bee
+\begin{tikzcd}[sep=small]
+    0 \arrow[r] &H^0\DlF{}\Rn{\bullet}{}_X \arrow[r] &H^0\DlF{}\Rn{\bullet}{}_Y \arrow[r] &H^0\DlF{}\Rn{\bullet}{}_Z\arrow[r] &H^0\circ[1](\DlF{}\Rn{\bullet}{}_X) \arrow[r] & \ldots  
+\end{tikzcd}
+\eee
+\end{proof}
+\subsection{Функтор $Ext$ по Йонеде}
+\begin{to_def}
+Пусть $\A \in \Ab$. Расширением объекта $C$ с помощью объекта $A$ длины $1$ будем называть короткую точную последовательность вида:
+\bee
+\begin{tikzcd}[sep=small]
+    0 \arrow[r]& A \arrow[r]& B\arrow[r]& C\arrow[r]& 0
+\end{tikzcd}
+\eee
+Аналогично расширение длины $n$ определим как:
+\bee
+\begin{tikzcd}[sep=small]
+    0 \arrow[r]& A \arrow[r]& B_1\arrow[r]&\ldots \arrow[r]&B_n\arrow[r]& C\arrow[r]& 0
+\end{tikzcd}
+\eee
+\end{to_def}
+\begin{to_def}
+Два расширения называются эквивалентными, если существует морфизм расширений как комплексов $\alpha = \exists\{\alpha_i\}_i^{n}$
+\bee
+\begin{tikzcd}
+        0 \arrow[r]& A\arrow[d, "id"] \arrow[r]& B_1\arrow[d, "\alpha_1"]\arrow[r]&\ldots \arrow[r]&B_n\arrow[d, "\alpha_n"]\arrow[r]& C\arrow[d, "id"]\arrow[r]& 0\\
+        0 \arrow[r]& A \arrow[r]& B'_1\arrow[r]&\ldots \arrow[r]&B'_n\arrow[r]& C\arrow[r]& 0\\
+\end{tikzcd}
+\eee
+\end{to_def}
+\begin{to_com}
+Введённое отношение эквивалентности не является отношением эквивалентности. Правильное определение должно являться минимальным отношением такого вида. Правильнее было бы сказать, что расширения должны быть квазиизоморфны как комплексы, однако, проверка квазиизоморфности комплексов крайне алгоритмически сложна. Но в силу того, что мы рассматриваем ацикличные комплексы, проверка квазиизоморфности может быть выполнена за $2n$ шагов.
+\end{to_com}
+В случае расширений длины $1$ по лемме о 5 два расширения будут эквивалентны тогда и только тогда, когда изоморфны средние члены последовательностей. 
+\bee
+\begin{tikzcd}
+        0 \arrow[r]& A\arrow[d, "id"] \arrow[r]& B\arrow[d, "\cong"]\arrow[r]& C\arrow[d, "id"]\arrow[r]& 0\\
+        0 \arrow[r]& A \arrow[r]& B'\arrow[r]&C\arrow[r]& 0
+\end{tikzcd}
+\eee
+Таким образом может быть определено множество классов эквивалентности расширений $Ext^1(C, A)$.
+\begin{to_ex}
+Неэквивалентные расширения $Ext^1(\Z_2, \Z)$
+\bee
+\begin{tikzcd}
+        0 \arrow[r]& \Z\arrow[d, "id"] \arrow[r, "\cdot 2"]& \Z\arrow[r]& \Z_2\arrow[d, "id"]\arrow[r]& 0\\
+        0 \arrow[r]& \Z \arrow[r]& \Z\oplus\Z_2 \arrow[r]&\Z_2\arrow[r]& 0
+\end{tikzcd}
+\eee
+\end{to_ex}
+\begin{to_ex}
+$Ext^1(\Z_m, A) = A /mA$
+\bee
+\begin{tikzcd}[sep=small]
+        0 \arrow[r] & \underset{g}{A} \arrow[r, "\alpha"] & \underset{\alpha g = m u}{B}\arrow[r, "\beta"]& \Z_n(c) \arrow[r]& 0\\
+                    &                       &a\arrow[r, mapsto]&     c             &  \end{tikzcd}
+\eee
+
+\begin{align*}
+    &\forall b \in B,\quad h \in \{1, ..., m-1\} \\
+    \alpha b &= a + h u \\
+    mb &= m\alpha a + h\underset{\in\ker \beta }{(mu)}\\
+    mu &= \alpha g, \quad g \in A
+\end{align*}
+\begin{align*}
+    (\alpha a + h u )+(\alpha a' + h'u) = \begin{cases}\alpha(a + a') + (h + h')u, & h + h' \le m \\ \alpha(a+a'+g) + (h + h' - m)u, & h+h' \geq m \end{cases}
+\end{align*}
+Задание элемента $g$ однозначно задаёт сложение в группе $B$. Несмотря на то, что сам элемент $g$ определён неоднозначно, класс смежности в образе определён однозначно. Это и означает, что существует биекция между классами смежности и всевозможными расширениями $\Z_m
+$. 
+\end{to_ex} 
+\subsection{Сложение по Бэру}
+Приведённый пример наводит на мысль, что на множестве $Ext$' ов может быть задана групповая структура. Ответ -- да. Для этого введём сложение расширений по Бэру:
+\begin{to_claim}
+Пусть есть расширение \begin{tikzcd} E \colon A \arrow[r, "\alpha"] & B \arrow[r, "\beta"] & C \end{tikzcd} и морфизм $\gamma\colon C' \rightarrow C$. Тогда $\exists ! $ расширение $E'$, которое начинается на $A$ и заканчивается на $C'$, задаваемое морфизмом комплексов $(id_{A}, \delta, \gamma): E' \rightarrow E$.
+\bee
+\begin{tikzcd}
+        0 \arrow[r]& \overset{a}{A}\arrow[d, "id_{A}"] \arrow[r]& \overset{(a, 0)}{B\underset{C}{\times}C'} \arrow[d, "\delta"]\arrow[r, "\beta'"]& C'\arrow[d, "\gamma"]\arrow[r]& 0\\
+        0 \arrow[r]& A \arrow[r, "\alpha"]& \underset{a}{B}\arrow[r, "\beta"]&\underset{0}{C}\arrow[r]& 0
+\end{tikzcd}
+\eee
+\begin{align*}
+    B \underset{C}{\times} C' &= \{ (b, c)\in B\oplus C' |\quad \beta\delta (b) = \gamma\beta' (c)\}\\
+    \delta(b, c) &= b\\
+    \beta'(b, c') &= c'
+\end{align*}
+Проведя двойственные рассуждения можем получить аналогичное утверждение для $\gamma'\colon A \rightarrow A'$\\
+\bee
+\begin{tikzcd}
+        0 \arrow[r]& A\arrow[d, "\gamma'"] \arrow[r, "\alpha"]& B \arrow[d, "\delta"]\arrow[r, "id_C"]& C\arrow[d]\arrow[r]& 0\\
+        0 \arrow[r]& A' \arrow[r, "\alpha'"]& A'\underset{A}{\coprod} B \arrow[r]&C\arrow[r]& 0
+\end{tikzcd}
+\eee
+\end{to_claim}
+
+Опишем теперь алгоритм сложения двух расширений:
+\bee
+\begin{tikzcd}[sep=small]
+        0 \arrow[r]& A \arrow[r]& B\arrow[r]& C\arrow[r]& 0\\
+        0 \arrow[r]& A \arrow[r]& B'\arrow[r]&C\arrow[r]& 0 
+\end{tikzcd}
+=
+\begin{tikzcd}
+    0 \arrow[r]& A \arrow[r]& B'''\arrow[r]&C\arrow[r]& 0 
+\end{tikzcd}
+\eee
+\newline
+\bee
+\begin{tikzcd}
+        0 \arrow[r]& A \arrow[r]&A \underset{A\oplus A}{\coprod} B''\arrow[r] = B'''& C \arrow[r]&0\\
+        0 \arrow[r]& A\oplus A\arrow[d] \arrow[u]\arrow[r]& (B\oplus B')\underset{C\oplus C}{\times}C \arrow[u]\arrow[d]\arrow[r] = B''& C\arrow[u]\arrow[d, "\Delta"]\arrow[r]& 0\\
+        0 \arrow[r]& A\oplus A \arrow[r]& B\oplus B'\arrow[r]&C\oplus C\arrow[r]& 0
+\end{tikzcd}
+\eee
+Итак, мы ввели сложение расширений по Бэру, задав на них групповую структуру. Несложно убедиться, что нейтральным по сложению элементом данной группы является тривиальное расширение \begin{tikzcd}[sep = small] 0\arrow[r]& A \arrow[r]& A\oplus C \arrow[r]& C \arrow[r]& 0\end{tikzcd}.
+\subsection{Сложение $Ext$ длины $n$}
+Пусть имеем два расширения $\xi, \xi'$ и морфизм комплексов, тождественный на $A$ и $B$.
+\bee
+\begin{tikzcd}[sep=small]
+\xi\colon& 0\arrow[r]& B\arrow[r]\arrow[d, "id_B"]& X_n\arrow[r]&\cdots\arrow[r]& X_1\arrow[r]& A\arrow[d, "id_A"]\\
+\xi'\colon& 0\arrow[r]& B\arrow[r]& X'_n\arrow[r]&\cdots\arrow[r]& X'_1\arrow[r]& A
+\end{tikzcd}
+\eee
+Тогда суммой по Бэру двух таких расширений будет комплекс
+\bee
+\begin{tikzcd}[sep=small]
+0\arrow[r]& B\arrow[r]& X''_n\arrow[r]& X_{n-1}\oplus X'_{n-1}\arrow[r]&\cdots\arrow[r]& X_2\oplus X'_2\arrow[r]& X''_1\arrow[r]& A\arrow[r] & 0\\
+          &           &   \underset{B}{X_n \oplus X_n'}                &               &                        & &X_1\underset{A}{\times}X_1'&           
+\end{tikzcd}
+\eee
+\end{document}

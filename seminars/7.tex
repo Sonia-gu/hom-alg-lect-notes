@@ -1,0 +1,199 @@
+\documentclass[../hw_main.tex]{subfiles}
+\begin{document}
+\section{Производный функтор, приспособленный класс объектов, выделенные треугольники }
+Ранее мы ввели понятие приспособленного класса объектов $\mathcal{R}\subset \A$ для точного слева (справа) функтора $\F$. Далее будем проводить все рассуждения для точного слева аддитивного функтора $\F\colon \A \to \B$, $\A, \B \in \Ab$. 
+Напоминание: $\mathcal{R}\subset \mathbf{Ob}(\A)$ -- приспособленный к $\F$ класс объектов, если он:
+\begin{itemize}
+    \item достаточно большой, то есть для люього объекта мы можем построить $\mathcal{R}$-резольвенту
+    \[
+    \forall X \in\A \quad \exists R \in \mathcal{R} \colon \quad X \hookrightarrow R
+    \]
+    \item $\F$ переводит ациклический комплекс из $Kom^{+}R$ в ацикличный.
+\end{itemize}
+\begin{to_claim}
+ Если $\mathcal{R}$ -- достаточно большой класс объектов, то для любого комплекса существует $\mathcal{R}$-резольвента, то есть
+ \[
+ \forall C^\bullet \subset Kom^{+}(\A) \quad \exists R^\bullet \subset Kom^+(\R) \colon \quad C^\bullet \overset{qis}{\to} R^\bullet
+ \]
+\end{to_claim}
+\begin{proof}
+Строим резольвенту. На первом шаге вложим нудевой член в некоторый объект из класса $R$
+\bee
+\begin{tikzcd}
+    0\arrow[r]& C^0\arrow[d, hook ] \arrow[r]& C^1\arrow[rd, dashed]\arrow[d]\arrow[r]& \ldots\\
+    0\arrow[r]& R^0\arrow[r]& R^0\underset{C^0}{\coprod}C^1\arrow[r, hook]& R^1 \arrow[r]& \ldots
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}
+        & C^i\arrow[d, "\tau^i"] \arrow[r, "d^i_C"]\arrow[ld, "t^i"']& C^{i+1}\arrow[d]\arrow[rd, "t^{i+1}"] & \\
+       R^i\arrow[r]&  \coker d^{i-1}_{R} \arrow[r, "p"] &\coker d_R^{i-1} \underset{C^i}{\coprod}C^{i+1}\arrow[r, hook]&R^{i+1}
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}[sep=small]
+    C^i \arrow[r, "{\begin{pmatrix} \tau^i \\ -d^{i}_C \end{pmatrix}}"]& \coker d^{i-1}_R\oplus C^{i+1} \arrow[r, two heads]& \coker d_R^{i-1} \underset{C^{i}}{\coprod}C^{i+1}\arrow[r]& 0
+\end{tikzcd}
+\eee
+Осталось проверить, что таким образом задан квазиизоморфизм комплексов.\\ 
+$\blacktriangle epi$
+\begin{align*}
+    C^i \supset Z^i(R^\bullet) \ni x \mapsto (p(x), 0) \in \coker d^{i-1}_R\oplus C^{i+1}
+\end{align*}
+\begin{align*}
+    \exists \widetilde{x}  \in C^i \colon \quad
+                          \begin{pmatrix} \tau^i \\ -d^{i}_C \end{pmatrix} \widetilde{x} = \begin{pmatrix} p(x) \\ 0 \end{pmatrix} \quad \Rightarrow \quad d_c^i\widetilde{x} = 0 \quad \Rightarrow \quad \widetilde{x} \in Z^i(C^\bullet)
+\end{align*}
+$\blacktriangle mono$
+\begin{align*}
+    C^{i} \supset B^{i-1}(C^\bullet) \ni x \mapsto d^i_C(x) = 0 \in C^{i+1} \mapsto (0, 0) \in \coker d^{i-1}_R\oplus C^{i+1} & \Rightarrow d^i_Rt^i(x) = 0 \Rightarrow t^i(x) \in B^{i-1}(R^\bullet)
+\end{align*}
+\end{proof}
+Продолжим теперь построение производного функтора. Ранее было отмечено, что если $\F$ -- точный, то приспособленным классом являются все объекты нашей категории.\\
+Продолжим рассуждение для точного слева функтора между абелевыми категориями. Почленным действием он продолжается до точного функтора в категории комплексов и гомотопической категории.
+\[\F\colon \A \to \B\]
+\[Kom^+\F\colon Kom^+(\A) \to Kom^+(\B)\]
+\[\KlF{F}\colon \Kl{\A} \to \Kl{\B}\]
+Однако, вообще говоря, функтор не обязан сохранять квазиизоорфизмы. Поэтому продление на прозводную категорию мы будем организовывать следующим образом: комплекс мы будем заменять на квазиизоморфный ему комплекс с приспособленными членами и уже на этот комплекс будем действовать функтором почленно. Так мы получим производный фунтор.
+\[\DlF{F} \colon \Dl{\A} \to \Dl{\B}\]
+План действий:\\
+\begin{itemize}
+    \item Локализация гомотопической категории приспособленных объектов по квазиизоморфизмам эквивалентна производной категории\\
+    \begin{tikzcd}[sep=small] \Kl{\mathcal{R}}[QIS_{\mathcal{R}}^{-1}] \arrow[r, bend right, "\psi"']& \Dl{\A} \arrow[l, bend right, dashed, "\phi"']  \end{tikzcd}
+    \item \begin{tikzcd}[sep=small]\Dl{\A} \arrow[r, "\phi"]& \Kl{\mathcal{R}}[QIS_{\mathcal{R}}^{-1}] \arrow[r]& \Dl{\B} \end{tikzcd}
+\end{itemize}
+\begin{to_lem}
+\label{AB}
+Пусть $\mathcal{C}$ -- категория, $S$ -- локализующее семейство, $\B$ -- полная подкатегория в $\mathcal{C}$.  Пусть также 
+\begin{enumerate}
+    \item $S_{\B} = S \bigcap \mathbf{Mor}(\B)$ -- локализующее семейство в $\B$.
+    \item У любого морфизма, заканчивающегося на объекте подкатегории $\B$ мы можем поправить начало так, чтобы он начинался тоже в $\B$.
+    \bee
+    \begin{tikzcd}
+        X' \arrow[rd, "s"]& \\
+        \underset{\in \B}{X''} \arrow[u, "t"] \arrow[r]& \underset{\in \B}{X}
+    \end{tikzcd}
+    \eee
+    \[\forall s \in S \quad s \colon X' \to \underset{\in \B}{X} \qquad \exists t \in S \quad t \colon \underset{\in \B}{X''} \to X' \qquad st \in S_{\B}\]
+    \item[2'] У любого морфизма, начинающегося на объекте подкатегории $\B$ мы можем поправить начало так, чтобы он заканчивался тоже в $\B$.\footnote{и тогда в доказательстве нужно будет применять левые домики}
+    \bee
+    \begin{tikzcd}
+        \underset{\in \B}{X'} \arrow[d]\arrow[rd, "s"]& \\
+        \underset{\in \B}{X''} & X \arrow[l, "t"']
+    \end{tikzcd}
+    \eee
+\end{enumerate}
+Тогда имеется строгое и полное вложение $\B[S_{\B}^{-1}] \hookrightarrow \mathcal{C}[S^{-1}]$
+\end{to_lem}
+\begin{proof}
+    \[Hom_{\B[S_{\B}^{-1}]} (A, B) \cong Hom_{\mathcal{C}[S^{-1}]}(A, B) \]
+    $\blacktriangle mono(inj)$ Покажем, что, если два морфизма представлялись эквивалентными домиками в $\B[S_{\B}^{-1}]$, то они остануться эквивалентными в $\mathcal{C}[S^{-1}]$. Изобразим последовательность домиков на диаграмме. Эквивалентные домики в \\
+    \bee
+    \begin{tikzcd}
+        & & \underset{\in \B}{D}\arrow[d, "t"] & & \\
+        & & X''\arrow[ld, "s"']\arrow[rd] & &\\
+        &X\arrow[ld, "r"']\arrow[rrrd]& & X'\arrow[rd]\arrow[llld]& \\ 
+       \underset{\in \B}{A} &&&& \underset{\in\B}{B} 
+    \end{tikzcd}
+    \eee
+    \[rs \in S \quad A \in \B \quad \Rightarrow \quad \exists D \subset \B \quad D \overset{t}{\to}X'' \quad rst \in S \]
+    $\blacktriangle epi(surj)$ То есть любой домик, полностью лежащий в $\B$ поднимается в объемлющую категорию $\mathcal{C}$
+    \bee
+    \begin{tikzcd}
+          & \underset{\in \B}{X'}\arrow[d]& \\
+          & X\arrow[ld, "s"']\arrow[rd]  & \\
+        \underset{\in \B}{A} &    & \underset{\in \B}{B}
+    \end{tikzcd}
+    \eee
+\end{proof}
+Теперь применим \ref{AB} для $\A = \Kl{\A}$ и $\B = \Kl{\mathcal{R}}$ и $S = QIS_{\A}$. Тогда 
+\begin{to_claim}
+$\exists \psi\colon \Kl{\mathcal{R}}[QIS_{\mathcal{R}}]\to \Dl{\A}$ -- эквивалентность категорий.\footnote{Функтор взятия резольвенты}
+\end{to_claim}
+\begin{to_def}
+\label{derived_functor}
+Производный функтор точного слева $\mathcal{F}$, действующего между двумя абелевыми категориями это \textbf{пара} $(\DlF{F}, \varepsilon_{\mathcal{F}})$ точного слева\footnote{в смысле производной категории, то есть переводящего выделенные треугольники в выделенные} функтора и естественного преобразования.\\
+\bee
+\begin{tikzcd}
+\Kl{R} \arrow[r, "\KlF{F}"]\arrow[d, "Q_{\A}"'] & \Kl{B} \arrow[d, "Q_{\B}"] \\
+\Dl{A} \arrow[r, "\DlF{F}"]\arrow[r, dashed, bend right, "G"'] & \Dl{B}
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}
+      Q_{\B}\KlF{F} \arrow[r, "\varepsilon_{\F}"]\arrow[rd] &\DlF{F} Q_{\A} \arrow[d, dashed, "\exists ! \eta"]\\
+     & G
+\end{tikzcd}
+\eee
+\end{to_def}
+\begin{to_com}
+Очевидно, что $\DlF{\F}$ -- единственный.
+\end{to_com}
+\begin{to_thr}
+Если точный слева функтор допускает класс приспособленных объектов $\mathcal{R}$, то $\exists !$ $(\DlF{\F}, \varepsilon_{\F})$.
+\end{to_thr}
+\textit{Построение}. На этом шаге мы показываем \textbf{точность в смысле производной категории}.
+     Будем использовать полученную ранее эквивалентность категорий $\psi\colon \Kl{\mathcal{R}}[QIS_{\mathcal{R}}]\to \Dl{\A}$, обратную $\phi \colon \Dl{\A} \to \Kl{\mathcal{R}}[QIS_{\mathcal{R}}]$ и два естественных изоморфизма \footnote{"единица и коединица сопряжения"} $\alpha\colon Id \to \phi \circ \psi$ и $\beta \colon \psi \circ \phi \to Id$. Мы определим вспомогательный функтор  $\widetilde{\F}\colon \Kl{\mathcal{R}}[QIS^{-1}]\to \Dl{\B}$ просто почленным действием, а производный функтор как $\DlF{\F} = \widetilde{\F} \circ \phi$.
+     \\
+\textbf{План:}
+\begin{enumerate}
+     \item \textit{Точность $\DlF{F}$}\footnote{\textbf{в смысле производной категории}}
+\begin{to_lem}
+Пусть $\Delta$ -- треугольник в локализованной гомотопической подкатегории приспособленных объектов. Предположим, что он изоморфен выделенному треугольнику в производной категории\footnote{Так как мы не вводили понятия треангулированной категории, то для нас просто треугольником будет набор из трёх объектов и трёх морфизмов, а выделенным треугольником будет такой набор, где $Z = C(X \to Y)$}. Тогда он будет изоморфен выделенному треугольнику в локализованной гомотопической подкатегории приспособленных объектов.
+\begin{align*}
+    \Kl{\mathcal{R}}[QIS^{-1}] \ni \Delta &\cong \Delta' \in \D{\A} \quad \Rightarrow \quad \Delta \cong \widetilde{\Delta'} \in \Kl{R}[QIS^{-1}]
+\end{align*}
+\end{to_lem}
+\begin{proof}
+    \bee
+\begin{tikzcd}
+    \Delta \colon& X \arrow[r]\arrow[d, "\phi"]& Y \arrow[r]\arrow[d, "\psi"]& Z \arrow[r]\arrow[d, "\theta"]& X[1]\arrow[d, "\phi{[1]}"] \\
+    \widetilde{\Delta} \colon& \widetilde{X} \arrow[r, "f"]& \widetilde{Y}\arrow[r]& C(f)\arrow[r]&\widetilde{X}[1]
+\end{tikzcd}
+    \eee
+Пусть морфизм $\phi$ представляется  в производной категории домиком
+    \bee
+\begin{tikzcd}
+    & S\arrow[ld, "q"']\arrow[rd, "r"] & \\
+    X& & Y
+\end{tikzcd}
+    \eee
+    Тогда существует морфизм между конусами 
+    \bee
+    \begin{tikzcd}
+        Y \oplus S[1] = C(r) \arrow[r, "{(\psi, \phi, q)}"]& C(f) = \widetilde{Y} \oplus \widetilde{X}[1]
+    \end{tikzcd}
+    \eee
+    Теперь можем построить изоморфизм треугольников
+    \bee
+    \begin{tikzcd}
+        S\arrow[r]\arrow[d, "q"]& Y \arrow[r]\arrow[d, "id"]& C(r)\arrow[d, "{\theta^{-1}\circ(\psi, \phi, q)}"]\\
+        X\arrow[r]& Y \arrow[r]& Z
+    \end{tikzcd}
+    \eee
+    $\Rightarrow$ $\DlF{F}$ -- точный.
+\end{proof}
+     \item \textit{Построение $\varepsilon_{\F}$, единственность.}
+     Для построения естественного изоморфизма, возьмём некоторый комплекс, вложим его в производную категорию и выберем его резольвенту, подбором квазиизоморфного ему. То есть \\
+     \[
+     X \in \Kl{A} \quad Y = \phi Q_{\A} (X)
+     \]
+     Квазиизоморфизм $\beta \colon X \to \psi\phi(X) = \psi(Y)$ представляется домиком\\
+     \bee
+\begin{tikzcd}
+     & Z & \\
+     X \arrow[ru]& & Y\arrow[lu]
+\end{tikzcd}
+\overset{\KlF{\F}}{\longrightarrow}
+\begin{tikzcd}
+     & \KlF{\F}(Z) & \\
+     \KlF{\F}X \arrow[ru]& & \KlF{\F}Y\arrow[lu]
+\end{tikzcd}
+     \eee
+     \[\varepsilon_{\F} \colon Q_{\B}\KlF{\F}(X) \to Q_{\B}\KlF{\F}(Y) = \widetilde{\F}Q_{\mathcal{R}}(Y) = \DlF{\F}Q_{\A}(Y)\]
+     Далее мы проверим, что таким образом опредлённый морфизм является естественным преобразованием функторов и не завичит от выбора $Z$.
+     \item \textit{Универсальность} \textit{to be continued...}
+\end{enumerate}
+\end{document}
+
+vsem privet! ya ochen' lubl'u gay algebru! :3 fak moi mozg

@@ -1,0 +1,233 @@
+\documentclass[../hw_main.tex]{subfiles}
+\begin{document}
+\section{Ext, gldim, pd, фильтрованная категория}
+Ранее мы добились того, что смогли определить функтор, действующий между производными категориями и являющийся точным в смысле производной категории. 
+Для точного слева функтора $\Hom(A, -) : \mathcal{A} \rightarrow \mathbf{Ab}$ был таким образом определён функтор $R\Hom(A, -) : \Db{A} \rightarrow \mathcal{D^\flat (\mathbf{Ab})}$.\\
+Также для $Hom$ был определен $Ext^i(A, -) = H^i(R\Hom(A, -)) : \mathcal{A} \rightarrow \mathbf{Ab}$ -- классический производный функтор, но этот функтор действует меджду обычными абелевыми категориями. Также была показана следующая связь между этими сущностями $Ext^i(A, B) = R\Hom(A, B[i])$.
+Докажем следующее утверждение, являющееся вообще говоря общим свойством всех производных функторов:
+\begin{to_claim}
+Не бывает отрицательных $Ext'$ов.\\
+$\forall$ $A$, $B$ $\in$ $\mathcal{A}$ $Ext^n (A, B) = 0$, $n<0$.
+\begin{proof}
+Пусть $0 \neq f \in \Hom_{\mathcal{D(A)}}(A, B[-n])$
+\bee
+\begin{tikzcd}[sep=small]
+    & M \arrow[ld]\arrow[rd]& \\
+  A & & B[-n]  
+\end{tikzcd}
+\sim\text{ }
+\begin{tikzcd}[sep=small]
+    & M \arrow[ld, "\tau_{n \curlyeqsucc 0}"']\arrow[rd]& \\
+  A & & B[-n]  
+\end{tikzcd}
+\eee
+\end{proof}
+\end{to_claim}
+\textbf{Напоминание:} Для точного справа функтора $F$ и короткой точной последовательности \begin{tikzcd}[sep=small] 0 \arrow[r] &A \arrow[r] &B \arrow[r] & C \arrow[r] &0 \end{tikzcd} $\exists$ когомологическая последовательность \begin{tikzcd}[sep=small] 0 \arrow[r] &F(A) \arrow[r] &F(B) \arrow[r] & F(C) \arrow[r] & R^1F(A) \arrow[r] & R^1F(B) \arrow[r] & \ldots \end{tikzcd}
+Введём понятие глобальной размерности. Это некоторая мера того, насколько сложно устроена категория, насколько длинные могут возникать последовательности.
+\begin{to_def}
+\label{gld}
+Говорят, что $\mathcal{A}$ имеет глобальную(гомологическую) размерность $n\in \N$, если $n$ -- наибольшее такое число, что $\exists X, Y \in \mathcal{A}$ : $Ext(X, Y)^n \neq 0$
+\bee
+\mathbf{gldim}(\mathcal{A}) = n
+\eee
+Если такого числа нет, говорят, что категория имеет бесконечную глобальную размерность:
+\bee
+\mathbf{gldim}(\mathcal{A}) = \infty
+\eee
+\end{to_def}
+\begin{to_thr}
+Следующие утверждения эквивалентны:
+\begin{enumerate}
+    \item $\gldim \mathcal{A} = 0$
+    \item $Ext^1(X, Y) = 0$  $\forall X, Y \in \mathcal{A}$
+    \item $\mathcal{A}$-- полупроста.
+\end{enumerate}
+\end{to_thr}
+
+\begin{proof}
+\begin{itemize}
+    \item $1\Rightarrow 2$ см. \ref{gld}
+    \item $3 \Leftrightarrow 2$ см. определние по Йонеде
+    \item $3 \Rightarrow 1$
+    Для $n = 1$ -- очевидно. Пусть для $n-1$ также имеем расщипимое расширение
+    \bee
+    \begin{tikzcd}[sep=small]
+        0 \arrow[r]& Y \arrow[r] & A_1 \arrow[r]& B \arrow[r] & 0 & B \arrow[r] & A_2 \arrow[r] &\ldots \arrow[r] & A_n \arrow[r] & X \arrow[r]&0
+    \end{tikzcd}
+    \eee
+    Но тогда их композиция тоже расщипима:
+    \bee
+    \begin{tikzcd}[sep=small]
+        0 \arrow[r]& Y \arrow[r] & A_1 \arrow[r] &\ldots \arrow[r] & A_n \arrow[r] & X \arrow[r]&0
+    \end{tikzcd}
+    \eee
+    $\Rightarrow$ $Ext^n(X, Y) = 0$ $\forall X, Y$ $\in \mathcal{A}$
+\end{itemize}
+\end{proof}
+\begin{to_ex}
+$\mathbf{gldim}\mathcal{ V }ect_{k} = 0 $
+\end{to_ex}
+\begin{to_def} Проективная размерность $X \in \mathcal{A}$
+\bee
+\mathbf{pd}\text{ }X = \sup\{ n \in \N \text{ } |\text{ } \exists Y : Ext^n(X, Y)\neq 0 \}
+\eee
+\end{to_def}
+\begin{to_suj}
+\bee
+\mathbf{pd}\text{ }X = 0 \Leftrightarrow X \text{-- проективный}
+\eee
+\end{to_suj}
+\begin{proof}
+    $\Leftarrow$ очевидно из определения по Йонеде, так как $\forall$ короткая точная последовательность, заканчивающаяся на проективном объекте -- расщипима.\\
+    $\Rightarrow$
+    \bee
+    \begin{tikzcd}[sep=small]
+        & & & P\arrow[ld]\arrow[d, "\varphi"] &\\
+        0\arrow[r]& A\arrow[r]& B\arrow[r]& C \arrow[r]& 0
+    \end{tikzcd}
+    \eee
+    \begin{align*}
+    \Hom(P, B) \twoheadrightarrow \Hom(P, C) \rightarrow 0 \Rightarrow \varphi \text{ -- поднимается}
+    \end{align*}
+\end{proof}
+
+\begin{to_lem}
+Пусть имеем проективную резольвенту $P_\bullet$:
+\bee
+\begin{tikzcd}[sep=small]
+    0 \arrow[r] & X' \arrow[r] & P_{-k} \arrow[r] & \ldots \arrow[r] & P_0 \arrow[r] & X
+\arrow[r] & 0 \end{tikzcd}
+\eee
+Тогда 
+\bee\pd X' = \max \{\pd X - k + 1, 0 \}\eee
+\end{to_lem}
+\begin{proof}
+Определим отображение склейки раширенией $\gamma: Ext^d(X', Y) \rightarrow Ext^{d+k+1}(X, Y)$.\\
+\underline{Если $d = 0$, то $\gamma$-- $epi(surj)$.}\\
+\underline{Если $d \geqslant 1$, то $\gamma$-- $iso$.}
+\begin{enumerate}
+    \item База: $k = 0$
+    \bee
+    \begin{tikzcd}[sep=small]
+        0 \arrow[r] & X' \arrow[r] & P \arrow[r] & X \arrow[r] & 0\\
+    \end{tikzcd}
+    \eee
+    \bee
+    \begin{tikzcd}[sep=small]
+        Ext^{d}(P, Y) \arrow[r] & Ext^d(X', Y) \arrow[r, "\cong"] & Ext^{d+1}(X, Y) \arrow[r] & Ext^{d+1} (P, Y) \arrow[r] & 0\\
+        \cong 0 & & & \cong 0&
+    \end{tikzcd}
+    \eee
+    \item Пусть верно для $k - 1$, тогда 
+    \bee
+    \begin{tikzcd}[sep=small]
+        Ext^d(X', Y) \arrow[r] & Ext^{d+1}(X', Y) \arrow[r, "\cong"] & Ext^{d+ k + 1}(X, Y)
+    \end{tikzcd}
+    \eee
+    \bee
+    \begin{tikzcd}[sep=small]
+        0 \arrow[r] & X' \arrow[r] & P_{-k-1} \arrow[r]\arrow[rd] &P_{-k} \arrow[r] &\ldots\\
+        & & & X''\arrow[u] & 
+    \end{tikzcd}
+    \eee
+    \bee
+    \begin{tikzcd}[sep=small]
+        0 \arrow[r] & Ext^d(X', Y) \arrow[r, "\cong"] & Ext^{d+1}(X, Y) \arrow[r] & 0
+    \end{tikzcd}
+    \eee
+\end{enumerate}
+Неформально можно сформулировать данное утверждение следующим образом: проективнаяразмерность ядра длинной точной последовательности проективных объектов не может быть очень большой.
+\end{proof}
+\begin{to_con}
+\begin{align*}
+    \pd X \leqslant k \Rightarrow \exists \text{ проективная резольвента длины } \leqslant k
+\end{align*}
+\end{to_con}
+\begin{to_suj}
+
+\begin{align}
+ \boxed{   \gldim \mathcal{A} = \sup_{X \in \mathcal{A}} \pd X}
+\end{align}
+\end{to_suj}
+
+Вычисление $Ext'$ов как производных функторов\\
+
+\begin{to_def}
+категоря $\mathcal{I}$ называется фильтрованной, если выполняется:
+    \be
+            \forall i, j \in \mathcal{I} \quad \exists k : \quad
+    \begin{tikzcd}[sep=small] i \arrow[rd] & \\ j \arrow[r] & k \end{tikzcd}
+    \ee
+    \be
+            \forall i, j \in \mathcal{I}, u, v \colon i \to j \quad \exists \omega \colon j \to k \colon \omega u = \omega v \quad
+    \begin{tikzcd}
+        i \arrow[r, shift right, "u"']\arrow[r, "v"] & j \arrow[r, "\omega"] & k
+    \end{tikzcd}
+    \ee
+\end{to_def}
+
+Пусть есть функтор $F\colon \mathcal{I}\to \A$ и функтор копредела $colim \colon \A^{\mathcal{I}}\to \A$.
+
+Сформулируем следующее утверждение, которое является важным техническим требованием для ряда задач:\\
+
+\begin{to_claim}
+Пусть $\A = \mathcal{R}-mod$ -- категория модулей над кольцом, $\mathcal{I}$-- фильтрованная категория, тогда функтор $colim\colon \A^{\mathcal{I}}\to \A$ точен.
+\end{to_claim}
+\begin{proof}
+\footnote{Для точности справа нужно, чтобы $\F(epi) = epi$, для точности слева $\F(mono)=mono$}
+\begin{itemize}
+    \item 
+    Точность справа очевидна.\footnote{Точность справа функтора $colim$ следует из его сопряженности слева диагональному функтоору $\Delta$. ($colim \dashv \Delta \dashv lim$) Левые сопряженные функторы сохраняют копределы, в частности, сохраняют коядра, а значит эпиморфизм переводят в эпиморфизм, что и нужно для точности справа. Эпиморфизмы на уровне }
+    \item \footnote{Нужно показать, что, если был мономорфизм на уровне диаграм, то он останется и мономорфизмом на уровне копределов.}
+    \begin{to_lem}
+$a \in \colim_{i\in \mathcal{I}}A_i$, то $a$ поднимаеся до $a_{i_0}\in A_{i_0}$.
+    \end{to_lem}
+    \begin{proof}
+    Определим морфизмы $\F(i\to j) = \varphi_{ij}\colon A_i \to A_j$. Каждое слагаемое канонически вкладывается в сумму $\lambda_i\colon A_i \to \oplus A$ так, что $\lambda_i = \lambda_j \varphi_{ij }$.
+    Это значит, что любой морфизм из $colim $ имеет прообраз в $\oplus A$ вида $\sum_{J}\alpha_j a_i$, где $J < \infty$.\\
+    Изобразим на диаграмме конус функтора $\F$
+    \[
+    \begin{tikzcd}
+        \ldots\arrow[r]&A_i \arrow[r,"\varphi_{ij}"]\arrow[rd, "\lambda_i"']&A_j \arrow[rd, "a"]\arrow[r]\arrow[d, "\lambda_j"]& \ldots \\
+                       & & \oplus_{J}A  \arrow[r]& \colim_{i\in\mathcal{I}}A \arrow[r]& 0
+    \end{tikzcd}
+    \]
+    Имея условие фильтрованности категории $\mathcal{I}$ можем применить лемму Цорна и найти максимальный элемент среди таких прообразов, от есть любой элемент копредела имеет прообраз в одном конкретном модуле.\footnote{Копредел -- это терминальный элемент в категории конусов под функтором , то есть такое семейство морфизмов, в которое мы можем попасть из любого другого семейства морфизмов. Копредел функтора действующего из фильтрованной категории можно понимать как семейство морфизмов, действующее в объединение своих образов. Категория является фильтрованной тогда и только тогода, когда существует конус под каждой конечной диграммой.}
+    \[
+    \exists i_0 = \sup J \quad \colon \quad \forall j \in J  \quad \exists j\to i_0 
+    \]
+    \[
+    \varphi_{j i_0}(a_i)\in A_{i_0}
+    \]
+    \[
+    \sum_{J} \alpha_i a_i \mapsto a
+    \]
+    \end{proof}
+    Продолжаем доказательство исходного утверждения. Покажем, что в категории $\mathcal{R}-mod$ $\colim$ -- точен.
+    \[
+    A = \colim_{i \in \mathcal{I}}A_i
+    \]
+    \[
+    B = \colim_{i \in \mathcal{I}}B_i
+    \]
+    Пусть есть мономорфизм $m_i\colon A_i \to B_i$. Пусть $t$ -- это индуциорванный морфизм (после взятия копредела). Теперь 
+    \[
+    \forall a\neq 0 \in A \quad \exists a_i \in A_i \colon \quad t_i(a_i)\neq 0 \quad t_i \text{-- mono} 
+    \]
+    \[
+    t_i(a_i) = t_j(\varphi_{ij}(a_i)) \mapsto t \neq 0 \in \colim
+    \]
+    Соответствует ненулевому элементу в коядре.
+\end{itemize}
+\end{proof}
+{\color{red} в категории $\Ab^{op} = (\Z-mod)^{op} \nsim \Ab$. Может разберём не разобрали....}
+
+\begin{to_claim}
+$Ext$ и $\colim$ (фильтрованный) коммутируют.
+\end{to_claim}
+
+{\color{red} Произвольная грппа является фильтрованым копредлом $M = \colim_{i \in \mathcal{I}}M_i$}
+\end{document}
+
+

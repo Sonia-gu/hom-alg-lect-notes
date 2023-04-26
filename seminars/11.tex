@@ -1,0 +1,170 @@
+\documentclass[../hw_main.tex]{subfiles}
+\begin{document}
+\section{Функтор $Tor$}
+\begin{to_note}
+Если в $\A$ достаточно много проективных объектов и $\gldim \A = n$, а $\F$ -- точный справа функтор, то 
+\[\forall m > n\quad
+L^m\F{(X)} = 0\quad
+\forall X \in \A\]
+\end{to_note}
+\begin{to_note}
+Комплекс де-Рама является резольвентой постоянного пучка на гладком многообразии.
+\end{to_note}
+\begin{to_claim}
+Пусть в $\A\in \Ab$ имеем комплекс $K^\bullet$ с двумя нетривиальными соседними когомологиями.
+\[
+H^n(K^\bullet) = \begin{cases} H^0, &n = 0\\ H^1, &n = 1\\ 0, &иначе\end{cases}
+\]
+Комплекс такого вида классифицируется с помощью $H^0$, $H^1$ и $Ext^2(H^1, H^0)$ с точностью до $qis$.
+\end{to_claim}\\
+\textbf{Hint:} Под классификацией понимаются соответствующие классы эквивалентности квазиизоморфных комплексов в производной категории. Комплекс в производной категории будет квазиизоморфен комплексу с двумя нетривиальными членами\footnote{строго-полное вложение $\A$ в $\D{A}$, обрезание комплексов} \begin{tikzcd}[sep=small] 0 \arrow[r]& K^0 \arrow[r]& K^1 \arrow[r]& 0 \end{tikzcd}. \\
+Такой комплекс достаивается до комплекса \begin{tikzcd}[sep=small] H^0 \arrow[r]& K^0 \arrow[r]& K^1 \arrow[r]& H^1\end{tikzcd} $\in$ $Ext^2(H^1, H^0)$. \\
+Любой $qis$ задаёт эквивалентность расширений.
+\bee
+\begin{tikzcd}[sep=small]
+0 \arrow[r]& K^0 \arrow[r]\arrow[d, "\sim"]& K^1 \arrow[r]\arrow[d, "\sim"]& 0\\
+0 \arrow[r]& H^0 \arrow[r]& H^1 \arrow[r]& 0
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}[sep=small]
+0 \arrow[r]& H^0 \arrow[r]\arrow[d, "\sim"]& K^0 \arrow[r]\arrow[d]& K^1 \arrow[r]\arrow[d]& H^1 \arrow[r]\arrow[d, "\sim"]& 0\\
+0 \arrow[r]& H^0 \arrow[r]& L^0 \arrow[r]& L^1 \arrow[r]& H^1 \arrow[r]& 0
+\end{tikzcd}
+\eee
+Но также любая эквивалентность расширений будет давать квазиизоморфизм комплексов. Эквивалентность расширений задаётся последовательностью домиков, определяющую квазиизоморфизм комплексов.
+\bee
+\begin{tikzcd}
+        &                               &K^\bullet\arrow[ld]\arrow[rd]\arrow[lldd, bend right]\arrow[rrdd, bend left]& & & &\\
+        &K^\bullet\arrow[ld]\arrow[rrrd]& & L^\bullet\arrow[rd]\arrow[llld]& \\
+    H^0[0] & & & & H^1[1]
+\end{tikzcd}
+\eee
+\begin{to_def}
+\[
+Tor_n^R (A, -) = L_n(A\otimes)(-)\footnote{$A\otimes(-)$-- сопряженный слева к фуктору $Hom$, а значит он точен справа, значит у него есть левые производные}
+\]
+\end{to_def}
+\[
+Ext^\bullet(A, -)\colon \Db{A} \to \Db{A} \vdash Tor^\bullet(A, -)\colon \Db{A} \to \Db{A}
+\]
+\begin{to_ex}
+$\A \in \Ab$
+\[
+Tor_n (\Z_p, A)
+\]
+Для точного справа функтора выпишем проективную резольвенту 
+\bee
+\begin{tikzcd}[sep=small]
+    0\arrow[r]& \Z \arrow[r, "\cdot p"]& \Z \arrow[r, "\varepsilon"]& \Z_p \arrow[r]& 0\\
+              &                       & 0 \arrow[u, dashed]         &               & \\  
+\end{tikzcd}
+\eee
+Далее применим к ней ковариантный фунтктор $\underset{\Z}{\otimes}A(-)$ и вычислим когомологии
+\bee
+\begin{tikzcd}[sep=small]
+    A \arrow[r, "\cdot p"]& A \\
+                          & 0 \arrow[u, dashed]  
+\end{tikzcd}
+\eee
+\begin{align*}
+    Tor_0(\Z/ p\Z; A) &= \Z / p\Z \underset{\Z}{\otimes} A = A / pA\\
+    Tor_1 (\Z / p\Z; A) &= \{ a \in A | pa = 0\} \text{ -- элементы порядка } p
+\end{align*}
+\end{to_ex}
+\begin{to_ex}
+Пусть $A$ -- конечно порождена, то есть имеет структуру $A = (\underset{k}{\oplus}\Z^k) \oplus (\underset{i=1, N}{\oplus}\Z / p_i\Z)$. Тогда $Tor$ также будет раскладываться в сумму \\
+\begin{align*}
+    Tor_1 (A; B) = \underset{i=1, N}{\oplus} Tor_1(\Z / p_i\Z; B)
+\end{align*}
+\end{to_ex}
+\begin{to_ex}
+Если же $A$-- произвольная группа, то она являеься пределом конечнопорждённых груп $A = \underrightarrow{\lim} A_i$, а также всегда представима в виде прямой суммы свободной группы и группы кручения $A \cong \mathcal{T}A\oplus\F A$ $\Rightarrow$ если $A$ -- без кручения, то $Tor(A; B)=0$.
+\end{to_ex}
+\begin{to_def}
+$A$ -- \textbf{плоский} $\Leftrightarrow$ $Tor_1(A; B) = 0$, $\forall$ $B$.
+\end{to_def}
+\begin{to_claim}
+Плоские модули -- приспособлены к функтору $(-)\otimes B$ ($A\otimes(-)$-- точный).
+\end{to_claim}
+\begin{to_claim}
+Проективный модуль $\Rightarrow$ плоский.
+\end{to_claim}
+\begin{to_claim}
+Если $\mathcal{R}$ -- \textbf{PID}\footnote{КГИ} $\Rightarrow$ (плоский) $\Leftrightarrow$ (без кручения).
+\end{to_claim}
+\begin{to_claim}
+\[A \in \Ab\]
+\[Tor_1(\Q / \Z; A)= \mathcal{T}A\text{ -- кручение $A$}\] 
+\[\underrightarrow{\lim}\text{ }\Z/p\Z = \Q / \Z\]\footnote{при подстановке в $Tor$ получаем прямой предел подгрупп элементов имеющий заднаный порядок для всех возможных порядков, то есть кручение группы. $\underrightarrow{\lim}$ учитывает пересечения всех таких подгрупп}
+\end{to_claim}
+\begin{to_claim}[$\mathcal{T}=0$, $Tor \neq 0$]
+Рассмотрим пример, когда модуль без кручения над кольцом $\mathcal{R}\neq$ \textbf{PID}, имеет ненулевые $Tor$. Стандартным примером не \textbf{PID} является $\mathcal{R} =\mathbf{k}\left[x, y\right]$. Рассмотрим в нём модуль $A = (x; y) \neq$ \textbf{PI}. Напишем резольвенту Кошуля
+\bee
+\begin{tikzcd}
+    0 \arrow[r]& \mathcal{R} \arrow[r, "{\begin{pmatrix} -y \\ x \end{pmatrix}}"]& \mathcal{R}\oplus \mathcal{R} \arrow[r, "{\begin{pmatrix}x & $ $ y \end{pmatrix}}"]& \mathbf{k} \arrow[r]& 0\\
+    0 \arrow[r]& \mathcal{R} \arrow[r, "{\begin{pmatrix} -y \\ x \end{pmatrix}}"]& \mathcal{R}\oplus \mathcal{R} \arrow[r, "{\begin{pmatrix}x & $ $ y \end{pmatrix}}"]& (x; y) \arrow[r]& 0
+\end{tikzcd}
+\eee
+Применяя функтор $\underset{k[x; y]}{\otimes}\mathbf{k} (-)$, получаем комплекс с нулевыми морфизмами:\\
+\bee
+\begin{tikzcd}[sep=small]
+    0 \arrow[r]& \mathbf{k} \arrow[r, "0"]& \mathbf{k} \oplus \mathbf{k} \arrow[r, "0"]& 0 \end{tikzcd}
+\eee
+\[
+Tor_1(A, \mathbf{k}) = \mathbf{k} \neq 0
+\]
+\end{to_claim}
+\begin{to_ex}[кольцо с делителями нуля]
+Пусть $\mathcal{R} = \Z_m$, $M = \Z_d$ $\in\mathcal{R}-mod$, $d|m$. 
+\bee
+\begin{tikzcd}[sep=small]
+    \ldots\arrow[r]& \Z_m \arrow[r, "\cdot d"]& \Z_m \arrow[r, "m/d"]& \Z_d \arrow[r]& 0
+\end{tikzcd}
+\eee
+Мы получили бесконечную циклическую проективную резольвенту.\footnote{Наличие делителей нуля тесно связано с бесконечной глобальной размерностью.} Применим к ней $\underset{\Z_m}{\otimes}B (-)$:
+\bee
+\begin{tikzcd}[sep=small]
+    \ldots\arrow[r, "\cdot d"]& B \arrow[r, "\cdot m/d"]& B \arrow[r, "\cdot d"]& B \arrow[r]& 0
+\end{tikzcd}
+\eee
+Теперь вычислим когомологии
+\begin{align*}
+    Tor_0(M; B) &= B / dB\\
+    Tor_{2k+1}(M; B) &=  \lbrace b \text{ }| ord(b)=d \rbrace \text{ }/ (m/d)  \\
+    Tor_{2k}(M; B) &=  \lbrace b \text{ }| ord(b)= m/d \rbrace \text{ }/ (d)
+\end{align*}
+\end{to_ex}
+\subsection{Спектральные последовательности}
+Работаем, например в категории $Kom(A)$. Будем говорить, что на объекте $A$ задана убывающая регулярная фильтрация, то есть цепочка вложенных друг в друга подобъктов $A \supset \ldots F^p A \supset F^{p+1}A \supset \ldots$, которая обладает следующими свойствами:
+\begin{itemize}
+    \item $\bigcap F^p A = 0$ \item  $\bigcup F^p A = A$
+\end{itemize}
+Тогда по такой последовательности можно построить \textbf{градуировочный фактор} $E^p = F^p A / F^{p+1} A$.\\
+"Пристёгивание" факторов к подмодулю будем обозначать как $F^N \sqsupset E^{N-1} \sqsupset E^{N-2}\sqsupset\ldots$.\\
+\textbf{Вопрос:} если известны все градуировочные факторы фильтрации, можем ли мы восстановить наш исходный объект?
+\begin{to_def}
+Спектральной последовательностью является набор данных, состоящий из 
+\begin{itemize}
+\item стопки листов с занумерованными клетками, в которых находятся объекты категории\footnote{$r$ -- номер листа, а $pq$ -- номер клетки}
+\item дифференциала между объектами листа \footnote{бьёт обобщённым "ходом коня"}
+\item изоморфизма между когомологиями и следующим листом
+\item морфизма из момента стабилизации когомологий в градуировочные факторы фильтрации
+\end{itemize}
+\[(E^{pq}_r, E^n, d^{pq}_r, \alpha^{pq}_r, \beta^{pq})\]
+\[d^{pq}_r&\colon E^{pq}_r\to E^{p+r, q-r+1}_r  \]
+\begin{align*}
+    \alpha_r^{pq}\colon H^{pq}_r(E_r^{\bullet\bullet}) \to E^{pq}_{r+1}
+\end{align*}
+Начиная с некоторого листа для любого члена все дифференциалы, которые бьют из него и в него зануляются, то есть
+\begin{align*}
+\forall (p, q) \quad \exists r_0\colon \forall r\ge r_0 \quad \hookrightarrow  \quad d^{pq}_r = 0 \quad d_r^{p-r, q+r-1}=0     
+\end{align*}
+Это означает, что когомологии с этого момента перестают меняться, а последовательность стабилизируется.\\
+$E^n$ -- это комплекс, на котором задана убывающая регулярная фильтрация $\ldots \supset \ldots F^p E^n \supset F^{p+1} E^n \supset \ldots$.\\ \begin{align*}
+    E^{pq}_{r_0} &= E_{\infty}^{pq}\\
+    \beta^{pq}&\colon E_{\infty}^{pq} \to F^{p} E^{p+q} / F^{p+1} E^{p+q}
+\end{align*}
+Спектральная последовательность сходится к градуировочным факторам фильтрации.
+\end{to_def}
+\end{document}

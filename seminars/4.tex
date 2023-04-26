@@ -1,0 +1,126 @@
+\section{Проективные резольвенты в гомотопической категории, абелевость гомотопической категории}
+\begin{to_com}
+Проективная резольвента с точностью до гомотопической эквивалентности определена однозначно.
+\end{to_com}
+
+\begin{to_suj}
+Пусть $M, N \in \textbf{Ob(Ab)}$. $P_\bullet$ -- проективная резольвента $M$, $Q_\bullet$ -- какая-то резольвента $N$.
+\bee
+\xymatrix@=1em{
+\ldots \ar[r]&P_1 \ar[r] & P_0  \ar[r] & M \\
+\ldots \ar[r]&Q_1 \ar[r] & Q_0  \ar[r] & N 
+}
+\eee
+Тогда 
+\begin{align*}
+\Hom_{\mathcal{K}(A)}(P_\bullet, Q_\bullet) = \Hom_{A}(M, N)
+\end{align*}
+\end{to_suj}
+\begin{proof}
+Имеем морфизм комплексов $f$ \begin{tikzcd}[sep=small] Q_\bullet  \arrow[r] & N[0] \end{tikzcd} и его конус \begin{tikzcd}[sep=small] Q_\bullet  \arrow[r] & N[0] \arrow[r] & C(f) \arrow[r] & Q_\bullet [1] \end{tikzcd}\\
+\bee
+\begin{tikzcd}[sep=small]
+\ldots \arrow[r] & Q_1 \arrow[r] \ar[d] & Q_0 \arrow[r]  \arrow[d] & 0 \arrow[r] \arrow[d] & ... \\
+\ldots \arrow[r] & 0 \arrow[r] & N \arrow[r] & 0 \arrow[r] & ...
+\end{tikzcd}
+\eee
+$f$ -- $qis$ $\Leftrightarrow$ $C(f)$-- ацикличен $\Rightarrow$ $\forall g: P_\bullet \rightarrow C(f) \hookrightarrow g \sim 0$. Применим точный функтор $\Hom(P_\bullet, -)$ к короткой точной последовательности 
+\begin{center}
+\begin{tikzcd}[sep=small]
+\Hom(P_\bullet, N[-1]) \ar[r] &\Hom(P_\bullet, Q_\bullet) \ar[r, "\cong"] &\Hom(P_\bullet, N[0]) \ar[r] &\Hom(P_\bullet, C(f)) \ar[r] & \Hom(P_\bullet, N[1]) \ar[r] & ...\\
+\cong 0 & & & \cong 0 & &
+\end{tikzcd}
+\end{center}
+В $\Hom(P_\bullet, N[0])$ нет нетривиальных гомотопий, а также $f d_1 = 0$ и $P_0/im d_1 = M$(универсальность коядра гомоморфизмов групп). Отсюда получаем:
+\bee
+\Hom_{\mathcal{K(A)}}(P_\bullet, N[0]) \cong \Hom(P_\bullet, N[0]) \cong \Hom(M, N)
+\eee
+\end{proof}
+\begin{to_con}
+Пусть $P^1_\bullet$, $P^2_\bullet$ -- проективные резольвенты $M$ $\Rightarrow$ $P^1_\bullet \sim P^2_\bullet$. 
+\end{to_con}
+\begin{to_con}
+Проективная резольвента от модуля -- строгий полный функтор.
+\bee
+P_\bullet(-): \mathcal{A} \rightarrow \mathcal{K(A)}
+\eee
+\end{to_con}
+\begin{to_com}
+\begin{align*}
+    \mathcal{A} \in \mathbf{Ab}&\Rightarrow Kom\mathcal{(A)}\\
+    \mathcal{A} \in \mathbf{Ab}&\nRightarrow \mathcal{K(A)}
+\end{align*}
+\end{to_com}
+\begin{to_ex}
+$f: \Z \twoheadrightarrow \Z_p $ не является эпиморфизмом в $\mathcal{K(A)}$.
+\begin{proof}
+Предположим, что $f$ -- $epi$
+\bee
+\begin{tikzcd}[sep=small]
+    \ldots \arrow[r] & 0 \arrow[r] \ar[d] & \Z \arrow[r]  \arrow[d, "f"] & 0 \arrow[r] \arrow[d] & \ldots = A\\
+    \ldots \arrow[r] & 0 \arrow[r] & \Z_{p} \arrow[r] & 0 \arrow[r] & \ldots = C
+\end{tikzcd}
+\eee
+Тогда существует разложение:
+\bee
+\begin{tikzcd} A \arrow[r, "f"] \arrow[rd, twoheadrightarrow] & C\\ & im f = B \arrow[u, hookrightarrow] \end{tikzcd}
+\begin{tikzcd} A \arrow[r, "\alpha"]& B \arrow[r, "\beta"] & C\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}[sep = small]
+A\arrow[rr, bend left]\arrow[r]&B \arrow[r]&C(\alpha)\\
+C(\beta)[-1]\arrow[rr, bend right]\arrow[r]&B \arrow[r]&C
+\end{tikzcd}
+\eee
+\newpage
+\bee
+\begin{tikzcd}[sep=small]
+    C(\beta)[-1]\arrow[r]&B \arrow[r]&C(\alpha)
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}
+    \ldots\arrow[d] & \ldots\arrow[d] & \ldots\arrow[d]\\
+    B_{-1} \arrow[r]\arrow[d] & B_{-1} \arrow[r]\arrow[d] & B_{-1}\oplus\Z\arrow[d]\\
+    B_{0} \arrow[r]\arrow[d]\arrow[ru, "h_0" description ] & B_{0} \arrow[r]\arrow[d]\arrow[ru, "k_0" description ] & B_{0}\arrow[d]\\
+    B_{1}\oplus\Z_p \arrow[r]\arrow[d]\arrow[ru, "h_1" description ] & B_{1} \arrow[r]\arrow[d]\arrow[ru, "k_1" description ] & B_{1}\arrow[d]\\
+    \ldots & \ldots & \ldots
+\end{tikzcd}
+\eee
+\begin{align*}
+    s = \begin{cases}h^n, & n\neq 1\\ k^n, & n=1  \end{cases}\\
+    d = dsd
+\end{align*}
+Таким образом получили, $B$ -- расщипим. 
+
+\bee
+\begin{tikzcd}
+    \ldots\arrow[d] & \ldots\arrow[d] & \ldots\arrow[d]\\
+    0 \arrow[r]\arrow[d] & 0 \arrow[r]\arrow[d] & B_{-1}\oplus\Z\arrow[d]\\
+    B_{0} \arrow[r]\arrow[d]\arrow[ru, "h_0" description ] & B_{0} \arrow[r]\arrow[d]\arrow[ru, "k_0" description ] & B_{0}\arrow[d]\\
+    B_{1}\oplus\Z_p \arrow[r]\arrow[d]\arrow[ru, "h_1" description ] & 0 \arrow[r]\arrow[d]\arrow[ru, "k_1" description ] & 0\arrow[d]\\
+    \ldots & \ldots & \ldots
+\end{tikzcd}
+\eee
+Но тогда имеем последовательность следующую морфизмов и противоречие:
+\bee
+\begin{tikzcd}
+    B_0 \arrow[r]\arrow[rrrr, bend left, "id"] & \Z_p\arrow[rr, bend right, "0"'] \arrow[r] & B_0 \arrow[r] & \Z \arrow[r] & B_0
+\end{tikzcd}
+\eee
+\end{proof}
+\end{to_ex}
+\begin{to_def}
+$\mathcal{A}$ -- полупроста $\Leftrightarrow$ $\forall$ точная последовательность расщипима.
+\end{to_def}
+\begin{to_claim}
+$\mathcal{K(A)}$ $\in$ $\mathbf{Ab}$ $\Leftrightarrow$ $\mathcal{A}$ -- полупроста(то есть $\forall$ точная последовательность расщипима).
+\end{to_claim}
+\begin{to_ex}
+$\mathbf{Ab}$-- не полупроста. Пример нерасщипимой короткой точной последовательности:
+\bee
+\begin{tikzcd}[sep=small]
+0 \arrow[r] &\Z \arrow[r, "\cdot p"] & \Z \arrow[r] & \Z_p \arrow[r] &  0
+\end{tikzcd}
+\eee
+\end{to_ex}

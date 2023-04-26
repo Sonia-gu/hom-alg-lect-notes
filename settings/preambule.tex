@@ -1,0 +1,189 @@
+% file's preambule
+% connect packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[T2A]{fontenc}                   %!? закрепляет внутреннюю кодировку LaTeX
+\usepackage[utf8]{inputenc}                 %!  закрепляет кодировку utf8
+\usepackage[english,russian]{babel}         %!  подключает русский и английский
+\usepackage{amsmath}                        %!  |
+\usepackage{amssymb,textcomp, esvect,esint} %!  |важно для формул 
+\usepackage[margin=1.5cm]{geometry}           %!  фиксирует оступ на 2cm
+\usepackage{amsfonts}                       %!  математические шрифты
+\usepackage{amsthm}                         %!  newtheorem и их сквозная нумерация
+\usepackage{graphicx}                       %?  графическое изменение текста
+\usepackage{indentfirst}                    %   добавить indent перед первым параграфом
+\usepackage{xcolor}                         %   добавляет цвета
+\usepackage{enumitem}                       %!  задание макета перечня.
+\usepackage[unicode, pdftex]{hyperref}      %!  оглавление для панели навигации по PDF-документу + гиперссылки
+\usepackage{booktabs}                       %!  добавляет книжные линии в таблицы
+\usepackage{hypcap}                         %?  адресация на картинку, а не на подпись к ней
+\usepackage{abraces}                        %?  фигурные скобки сверху или снизу текста
+\usepackage{caption}                        %-  позволяет корректировать caption 
+\usepackage{multirow}                       %   объединение ячеек в таблицах
+\usepackage{pifont}                         %!  нужен для крестика
+\usepackage{cancel}                         %!  аутентичное перечеркивание текста
+\usepackage{ulem}                           %!  перечеркивание текста
+\usepackage{tikz}                           %!  высокоуровневые рисунки (кружочек)
+\usepackage{titling}                        %-  автоматическое заглавие 
+\usepackage{blindtext}                      %-  слепой текст
+\usepackage{fancyhdr}                       %   добавить верхний и нижний колонтитул
+
+\usepackage{fancyhdr}
+\usepackage{accents}
+\pagestyle{fancy}
+\setlength{\headheight}{40pt}
+
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\usepackage{mathrsfs}  
+
+\usepackage[yyyymmdd]{datetime} %yyy/mm/dd
+\renewcommand{\dateseparator}{/}
+
+%epigraph
+\usepackage{tcolorbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%subfiles
+
+
+\usepackage{subfiles} % Best loaded last in the preambles
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz-cd}
+\usetikzlibrary{cd, babel}
+\usepackage[all, cmtip]{xy} %ВПИЗДУ ЭТОТ ТАКЗ БЛЯТЬ // САМ ИДИ В ПИЗДУ БЛЯ(миша)// ЭЭЭЭ ТЫ АХУЕЛ БЛЯ???
+\usetikzlibrary{cd}
+
+\usepackage{eulervm}
+\DeclareMathOperator{\Hom}{Hom}% preferred
+
+% create environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{to_thr}{Thr}[section]
+\newtheorem{to_suj}[to_thr]{Prop}
+\newtheorem{to_lem}[to_thr]{Lem}
+\newtheorem{to_law}[to_thr]{Law}
+\newtheorem{to_com}[to_thr]{Com}
+\newtheorem{to_con}[to_thr]{Corr}
+\newtheorem{to_ex}[to_thr]{Ex}
+\newtheorem{to_claim}[to_thr]{Claim}
+\newtheorem{to_note}[to_thr]{Note}
+\theoremstyle{definition}
+\newtheorem{to_def}[to_thr]{def}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\incfig}[1]{%
+    % \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%add
+\newcommand*{\be}{\begin{equation}}
+\newcommand*{\ee}{\end{equation}}
+\newcommand*{\bee}{\begin{equation*}}
+\newcommand*{\eee}{\end{equation*}}
+\newcommand*{\wt}{\widetilde}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand{\div}{\mathop{\mathrm{div}}\nolimits}
+\renewcommand{\d}{\, d}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+\newcommand{\pd}{\mathbf{pd}\text{ }}
+\newcommand{\gldim}{\mathbf{gldim}\text{ }}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\K}[1]{\mathcal{K(#1)}}
+\newcommand{\Kl}[1]{\mathcal{K^+(#1)}}
+\newcommand{\KlF}[1]{\mathcal{K^+ #1}}
+\newcommand{\Kr}[1]{\mathcal{K^-(#1)}}
+\newcommand{\Kb}[1]{\mathcal{K^\flat(#1)}}
+\newcommand{\Dl}[1]{\mathcal{D^+(#1)}}
+\newcommand{\DlF}[1]{\mathcal{D^+ #1}}
+\newcommand{\DrF}[1]{\mathcal{D^- #1}}
+\newcommand{\DF}[1]{\mathcal{D #1}}
+\newcommand{\Dr}[1]{\mathcal{D^-(#1)}}
+\newcommand{\D}[1]{\mathcal{D(#1)}}
+\newcommand{\Db}[1]{\mathcal{D^\flat (#1)}}
+\newcommand{\Rn}[2]{\mathcal{R}^{#1}\mathcal{#2}}
+\newcommand{\Ln}[2]{\mathcal{L}^{#1}\mathcal{#2}}
+\newcommand{\hHom}{\underline{Hom}}
+
+
+\newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\T}{^{\text{T}}}
+
+\newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
+\newcommand{\rot}{\mathop{\mathrm{rot}}\nolimits}
+\newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\Spec}{\mathop{\mathrm{Spec}}\nolimits}
+\newcommand{\sign}{\mathop{\mathrm{sign}}\nolimits}
+\newcommand{\tr}{\mathop{\mathrm{tr}}\nolimits}
+\newcommand{\rg}{\mathop{\mathrm{rg}}\nolimits}
+
+\newcommand{\const}{\text{const}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\xmark}{\ding{55}}
+
+\renewcommand{\int}{\upint}
+\renewcommand{\oint}{\upoint}
+
+\makeatletter
+\newcommand{\colim@}[2]{%
+  \vtop{\m@th\ialign{##\cr
+    \hfil$#1\operator@font colim$\hfil\cr
+    \noalign{\nointerlineskip\kern1.5\ex@}#2\cr
+    \noalign{\nointerlineskip\kern-\ex@}\cr}}%
+}
+\newcommand{\colim}{%
+  \mathop{\mathpalette\colim@{\rightarrowfill@\scriptscriptstyle}}\nmlimits@
+}
+\renewcommand{\varprojlim}{%
+  \mathop{\mathpalette\varlim@{\leftarrowfill@\scriptscriptstyle}}\nmlimits@
+}
+\renewcommand{\varinjlim}{%
+  \mathop{\mathpalette\varlim@{\rightarrowfill@\scriptscriptstyle}}\nmlimits@
+}
+
+\DeclareMathOperator{\coker}{Coker}
+
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%links
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{floatrow}
+\usepackage{wrapfig}
+
+\definecolor{urlcolor}{HTML}{799B03} % hyperlink color
+\hypersetup{pdfstartview=FitH,  linkcolor=blue,urlcolor=blue, colorlinks=true}
+
+%Форматирование секций.
+\usepackage{titlesec}
+
+\titleformat{\section}[runin]{\bfseries}{\begin{tcolorbox}\small{Семинар }\thesection\\ }{0.5pt}{(Темы: }[)\end{tcolorbox}]
+
+\titleformat{name=\section, numberless} %Форматирование заголовка оглавления
+ {\bfseries}
+ {}
+ {0pt}
+ {}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
