@@ -1,23 +1,17 @@
 \section{Проективные резольвенты в гомотопической категории, абелевость гомотопической категории}
+Мы движемся к тому, чтобы определить производную категорию -- это наша стратегическая цель. Наша тактическая цель на данном этапе -- установить  нужные нам свойства фунткора взятия проективной резольвенты.
 \begin{to_com}
 Проективная резольвента с точностью до гомотопической эквивалентности определена однозначно.
 \end{to_com}
-
 \begin{to_suj}
-Пусть $M, N \in \textbf{Ob(Ab)}$. $P_\bullet$ -- проективная резольвента $M$, $Q_\bullet$ -- какая-то резольвента $N$.
-\bee
-\xymatrix@=1em{
-\ldots \ar[r]&P_1 \ar[r] & P_0  \ar[r] & M \\
-\ldots \ar[r]&Q_1 \ar[r] & Q_0  \ar[r] & N 
-}
-\eee
+Пусть $M, N \in \textbf{Ob}(\A)$. $P_\bullet$ -- проективная резольвента $M$, $Q_\bullet$ -- какая-то резольвента $N$.
 Тогда 
 \begin{align*}
 \Hom_{\mathcal{K}(A)}(P_\bullet, Q_\bullet) = \Hom_{A}(M, N)
 \end{align*}
 \end{to_suj}
 \begin{proof}
-Имеем морфизм комплексов $f$ \begin{tikzcd}[sep=small] Q_\bullet  \arrow[r] & N[0] \end{tikzcd} и его конус \begin{tikzcd}[sep=small] Q_\bullet  \arrow[r] & N[0] \arrow[r] & C(f) \arrow[r] & Q_\bullet [1] \end{tikzcd}\\
+Рассмотрим морфизм комплексов $f\colon Q_\bullet \to N[0] $ и его конус \begin{tikzcd}[sep=small] Q_\bullet  \arrow[r] & N[0] \arrow[r] & C(f) \arrow[r] & Q_\bullet [1] \end{tikzcd}\\
 \bee
 \begin{tikzcd}[sep=small]
 \ldots \arrow[r] & Q_1 \arrow[r] \ar[d] & Q_0 \arrow[r]  \arrow[d] & 0 \arrow[r] \arrow[d] & ... \\
@@ -27,8 +21,7 @@
 $f$ -- $qis$ $\Leftrightarrow$ $C(f)$-- ацикличен $\Rightarrow$ $\forall g: P_\bullet \rightarrow C(f) \hookrightarrow g \sim 0$. Применим точный функтор $\Hom(P_\bullet, -)$ к короткой точной последовательности 
 \begin{center}
 \begin{tikzcd}[sep=small]
-\Hom(P_\bullet, N[-1]) \ar[r] &\Hom(P_\bullet, Q_\bullet) \ar[r, "\cong"] &\Hom(P_\bullet, N[0]) \ar[r] &\Hom(P_\bullet, C(f)) \ar[r] & \Hom(P_\bullet, N[1]) \ar[r] & ...\\
-\cong 0 & & & \cong 0 & &
+\underset{0}{\Hom(P_\bullet, N[-1])} \ar[r] &\Hom(P_\bullet, Q_\bullet) \ar[r, "\cong"] &\Hom(P_\bullet, N[0]) \ar[r] &\underset{0}{\Hom(P_\bullet, C(f))} \ar[r] & \Hom(P_\bullet, N[1]) \ar[r] & ...\\
 \end{tikzcd}
 \end{center}
 В $\Hom(P_\bullet, N[0])$ нет нетривиальных гомотопий, а также $f d_1 = 0$ и $P_0/im d_1 = M$(универсальность коядра гомоморфизмов групп). Отсюда получаем:

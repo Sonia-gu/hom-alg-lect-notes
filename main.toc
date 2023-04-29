@@ -1,0 +1,25 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Введение, комплекс, резольвента, проективный объект}{2}{section.1}%
+\contentsline {section}{\numberline {2}Проективная резольвента, гомотопическая категория}{6}{section.2}%
+\contentsline {section}{\numberline {3}Конус}{9}{section.3}%
+\contentsline {section}{\numberline {4}Проективные резольвенты в гомотопической категории, абелевость гомотопической категории}{11}{section.4}%
+\contentsline {section}{\numberline {5}Локализация, условия Оре}{13}{section.5}%
+\contentsline {section}{\numberline {6}Локализация гомотопической категории и производная категория}{17}{section.6}%
+\contentsline {section}{\numberline {7}Строгое и полное вложение в производную категорию}{20}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Каноническое вложение в производную категорию}{20}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Мотивировка}{21}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Классический производный функтор, класс преспособленных объектов}{22}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Производный функтор, приспособленный класс объектов, выделенные треугольники }{23}{section.8}%
+\contentsline {section}{\numberline {9}Производный функтор, классический $Ext$, сложение по Бэру}{27}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Производный функтор}{27}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Функтор $Ext$ по Йонеде}{29}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Сложение по Бэру}{30}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Сложение $Ext$ длины $n$}{31}{subsection.9.4}%
+\contentsline {section}{\numberline {10}Класс приспособленных объектов, градуированная алгебра $Ext$}{32}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Умножение $Ext$' ов}{32}{subsection.10.1}%
+\contentsline {section}{\numberline {11}Ext, gldim, pd, фильтрованная категория}{34}{section.11}%
+\contentsline {section}{\numberline {12}Функтор $Tor$}{37}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Спектральные последовательности}{39}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Фильтрованный комплекс}{40}{subsection.12.2}%
+\contentsline {section}{\numberline {A}Диаграмный поиск}{41}{appendix.A}%
+\contentsline {section}{\numberline {B}Расслоённые суммы и произведения}{42}{appendix.B}%

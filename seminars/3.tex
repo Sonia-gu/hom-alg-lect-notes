@@ -155,11 +155,23 @@ H^i (\hHom(K^\bullet, L^\bullet)) = \Hom_{\K{A}}(K^\bullet, L^\bullet[i])
 \end{tikzcd}
     \eee
 \end{to_lem}
-\begin{to_suj}
+\begin{to_suj}[Тактическая цель]\label{tactics}
     Проективная резольвента -- строгий функтор
     \begin{align*}
         \mathcal{P}\colon&\A \to\K{A}\\
          &A \mapsto P_\bullet(A)
     \end{align*}
 \end{to_suj}
+\begin{to_lem}
+    Пусть $P_\bullet$ -- проективная резольвента $M$, $K_\bullet$ -- какая-то резольвента $N$, также пусть есть морфизм $f \colon M \to N$. Тогда $\exists g_\bullet\colon P_\bullet\to K_\bullet$, такой, что $H^0(g_\bullet) = f$
+\end{to_lem}
+\begin{proof}
+    Просто построим этот морфизм комплексов. Дополним проективный комплекс до ацикличного. Далее доказательство будем проводить по индукции.  В силу проективности можем поднять $f\varepsilon$ вдоль эпиморфизма из крайнего члена резольвенты $K_\bullet$ до морфизма $f_0$. Аналогично далее все морфизмы диагональные морфизмы вида $f_i\circ d_{i-1}^P$ поднимаются вдоль эпиморфизмов вида $d_{i-1}^K\colon K_{i-1}\twoheadrightarrow \im d_{i-1}^K$.
+    \bee
+        \begin{tikzcd}
+            \ldots\arrow[r]& P_2\arrow[d, "f_2"] \arrow[r]&P_1 \arrow[d, "f_1"]\arrow[rd]\arrow[r, "d^P_1"]&P_0\arrow[rd, "f\varepsilon"] \arrow[r, "\varepsilon"]\arrow[d, dashed, "f_0"]&M\arrow[r]\arrow[d, "f"]&0\\
+            \ldots\arrow[r]& K_2 \arrow[r]&K_1 \arrow[r, "d^K_1"']&K_0 \arrow[r, two heads]&N\arrow[r]&0
+        \end{tikzcd}
+    \eee
+\end{proof} 
 \end{document}
