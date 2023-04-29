@@ -174,4 +174,21 @@ H^i (\hHom(K^\bullet, L^\bullet)) = \Hom_{\K{A}}(K^\bullet, L^\bullet[i])
         \end{tikzcd}
     \eee
 \end{proof} 
+\begin{to_lem}
+    Лбой морфизм из ограниченного справа комплекса из проективных объектов в ацикличный гомотопен нулю. 
+\end{to_lem}
+\begin{proof}
+Крайний морфизм строится по проективности $P_0$ поднятием вдоль эпиморфизма на $\im d_1 = \ker d_{1}$. Получили базу индукции $f_0 = d_1 h_0 - 0 $.
+        \bee
+        \begin{tikzcd}
+            \ldots\arrow[r]& P_2\arrow[d, "f_2"] \arrow[r]&P_1 \arrow[d, "f_1"]\arrow[r, "d^P_1"]&P_0\arrow[d, "f_0"]\arrow[ld, "h_0"]\arrow[r]&0\arrow[r]\arrow[d, "f_{-1}"]&\ldots\\
+            \ldots\arrow[r]& K_2 \arrow[r]&K_1 \arrow[r, "d^K_1"']&K_0 \arrow[r]&K_{-1}\arrow[r]&\ldots
+        \end{tikzcd}
+    \eee
+Пусть теперь все гомотопии до $i$-й построены и $f_{i-1} = h_{i-2}d - dh_{i-1}$ Рассмотри разность образов вертикальной и диагональной стрелок 
+\[g_i = f_i - h_{i-1} d_{i+1} \]
+\begin{align*}
+       d_i g_i = d(f_i - h_{i-1}d) = f_{i-1}d - d h_{i-1}d = (h_{i-2}d - d h_{i-1})d - d h_{i-1}d = d h_{i-1} d - d h_{i-1} d = 0
+\end{align*}
+\end{proof}
 \end{document}
