@@ -5,7 +5,8 @@
 \usepackage[T2A]{fontenc}                   %!? закрепляет внутреннюю кодировку LaTeX
 \usepackage[utf8]{inputenc}                 %!  закрепляет кодировку utf8
 \usepackage[english,russian]{babel}         %!  подключает русский и английский
-\usepackage{amsmath}                        %!  |
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{amssymb,textcomp, esvect,esint} %!  |важно для формул 
 \usepackage[margin=1.5cm]{geometry}           %!  фиксирует оступ на 2cm
 \usepackage{amsfonts}                       %!  математические шрифты
@@ -110,6 +111,7 @@
 \newcommand{\F}{\mathcal{F}}
 \newcommand{\Ab}{\mathbf{Ab}}
 \newcommand{\K}[1]{\mathcal{K(#1)}}
+\newcommand{\Kstar}[1]{\mathcal{K^{*}(#1)}}
 \newcommand{\Kl}[1]{\mathcal{K^+(#1)}}
 \newcommand{\KlF}[1]{\mathcal{K^+ #1}}
 \newcommand{\Kr}[1]{\mathcal{K^-(#1)}}
@@ -120,11 +122,14 @@
 \newcommand{\DF}[1]{\mathcal{D #1}}
 \newcommand{\Dr}[1]{\mathcal{D^-(#1)}}
 \newcommand{\D}[1]{\mathcal{D(#1)}}
+\newcommand{\Dstar}[1]{\mathcal{D^{*}(#1)}}
 \newcommand{\Db}[1]{\mathcal{D^\flat (#1)}}
 \newcommand{\Rn}[2]{\mathcal{R}^{#1}\mathcal{#2}}
 \newcommand{\Ln}[2]{\mathcal{L}^{#1}\mathcal{#2}}
 \newcommand{\hHom}{\underline{Hom}}
-
+\newcommand{\taule}[1]{\tau_{ \curlyeqprec #1}}
+\newcommand{\tauge}[1]{\tau_{ \curlyeqsucc #1}}
+\newcommand\NB[1][0.3]{N\kern-#1em B}
 
 \newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
 \newcommand{\T}{^{\text{T}}}

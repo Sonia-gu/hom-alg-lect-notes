@@ -1,4 +1,165 @@
-\documentclass[../hw_main.tex]{subfiles}
+\documentclass[../main.tex]{subfiles}
 \begin{document}
 \section{Конус}
+\begin{to_def}
+Сдвигом комплекса $K[n]$ назовём комплекс с объектами $K[n]^i = K^{n+i}$ и дифференциалами $d[n]^i = (-1)^nd^{i+n}$
+\end{to_def}
+\begin{to_def}
+Конусом $C[f]^\bullet$ морфизма комплексов $f^\bullet:K^\bullet\to L^\bullet$ называется комплекс с объектами $C[f]^i = K^{i+1}\oplus L^i$ и дифференциалами $d^i = \begin{pmatrix}-d_K^{i+1}&0\\f&d_K^i\end{pmatrix}$.
+\end{to_def}
+Простая выкладка (индексы опущены для простоты) показывает корректность определения:
+\begin{equation*}
+d^2 = \begin{pmatrix}-d&0\\f&d\end{pmatrix}^2 = \begin{pmatrix}d^2&0\\-fd + df&d^2\end{pmatrix} = 0
+\end{equation*}
+\begin{to_suj}\label{3:cone_short_exact}
+Для морфизма комплексов $f:K\to L$ следующая последовательность точна.
+\begin{equation}\label{3:cone_short_exact_eq}
+    \begin{tikzcd}
+	0 & L & {C(f)} & {K[1]} & 0
+	\arrow[from=1-1, to=1-2]
+	\arrow["i", from=1-2, to=1-3]
+	\arrow["\pi", from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+\end{tikzcd}
+\end{equation}
+\end{to_suj}
+\begin{proof}
+Приведённая последовательность расщипима в каждом члене.
+\end{proof}
+\begin{to_thr}
+$f$ --- квазиизоморфизм тогда и только тогда, когда $C(f)$ --- ацикличен.
+\end{to_thr}
+\begin{proof}
+    Применим лемму о зигзаге \ref{B:zigzag_lemma} к последовательности \eqref{3:cone_short_exact_eq}.
+\end{proof}
+Дадим ещё несколько определений 
+\begin{to_def}
+%% продолжу с этого момента
+$K^\bullet$ -- расщипимый комплекс, если 
+\[\exists s^i\colon K^{i} \to K^{i-1} \quad \colon \quad dsd = d \]
+\end{to_def}
+\begin{to_def}
+$K^\bullet$ -- стягиваемый, если $id_{K^\bullet}\sim 0$
+\end{to_def}
+\begin{to_ex}[простейший стягиваемый комплекс]\label{idM}
+\be
+\label{eq:vid2}
+\begin{tikzcd}[sep=small] \ldots\arrow[r]& 0 \arrow[r]& M \arrow[r, "id"]& M \arrow[r]& 0 \arrow[r]& \ldots\end{tikzcd}
+\ee
+\end{to_ex}
+\begin{to_ex}[простейший расщипимый комплекс]
+\be
+\label{eq:vid3}
+\begin{tikzcd}[sep=small] \ldots\arrow[r]& 0 \arrow[r]& M \arrow[r]& 0 \arrow[r]& \ldots\end{tikzcd}
+\ee
+$\NB$ он не стягиваемый
+\end{to_ex}
+\begin{to_suj}
+$(K^\bullet$ -- стягиваемый$)$ $\quad \Rightarrow \quad$ $(K^\bullet$ -- расщипимый$)$
+\bee
+\begin{tikzcd}
+    \ldots\arrow[r]& K^{i-1}\arrow[r]\arrow[ld, "s^{i-1}"']\arrow[d, "id"']&K^{i}\arrow[r]\arrow[ld, "s^{i}"']\arrow[d, "id"']& K^{i+1}\arrow[r]\arrow[ld, "s^{i+1}"']\arrow[d, "id"']& \ldots\\
+    \ldots\arrow[r]& K^{i-1}\arrow[r]&K^{i}\arrow[r]& K^{i+1}\arrow[r]& \ldots\\
+\end{tikzcd}
+\eee
+\end{to_suj}
+\begin{to_suj}
+Любой стягиваемый комплекс является суммой сдвигов комплексов вида \ref{idM}. 
+\end{to_suj}
+\begin{to_suj}
+$K^\bullet$ -- стягиваемый $\quad \Leftrightarrow \quad$ $K^\bullet$ -- расщипимый и ацикличный.
+\end{to_suj}
+\begin{to_suj}
+$K^\bullet$ -- ограниченный расщипимый комплекс $\quad \Rightarrow \quad$ $K^\bullet\overset{qis}{\sim}H^\bullet(K^\bullet)$. \\
+Иными словами любой расщипимый комплекс представляется в виде суммы комплексов вида \ref{eq:vid2} и \ref{eq:vid3}.
+\end{to_suj}
+\begin{to_def}
+    Морфизм комплексов $f\colon K^\bullet \to L^\bullet$ называется гомотопической эквивалентностью, если $\exists f\colon L^\bullet \to K^\bullet$ такой что $fg \sim id_{K^\bullet}$ и $gf\sim id_{L^\bullet}$
+\end{to_def}
+\begin{to_suj}
+\label{hom_eq_con}
+ $f$ -- гомотопическая эквивалентность $\quad \Leftrightarrow \quad$ $C(f)$ -- стаягиваем.
+\end{to_suj}\footnote{существует более прямое доказательство этого утверждения, получаемое перемножением соответсвующих матриц морфизмов, см. листочки}
+    Воспользуемся введённым ранее понятием комплекса морфизмов \ref{hHom}.\footnote{Это конструкция представляет собой 'внутренний' $\hHom$. Обычный функтор $Hom_{\A}$ действует из $\A$ в кататегорию абелевых групп, а $\hHom$ из категории комплексов в категорию комплексов} 
+    \[\hHom (K^\bullet, L^\bullet)^{i} = \prod_{n\in \Z}\Hom(K^n, L^{n+i})\]
+    \[\partial\colon \quad g^m = df^m - (-1)^if^{m+1}d\]
+    \[f\in \hHom(K^\bullet, L^\bullet)^i\]
+    \[\partial\colon f \mapsto g\]
+\begin{to_com}[Циклы комплекса морфизмов]\footnote{$i$-ые циклы комплекса морфизмов это морфизмы комплексов первого комплекса в сдвиг на $i$ второго}
+    В случае $i=0$ циклами морфизма комплексов будут просто морфизмы комплексов 
+    \[
+        Z^0 (\hHom(K^\bullet, L^\bullet)) = \Hom(K^\bullet, L^\bullet)
+    \]
+    \[
+    df^n = f^{n+1}d
+    \]
+    А для $i>0$ это будут морфизмы в сдвинутые комплексы, то есть 
+    \[
+    Z^i (\hHom(K^\bullet, L^\bullet)) = \Hom(K^\bullet, L^\bullet[i])
+    \]
+\end{to_com}
+\begin{to_com}[Границы комплекса морфизмов]
+    В случае $i=0$ выражение для дифференциала принимает вид $\partial\colon f^m\mapsto g^m = df^m - f^{m+1}d$. Образом такого отображения будет гомотопный нулю морфизм. При $i>0$ получим гомотопные нулю морфизмы в сдвинутый комплекс.
+    \[
+        B^i (\hHom(K^\bullet, L^\bullet)) = \lbrace f\in Hom(K^\bullet, L^\bullet[i])\quad|\quad f\sim 0 \rbrace
+    \]
+\end{to_com}
+\begin{to_com}[Когомологии комплекса морфизмов]\label{cohomology_comp_mor}
+Наконец, когомологиями комплекса морфизмов будут гомотопический классы эквивалентности морфизмов комплексов.
+\[
+H^i (\hHom(K^\bullet, L^\bullet)) = \Hom_{\K{A}}(K^\bullet, L^\bullet[i])
+\]
+\end{to_com}
+Теперь можем доказывать утверждение \ref{hom_eq_con}.
+\begin{proof}
+Применим функтор $\hHom(X,)$ к короткой точной последовательности
+\bee\label{3:cone_short_exact_eq}
+    \begin{tikzcd}[sep=small]
+	0 & L & {C(f)} & {K[1]} & 0
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}[sep=small]
+	0 & \hHom(X, L) & \hHom(X, {C(f)}) & \hHom({K[1]}) & 0
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+\end{tikzcd}
+\eee
+Имея теперь короткую точную последовательность комплексов, естественно применить лемму о зиг-заге \ref{B:zigzag_lemma}. Получим длинную точную последовательность когомологий комплексов морфизмов, которые в силу \ref{cohomology_comp_mor} являются просто гомотопическими классами эквивалентности морфизмов в сдвинутый комплекс, то есть
+\bee
+\begin{tikzcd}[sep=small]
+	\underset{0}{\Hom_{\K{A}}(X, {C(f)}[-1])} & \Hom_{\K{A}}(X, K) & \Hom_{\K{A}}(X, L) & \underset{0}{\Hom_{\K{A}}(X, {C(f)})} & \ldots
+	\arrow[from=1-1, to=1-2]
+	\arrow["\cong", from=1-2, to=1-3]
+	\arrow[from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+\end{tikzcd}
+\eee
+\end{proof}
+\begin{to_lem}
+    Короткой точной последовательности комплексов соответсвует длинная точная последовательность морфизмов в гомотопической категории
+    \bee
+\begin{tikzcd}[sep=small]
+    0 \arrow[r]& K^\bullet \arrow[r]& L^\bullet \arrow[r]&M^\bullet \arrow[r]&0
+\end{tikzcd}
+    \eee
+\bee
+\begin{tikzcd}[sep=small]
+     \ldots\arrow[r]& \Hom_{\K{A}}(X, K^\bullet) \arrow[r]& Hom_{\K{A}}(X,L^\bullet) \arrow[r]&\Hom_{\K{A}}(X, M^\bullet) \arrow[r]&\Hom_{\K{A}}(X, M^\bullet[1])\ldots
+\end{tikzcd}
+    \eee
+\end{to_lem}
+\begin{to_suj}
+    Проективная резольвента -- строгий функтор
+    \begin{align*}
+        \mathcal{P}\colon&\A \to\K{A}\\
+         &A \mapsto P_\bullet(A)
+    \end{align*}
+\end{to_suj}
 \end{document}

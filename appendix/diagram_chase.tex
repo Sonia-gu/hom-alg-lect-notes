@@ -1,0 +1,96 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\section{Диаграмный поиск}
+\begin{to_thr}[Фрейд-Митчелл]
+Для любой малой абелевой категории существует полный, строгий и точный функтор в $R-mod$ для некоторого кольца $R$.
+\end{to_thr}
+Благодаря этой теореме многие утверждения для диаграмм можно доказывать рассматривая объекты абелевой категории как модули, а морфизмы --- как соответствующие гомоморфизмы. Приведём примеры.
+
+\begin{to_suj}[Лемма о пяти]\label{B:five_lemma}
+Пусть в абелевой категории дана коммутативная диаграмма с точными строками.
+\begin{equation*}
+    \begin{tikzcd}
+	A & B & C & D & E \\
+	{A'} & {B'} & {C'} & {D'} & {E'}
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-3, to=2-4]
+	\arrow[from=2-4, to=2-5]
+	\arrow["\alpha"', from=1-1, to=2-1]
+	\arrow["\beta"', from=1-2, to=2-2]
+	\arrow["\gamma"', from=1-3, to=2-3]
+	\arrow["\delta"', from=1-4, to=2-4]
+	\arrow["\varepsilon"', from=1-5, to=2-5]
+\end{tikzcd}
+\end{equation*}
+Тогда если $\beta, \delta$ --- изоморфизмы, $\alpha$ --- эпиморфизм, $\varepsilon$ --- мономорфизм, то $\gamma$ --- изоморфизм.
+\end{to_suj}
+
+\begin{to_suj}[Лемма о змее]\label{B:snake_lemma}
+Пусть в абелевой категории дана коммутативная диаграмма с точными строками.
+\begin{equation*}
+\begin{tikzcd}
+	& A & B & C & 0 \\
+	0 & {A'} & {B'} & {C'}
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-3, to=2-4]
+	\arrow["\alpha", from=1-2, to=2-2]
+	\arrow["\beta", from=1-3, to=2-3]
+	\arrow["\gamma", from=1-4, to=2-4]
+\end{tikzcd}
+\end{equation*}
+Тогда существует длинная точная последовательность.
+\begin{equation*}
+    \begin{tikzcd}
+	\Ker\alpha & \Ker\beta & \Ker\gamma & \coker\alpha & \coker\beta & \coker\gamma
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+	\arrow[from=1-5, to=1-6]
+\end{tikzcd}
+\end{equation*}
+\end{to_suj}
+
+\begin{to_suj}[Лемма о зигзаге]\label{B:zigzag_lemma}
+Пусть есть короткая точная последовательность.
+\begin{equation*}
+    \begin{tikzcd}
+	0 & {K^\bullet} & {L^\bullet} & {M^\bullet} & 0
+	\arrow[from=1-1, to=1-2]
+	\arrow["f", from=1-2, to=1-3]
+	\arrow["g", from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-5]
+\end{tikzcd}
+\end{equation*}
+Тогда существуют связующие гомоморфизмы $\delta^i: H^i(M^\bullet) \to H^{i+1}(K^\bullet)$, делающие следующую последовательность точной.
+\begin{equation*}
+    \begin{tikzcd}
+	&& \ldots \\
+	{H^{i-1}(K^\bullet)} & {H^{i-1}(L^\bullet)} & {H^{i-1}(M^\bullet)} \\
+	{H^i(K^\bullet)} & {H^i(L^\bullet)} & {H^i(M^\bullet)} \\
+	{H^{i+1}(K^\bullet)} & {H^{i+1}(L^\bullet)} & {H^{i+1}(M^\bullet)} \\
+	\ldots
+	\arrow[from=1-3, to=2-1]
+	\arrow["{f^*}"', from=2-1, to=2-2]
+	\arrow["{g^*}", from=2-2, to=2-3]
+	\arrow["{\delta^{i-1}}"{description}, from=2-3, to=3-1]
+	\arrow["{f^*}"', from=3-1, to=3-2]
+	\arrow["{g^*}", from=3-2, to=3-3]
+	\arrow["{\delta^i}"{description}, from=3-3, to=4-1]
+	\arrow["{f^*}"', from=4-1, to=4-2]
+	\arrow["{g^*}", from=4-2, to=4-3]
+	\arrow[from=4-3, to=5-1]
+\end{tikzcd}
+\end{equation*}
+\end{to_suj}
+\end{document}
