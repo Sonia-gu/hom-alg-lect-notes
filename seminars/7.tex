@@ -103,13 +103,14 @@ $\exists \psi\colon \Kl{\mathcal{R}}[QIS_{\mathcal{R}}^{-1}]\to \Dl{\A}$ -- эк
 \end{to_claim}
 \begin{to_def}
 \label{derived_functor}
-Производный функтор точного слева $\mathcal{F}$, действующего между двумя абелевыми категориями это \textbf{пара} $(\DlF{F}, \varepsilon_{\mathcal{F}})$ точного слева\footnote{в смысле производной категории, то есть переводящего выделенные треугольники в выделенные} функтора и естественного преобразования.\\
+Производный функтор точного слева $\mathcal{F}$, действующего между двумя абелевыми категориями это \textbf{пара} $(\DlF{F}, \varepsilon_{\mathcal{F}})$ точного слева\footnote{в смысле производной категории, то есть переводящего выделенные треугольники в выделенные} функтора и естественного преобразования.
 \bee
 \begin{tikzcd}
 \Kl{R} \arrow[r, "\KlF{F}"]\arrow[d, "Q_{\A}"'] & \Kl{B} \arrow[d, "Q_{\B}"] \\
 \Dl{A} \arrow[r, "\DlF{F}"]\arrow[r, dashed, bend right, "G"'] & \Dl{B}
 \end{tikzcd}
 \eee
+Обладающая следующим универсальным свойством для любого точного в смысле производной категории $G$
 \bee
 \begin{tikzcd}
       Q_{\B}\KlF{F} \arrow[r, "\varepsilon_{\F}"]\arrow[rd] &\DlF{F} Q_{\A} \arrow[d, dashed, "\exists ! \eta"]\\
@@ -165,11 +166,11 @@ $\exists \psi\colon \Kl{\mathcal{R}}[QIS_{\mathcal{R}}^{-1}]\to \Dl{\A}$ -- эк
     $\Rightarrow$ $\DlF{F}$ -- точный.
 \end{proof}
      \item \textit{Построение $\varepsilon_{\F}$, единственность.}
-     Для построения естественного изоморфизма, возьмём некоторый комплекс, вложим его в производную категорию и выберем его резольвенту, подбором квазиизоморфного ему. То есть \\
+     Для построения естественного изоморфизма, возьмём некоторый комплекс, вложим его в производную категорию и выберем его резольвенту, подбором квазиизоморфного ему. То есть 
      \[
      X \in \Kl{A} \quad Y = \phi Q_{\A} (X)
      \]
-     Квазиизоморфизм $\beta \colon X \to \psi\phi(X) = \psi(Y)$ представляется домиком\\
+     Квазиизоморфизм $\beta \colon X \to \psi\phi(X) = \psi(Y)$ представляется домиком
      \bee
 \begin{tikzcd}
      & Z & \\
@@ -183,6 +184,6 @@ $\exists \psi\colon \Kl{\mathcal{R}}[QIS_{\mathcal{R}}^{-1}]\to \Dl{\A}$ -- эк
      \eee
      \[\varepsilon_{\F} \colon Q_{\B}\KlF{\F}(X) \to Q_{\B}\KlF{\F}(Y) = \widetilde{\F}Q_{\mathcal{R}}(Y) = \DlF{\F}Q_{\A}(Y)\]
      Далее мы проверим, что таким образом опредлённый морфизм является естественным преобразованием функторов и не завиcит от выбора $Z$.
-     \item \textit{Универсальность} \textit{to be continued...}
+     \item \textit{Универсальность} \textit{to be continued...}\label{natural}
 \end{enumerate}
 \end{document}
