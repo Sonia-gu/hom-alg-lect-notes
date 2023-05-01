@@ -1,7 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 \section{Класс приспособленных объектов, градуированная алгебра $Ext$}
-$\A, \mathcal{B} \in \Ab$. 
+Пусть $\A$, $\B$ -- абелевы категории.
 \begin{tikzcd}
 \A \arrow[r]\arrow[rrr, bend right, "\Rn{n}{F}" '] & \Dr{A} \arrow[r, "\DrF{F}"] & \Dr{B} \arrow[r, "H^0\circ (n)" ] & \mathcal{B}
 \end{tikzcd}
@@ -44,15 +44,15 @@ $\forall$ достаточно большой $\mathcal{Z}$ приспособл
 Пусть имеем 2 расширения длины 1 $\gamma \in Ext^1(C, A)$ и $\delta \in Ext^1(Z, C)$. Опустив $C$ в цепочке морфизмов мы получим некоторый элемент $Ext^2(Z, A)$.
 \bee
 \begin{tikzcd}[sep=small]
-    \gamma \colon & 0 \arrow[r] & A \arrow[r] & X \arrow[r] & C &\\
-    \delta \colon & 0 \arrow[r] & C \arrow[r] & Y \arrow[r] & Z &\\
-    \gamma * \delta \colon & A \arrow[r] & X \arrow[r] & \cancel{C} \arrow[r]& Y \arrow[r] & Z
+    \gamma \colon & 0 \arrow[r] & A \arrow[r] & X \arrow[r] & C \arrow[r]&0\\
+    \delta \colon & 0 \arrow[r] & C \arrow[r] & Y \arrow[r] & Z \arrow[r]&0\\
+    \gamma * \delta \colon & A \arrow[r] & X \arrow[r] & \cancel{C} \arrow[r]& Y \arrow[r] & Z\arrow[r]&0
 \end{tikzcd}
 \eee
 \[
 * \colon Ext^m (C, A) \times Ext^n(Z, C) \rightarrow Ext^{n+m}(Z, A)
 \]
-Таким образом может быть задана структура градуированного кольца\footnote{или градуированной $\Z$--алгебры} $Ext_{R}^\bullet (A, A)$, $A\in R-mod $.\\
+Таким образом может быть задана структура градуированной алгебры\footnote{градуированной некоммутативной $\Z_{\ge 0}$--алгебры при совпадающих аргументах, если не фиксировать аргумент, то алгебра градуирована целыми неотрицательными числами и парами объектов} $Ext_{R}^\bullet (A, A)$, $A\in R-mod $.\\
 $Ext_{R}^\bullet(A, B)$ -- это модуль над $Ext_{R}^\bullet(A, A)$, $A, B \in R-mod $
 \begin{to_claim}
 \[Ext_{\A}^i(A, B) \cong Hom_{\D{A}}(A[0], B[i])\]

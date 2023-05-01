@@ -54,7 +54,7 @@
     Q_{\B}\KlF{F}(X_2)\arrow[r, "\varepsilon_{\mathcal{F}}"]& \DlF{F}(Y_2)
 \end{tikzcd}
 \eee
-\item[4.]Теперь построим естественное преобразование $\eta$ для объекта $X\in\Kl{A}$, вложенного в $\Dl{A}$
+\item[4.]Теперь построим естественное преобразование $\eta$ для объекта $X\in\Kl{A}$, вложенного в $\Dl{A}$ как $Q_{\A}X$\footnote{{\color{red}возможно, стоит подробнее описать как устроено }}
 \bee
 \begin{tikzcd}
     X\arrow[d, "\cong"] & &Q_{\B}\KlF{F}(X)\arrow[d] \arrow[r, "\varepsilon_X"]& G(X) \arrow[d, "\overset{\theta}{\cong}"]\\
@@ -137,7 +137,7 @@ X[0] \arrow[r, "f"] & Y[0] \arrow[r] & Y \arrow[u]      &C(f)\cong Z[0]\\
 \end{proof}
 \subsection{Функтор $Ext$ по Йонеде}
 \begin{to_def}
-Пусть $\A \in \Ab$. Расширением объекта $C$ с помощью объекта $A$ длины $1$ будем называть короткую точную последовательность вида:
+Пусть $\A$ -- абелева категория. Расширением объекта $C$ с помощью объекта $A$ длины $1$ будем называть короткую точную последовательность вида:
 \bee
 \begin{tikzcd}[sep=small]
     0 \arrow[r]& A \arrow[r]& B\arrow[r]& C\arrow[r]& 0
@@ -246,8 +246,8 @@ $Ext^1(\Z_m, A) = A /mA$
 Пусть имеем два расширения $\xi, \xi'$ и морфизм комплексов, тождественный на $A$ и $B$.
 \bee
 \begin{tikzcd}[sep=small]
-\xi\colon& 0\arrow[r]& B\arrow[r]\arrow[d, "id_B"]& X_n\arrow[r]&\cdots\arrow[r]& X_1\arrow[r]& A\arrow[d, "id_A"]\\
-\xi'\colon& 0\arrow[r]& B\arrow[r]& X'_n\arrow[r]&\cdots\arrow[r]& X'_1\arrow[r]& A
+\xi\colon& 0\arrow[r]& B\arrow[r]\arrow[d, "id_B"]& X_n\arrow[r]&\cdots\arrow[r]& X_1\arrow[r]& A\arrow[d, "id_A"]\arrow[r]&0\\
+\xi'\colon& 0\arrow[r]& B\arrow[r]& X'_n\arrow[r]&\cdots\arrow[r]& X'_1\arrow[r]& A\arrow[r]&0
 \end{tikzcd}
 \eee
 Тогда суммой по Бэру двух таких расширений будет комплекс
