@@ -30,6 +30,66 @@
 \end{equation*}
 Тогда если $\beta, \delta$ --- изоморфизмы, $\alpha$ --- эпиморфизм, $\varepsilon$ --- мономорфизм, то $\gamma$ --- изоморфизм.
 \end{to_suj}
+\begin{proof}
+Рассмотрим правую часть диаграммы и покажем, что $\gamma$ --- эпиморфизм.
+\begin{equation*}
+    \begin{tikzcd}
+	B & C & D & E \\
+	{B'} & {C'} & {D'} & {E'} \\
+	& c & d & 0 \\
+	& {c'} & {d'} & 0
+	\arrow["\beta", hook, two heads, from=1-1, to=2-1]
+	\arrow["\gamma", from=1-2, to=2-2]
+	\arrow["\delta", hook, two heads, from=1-3, to=2-3]
+	\arrow["\varepsilon", hook, from=1-4, to=2-4]
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-3, to=1-4]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-3, to=2-4]
+	\arrow[maps to, from=4-2, to=4-3]
+	\arrow[maps to, from=4-3, to=4-4]
+	\arrow[from=3-4, to=4-4]
+	\arrow[maps to, from=3-2, to=3-3]
+	\arrow[maps to, from=3-3, to=3-4]
+	\arrow[from=3-3, to=4-3]
+	\arrow[from=3-2, to=4-2]
+\end{tikzcd}
+\end{equation*}{\color{red} Тут ошибочка}
+Рассмотрим произвольный элемент $c'\in C'$. Из точности нижней строки его образом в $E'$ будет $0$. $\varepsilon$ --- мономорфизм, откуда его прообраз в $E$--- ноль. Из точности верхней последовательности у него будет прообраз $c\inC$. Это доказывает сюрьективность.
+
+Теперь рассмотрим правую часть диаграммы. Докажем инъективность $\gamma$.
+\begin{equation*}
+    \begin{tikzcd}
+	A & B & C & D \\
+	{A'} & {B'} & {C'} & {D'} \\
+	a & b & {x=0} & 0 \\
+	{a'} & {b'} & 0 & 0
+	\arrow["\alpha"', two heads, from=1-1, to=2-1]
+	\arrow["\beta"', hook, two heads, from=1-2, to=2-2]
+	\arrow["\gamma"', from=1-3, to=2-3]
+	\arrow["\delta"', hook, two heads, from=1-4, to=2-4]
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-3, to=1-4]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-3, to=2-4]
+	\arrow[maps to, from=4-2, to=4-3]
+	\arrow[maps to, from=4-1, to=4-2]
+	\arrow[maps to, from=3-1, to=4-1]
+	\arrow[maps to, from=3-1, to=3-2]
+	\arrow[maps to, from=3-2, to=4-2]
+	\arrow[from=3-2, to=3-3]
+	\arrow[maps to, from=3-3, to=4-3]
+	\arrow[maps to, from=4-3, to=4-4]
+	\arrow[maps to, from=3-4, to=4-4]
+	\arrow[from=3-3, to=3-4]
+\end{tikzcd}
+\end{equation*}
+Пусть $x\in \Ker\gamma$. Образом нуля в $D'$ будет ноль. $\delta$ --- изооморфизм, откуда прообраз нуля в $D$ будет ноль. Из коммутативности правого квадрата и точности верхней последовательности $x$ имеет прообраз $b\in B$. Его образ $\beta(b) = b'$ из точности нижней последовательности и коммутативности тогда имеет прообраз $a'\in A'$. Т. к. $\alpha$ --- эпиморфизм, то $a'$ есть прообраз $a\in A$. Но верхняя строка точна, откуда $x=0$. Это доказывает инъективность $\gamma$.
+\end{proof}
 
 \begin{to_suj}[Лемма о змее]\label{B:snake_lemma}
 Пусть в абелевой категории дана коммутативная диаграмма с точными строками.
@@ -60,6 +120,181 @@
 \end{tikzcd}
 \end{equation*}
 \end{to_suj}
+\begin{proof}\textbf{Комедия в четырёх действиях}
+    \begin{equation*}
+        \begin{tikzcd}[sep=huge]
+	& \Ker\alpha & \Ker\beta & \Ker\gamma \arrow["\delta", dashed, dlldd,
+        "\delta",
+        rounded corners,
+        to path={ -- ([xshift=2ex]\tikztostart.east)
+        |- (Z) [near end]\tikztonodes
+        -| ([xshift=-2ex]\tikztotarget.west)
+        -- (\tikztotarget)}]  \\
+	& A & B & C & 0 \\
+	0 & {A'} & {B'} & {C'} \\
+	& \coker\alpha & \coker\beta & \coker\gamma
+	\arrow["\alpha"'{pos=0.9}, from=2-2, to=3-2]
+	\arrow["\beta"'{pos=0.9}, from=2-3, to=3-3]
+	\arrow["\gamma"'{pos=0.9}, from=2-4, to=3-4]
+	\arrow["{f_A}"{description}, from=2-2, to=2-3]
+	\arrow["{f_B}"{description}, two heads, from=2-3, to=2-4]
+	\arrow[from=2-4, to=2-5]
+	\arrow[from=3-1, to=3-2]
+	\arrow["{f_{A'}}"{description}, from=3-2, to=3-3]
+	\arrow["{f_{B'}}"{description}, from=3-3, to=3-4]
+	\arrow["{K_\alpha}"', hook, from=1-2, to=2-2]
+	\arrow["{K_\beta}"', hook, from=1-3, to=2-3]
+	\arrow["{K_\gamma}"', hook, from=1-4, to=2-4]
+	\arrow[dashed, from=1-2, to=1-3]
+	\arrow[dashed, from=1-3, to=1-4]
+	\arrow[dashed, from=4-2, to=4-3]
+	\arrow[dashed, from=4-3, to=4-4]
+	\arrow["{C_\alpha}"', two heads, from=3-2, to=4-2]
+	\arrow["{C_\beta}"', from=3-3, to=4-3]
+	\arrow["{C_\gamma}"', from=3-4, to=4-4]
+ \arrow[]
+\end{tikzcd}
+    \end{equation*}
+    {\color{red} Добавить про нули в концах}
+    \textbf{Построение морфизмов}
+    
+    Построим искомые морфизмы. Из коммутативности диаграммы $f_{A'}\circ \alpha\circ K_\alpha = \beta \circ f_A\circ K_\alpha = 0$, где равенство нулю следует из $\alpha\circ K_\alpha = 0$. Тогда по универсальному свойству ядра существует единственный морфизм $\Ker\alpha\to \Ker\beta$, делающий квадрат $\Ker\alpha$, $\Ker\beta$, $A$, $B$ коммутативным. Его мы и возьмём. Так строятся все морфизмы кроме "змеи" $\delta:\Ker\gamma\to \coker\alpha$.
+
+    \textbf{Построение "змеи"}
+    
+    "Змею" мы построим диаграмным поиском.
+    \begin{equation*}
+       \begin{tikzcd}
+	&&& \Ker\gamma &&&& {k_\gamma} \\
+	&& B & C & 0 && b & {K_\gamma(k_\gamma)} \\
+	0 & {A'} & {B'} & {C'} && {a'} & {\beta(b)=f_{A'}(a')} & {\gamma\circ K_\gamma(k_\gamma) = 0} \\
+	& {\coker\alpha} &&&& {C_\alpha(a')}
+	\arrow[two heads, from=2-3, to=2-4]
+	\arrow[hook, from=1-4, to=2-4]
+	\arrow[from=2-4, to=3-4]
+	\arrow[from=2-3, to=3-3]
+	\arrow[from=3-3, to=3-4]
+	\arrow[hook, from=3-2, to=3-3]
+	\arrow[from=3-1, to=3-2]
+	\arrow[from=2-4, to=2-5]
+	\arrow[from=3-2, to=4-2]
+	\arrow[maps to, from=2-7, to=3-7]
+	\arrow[maps to, from=2-8, to=3-8]
+	\arrow[maps to, from=3-7, to=3-8]
+	\arrow[maps to, from=2-7, to=2-8]
+	\arrow[maps to, from=3-6, to=3-7]
+	\arrow[maps to, from=3-6, to=4-6]
+	\arrow[maps to, from=1-8, to=2-8]
+\end{tikzcd}
+    \end{equation*}
+    Рассмотрим $k_\gamma\in\Ker\gamma$. По определению ядра $\gamma\circ K_\gamma(k_\gamma)=0$. Из сюрьективности $K_\gamma(k_\gamma)$ имеет прообраз $b\in B$. Тогда из коммутативности диаграммы и точности нижней строки имеем прообраз $f_{A'}(a') = \beta(b)$. Тогда искомый $\delta(k_\gamma) = C_\alpha(a')$.
+
+    \textbf{Корректность определения "змеи"}
+    
+    Отметим, что определённый выше морфизм неоднозначен. Неоднозначность заключается в выборе $b$. Рассмотрим два различных $b$ и $b_1$. "Вычтем" соответствующие диаграммы друг из друга.
+    \begin{equation*}
+        \begin{tikzcd}
+	&& 0 \\
+	a & {b-b_1} & 0 \\
+	{a' - a_1'} & {\beta(b-b_1)} & 0 \\
+	{C_{\alpha}(a' - a_1') = 0}
+	\arrow[from=1-3, to=2-3]
+	\arrow[from=2-3, to=3-3]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=3-2, to=3-3]
+	\arrow[from=3-1, to=3-2]
+	\arrow[from=2-2, to=3-2]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-1, to=3-1]
+	\arrow[from=3-1, to=4-1]
+\end{tikzcd}
+    \end{equation*}
+    Из точности $b-b_1$ имеет прообраз $f_A(a) = b- b_1$, причем т. к. $f_{A'}$ --- мономорфизм имеем $\alpha(a) = a'-a_1'$. Тогда из коммутативности и по определению коядра соответственно получаем $C_\alpha(a'-a_1') = \alpha\circ C_\alpha(a'-a_1') = 0$.
+
+    \textbf{Доказательство точности}
+
+    Докажем точность в $\Ker\beta$ и $\Ker\gamma$. Для коядер доказательство аналогично.
+
+    Пусть $k_\alpha \in \Ker\alpha$. Из коммутативности его образ в $\Ker\gamma$ будет $K_\gamma^{-1} \circ f_B\circ f_A\circ K_\alpha(k_\alpha)$, причём $f_B\circ f_A = 0$ из точности и $K_\gamma$ --- мономорфизм. Откуда образ в $\Ker\gamma$ будет ноль. Это доказывает вложение образа в ядро в члене $\Ker\beta$.
+    \begin{equation*}
+        \begin{tikzcd}
+	{k_\alpha} & {k_\beta} & 0 \\
+	{K_\alpha} & {f_A\circ K_\alpha(k_\alpha)} & {f_B\circ f_A\circ K_\alpha(k_\alpha)=0}
+	\arrow[maps to, from=1-1, to=1-2]
+	\arrow[maps to, from=2-1, to=2-2]
+	\arrow[maps to, from=1-1, to=2-1]
+	\arrow[maps to, from=1-2, to=1-3]
+	\arrow[maps to, from=1-2, to=2-2]
+	\arrow[maps to, from=2-2, to=2-3]
+	\arrow[maps to, from=1-3, to=2-3]
+\end{tikzcd}
+    \end{equation*}
+
+    Пусть $k_\beta$ лежит в ядре морфизма $\Ker\beta\to\Ker\gamma$. Тогда из точности верхней строки существует прообраз $f_A(a) = K_\beta(k_\beta)$. Из точности нижней строки и коммутативности диаграммы $\alpha(a) = 0$, откуда у $a$ по определению ядра существует прообраз $K_\alpha(k_\alpha) = a$. Т. к. $K_\beta$ --- мономорфизм получим, что $k_\alpha$ --- прообраз $k_\beta$. Это доказывает вложение ядра в образ и, следовательно, точность в члене $\Ker\beta$.
+    \begin{equation*}
+        \begin{tikzcd}
+	{k_\alpha} & {k_\beta} & 0 \\
+	a & {K_\beta(k_\beta)} & 0 \\
+	0 & 0
+	\arrow[maps to, from=1-2, to=1-3]
+	\arrow[maps to, from=1-2, to=2-2]
+	\arrow[maps to, from=2-2, to=3-2]
+	\arrow[maps to, from=1-3, to=2-3]
+	\arrow[maps to, from=2-2, to=2-3]
+	\arrow[maps to, from=2-1, to=2-2]
+	\arrow[maps to, from=3-1, to=3-2]
+	\arrow[maps to, from=2-1, to=3-1]
+	\arrow[maps to, from=1-1, to=2-1]
+	\arrow[maps to, from=1-1, to=1-2]
+\end{tikzcd}
+    \end{equation*}
+
+    Пусть теперь $k_\gamma \in \Ker\delta$. Вспомним построение $\delta$, где теперь $C_\alpha(a')=0$. Тогда по определению коядра существует прообраз $\alpha(a) = a'$, причём $f_B\circ f_A (a) = 0$ и $\beta\circ f_A(a) = \beta(b)$. Это позволяет "вычесть" из правой части диаграммы образы $a$.
+    \begin{equation*}
+        \begin{tikzcd}
+	{f_A(a)} && {k_\gamma} & {k_\beta} & {k_\gamma} \\
+	a & b & {K_\gamma(k_\gamma)} & {b-f_A(a)} & {K_\gamma(k_\gamma)} \\
+	{a'} & {\beta(b) = \beta\circ f_A(a)} & 0 & 0 & 0 \\
+	{C_\alpha(a')}
+	\arrow[maps to, from=1-3, to=2-3]
+	\arrow[maps to, from=2-1, to=3-1]
+	\arrow["{f_A}", maps to, from=2-1, to=1-1]
+	\arrow[maps to, from=3-1, to=3-2]
+	\arrow[maps to, from=2-2, to=3-2]
+	\arrow[maps to, from=2-3, to=3-3]
+	\arrow[maps to, from=2-2, to=2-3]
+	\arrow[maps to, from=3-2, to=3-3]
+	\arrow[maps to, from=3-1, to=4-1]
+	\arrow[maps to, from=1-4, to=2-4]
+	\arrow[maps to, from=1-4, to=1-5]
+	\arrow[maps to, from=2-4, to=3-4]
+	\arrow[maps to, from=1-5, to=2-5]
+	\arrow[maps to, from=2-5, to=3-5]
+	\arrow[maps to, from=2-4, to=2-5]
+	\arrow[maps to, from=3-4, to=3-5]
+\end{tikzcd}
+    \end{equation*}
+    Тогда по определению ядра существует прообраз $K_\beta (b-f_A(a))$. Из коммутативности и инъективности $K_\gamma$ получим, что $k_\beta$ --- прообраз $k_\gamma$. Это доказывает вложение ядра в образ в члене $\Ker\gamma$.
+
+    Теперь пусть $k_\beta\in \Ker\beta$. По определению ядра получим нули в $B'$ и $C'$. Из инъективности $f_{A'}$ им соответствует 0 в $A'$. Соответственно построение морфизма даёт $C_\alpha (0) = 0$. Это доказывает вложение образа в ядро и, следовательно, точность в члене $\Ker\gamma$.
+    \begin{equation*}
+        \begin{tikzcd}
+	& {k_\beta} & {k_\gamma} \\
+	& {K_\beta(k_\beta)} & {K_\gamma(k_\gamma)} \\
+	0 & 0 & 0 \\
+	0
+	\arrow[maps to, from=1-2, to=2-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow[maps to, from=1-3, to=2-3]
+	\arrow[maps to, from=2-3, to=3-3]
+	\arrow[maps to, from=2-2, to=2-3]
+	\arrow[maps to, from=2-2, to=3-2]
+	\arrow[maps to, from=3-2, to=3-3]
+	\arrow[maps to, from=3-1, to=3-2]
+	\arrow[maps to, from=3-1, to=4-1]
+\end{tikzcd}
+    \end{equation*}
+\end{proof}
 
 \begin{to_suj}[Лемма о зигзаге]\label{B:zigzag_lemma}
 Пусть есть короткая точная последовательность.
@@ -72,7 +307,7 @@
 	\arrow[from=1-4, to=1-5]
 \end{tikzcd}
 \end{equation*}
-Тогда существуют связующие гомоморфизмы $\delta^i: H^i(M^\bullet) \to H^{i+1}(K^\bullet)$, делающие следующую последовательность точной.
+Тогда существуют связующие морфизмы $\delta^i: H^i(M^\bullet) \to H^{i+1}(K^\bullet)$, делающие следующую последовательность точной.
 \begin{equation*}
     \begin{tikzcd}
 	&& \ldots \\
