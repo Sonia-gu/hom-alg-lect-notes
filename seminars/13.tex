@@ -1,0 +1,209 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section{Спектральные последовательности}
+Работаем, например, в категории $Kom(A)$. Будем говорить, что на объекте $A$ задана убывающая регулярная фильтрация, то есть цепочка вложенных друг в друга подобъектов $A \supset \ldots F^p A \supset F^{p+1}A \supset \ldots$, регулярность означает, что:
+\begin{itemize}
+    \item $\bigcap F^p A = 0$ \item  $\bigcup F^p A = A$
+\end{itemize}
+Тогда по такой последовательности можно построить \textbf{градуировочный фактор} $E^p = F^p A / F^{p+1} A$.
+"Пристёгивание" факторов к подмодулю будем обозначать как $F^N \sqsupset E^{N-1} \sqsupset E^{N-2}\sqsupset\ldots$.
+\textbf{Вопрос:} если известны все градуировочные факторы фильтрации, можем ли мы восстановить наш исходный объект?
+\begin{to_def}
+Спектральной последовательностью является набор данных, состоящий из 
+\begin{itemize}
+\item стопки листов с занумерованными клетками, в которых находятся объекты категории\footnote{$r$ -- номер листа, а $pq$ -- номер клетки}
+\item дифференциала между объектами листа \footnote{бьёт обобщённым "ходом коня", на нудевом шаге он бьёт вправо, потом вверх, а потом всегда попадает на соседнюю диагональ}
+\item изоморфизма между когомологиями и следующим листом\footnote{на каждом следующем листе стоят когомологии предыдущего, дифференциалы на каждом следующем листе индуцированы}
+\item изоморфизма между пределом когомологий на трансфинитном листе и градуировочными факторами фильтрации
+\item объект на котором задана фильтрация 
+\end{itemize}
+\[(E^{pq}_r, E^n, d^{pq}_r, \alpha^{pq}_r, \beta^{pq})\]
+\[d^{pq}_r&\colon E^{pq}_r\to E^{p+r, q-r+1}_r  \]
+\begin{align*}
+    \alpha_r^{pq}\colon H^{pq}_r(E_r^{\bullet\bullet}) \to E^{pq}_{r+1}
+\end{align*}
+Начиная с некоторого листа для любого члена все дифференциалы, которые бьют из него и в него зануляются, то есть
+\begin{align*}
+\forall (p, q) \quad \exists r_0\colon \forall r\ge r_0 \quad \hookrightarrow  \quad d^{pq}_r = 0 \quad d_r^{p-r, q+r-1}=0     
+\end{align*}
+Это означает, что когомологии с этого момента перестают меняться, а последовательность стабилизируется.\\
+$E^n$ -- это комплекс, на котором задана убывающая регулярная фильтрация $\ldots \supset \ldots F^p E^n \supset F^{p+1} E^n \supset \ldots$.
+\begin{align*}
+    E^{pq}_{r_0}&\cong E_{\infty}^{pq}\\
+    \beta^{pq}&\colon E_{\infty}^{pq} \to F^{p} E^{p+q} / F^{p+1} E^{p+q}
+\end{align*}
+\textbf{Спектральная последовательность сходится к градуировочным факторам фильтрации.}
+\end{to_def}
+Гротендик придумал спектральные категории, чтобы ввести спектральные последовательности.\\
+Знание градуировочных факторов фильтрации не позволяет восстановить объект. Однозначности восстановления нет. 
+\textbf{filtration respects differentiall structure}
+\begin{to_ex}[Эйлерова характеристика]
+$\chi \colon \Ab \to G$, $G$ -- абелева группа. 
+Фильтрация длины 1
+\bee
+\begin{tikzcd}[sep=small]
+0 \arrow[r]& A \arrow[r] & B \arrow[r] &C \arrow[r] & 0
+\end{tikzcd}
+\qquad \chi(B) = \chi(A) + \chi(C)
+\eee
+\[
+\chi (K^\bullet) = \sum_{}^{}(-1)^n \chi (K^\bullet) = \sum (-1)^n \chi (H^n(K^\bullet))
+\]
+$\chi (E^n) = ?$\\
+$E^{pq}_r \Rightarrow E^n$
+Вычислим альтернированную сумму на листе $r$
+\[E_{pq}^{\bullet} = \underset{p+q = \bullet}{\oplus} E_r^{pq}\]
+\[\chi (E^{\bullet \bullet}_r) = \sum (-1)^k \chi(H^k(E_r^{\bullet})) = \chi(E_{r+1}^{\bullet}) =\ldots = \chi(E_{\infty}^{\bullet})\]
+\[\chi(E^n) = \sum \chi (F^pE^n / F^{p+1}E^n) = \chi(E^{\bullet \bullet}_{\infty})\]
+\end{to_ex}
+\subsection{Фильтрованный комплекс}
+Пусть $E^n$  -- комплекс, на котором задана фильтрация. Отметим, что дифференциал \textit{"не понижает градус фильтрации"}, т. е.  $d(F^pE^n)\subset F^p E^{n+1}$. Можем рассмотреть два варианта фильтрации:
+\begin{itemize}
+\item \textit{Глупая фильтрация}
+\[
+\widetilde{F}_p E^n = \begin{cases} 0, &n < p \\ E^n, & n \ge p \end{cases}
+\]
+\[
+H^n(\widetilde{F}^p E^n) = \begin{cases} 0, &n < p\\ \ker d^p, & n=p \\ E^n, & n > p \end{cases}
+\]
+\bee
+\begin{tikzcd}[sep=small]
+\ldots \arrow[r]\arrow[d]& 0 \arrow[r]\arrow[d]& 0\arrow[r]\arrow[d]& E^{n+1} \arrow[r] \arrow[d]&\ldots\\
+\ldots \arrow[r]\arrow[d]& E^{n-1} \arrow[r]\arrow[d]& E^{n}\arrow[r]\arrow[d]& E^{n+1} \arrow[r] \arrow[d]&\ldots\\
+\ldots \arrow[r]& E^{n-1} \arrow[r]& E^{n}\arrow[r]& 0 \arrow[r]&\ldots\\
+\end{tikzcd}
+\eee
+\item \textit{Каноническая фльтрация}
+\[
+F_p E^n = \begin{cases} E^n, &n < -p \\ \ker d^p, & n = -p \\ 0, & n>-p \end{cases}
+\]
+\[
+H^n (F^p E^\bullet) \begin{cases} 0, &n > -p \\ H^n(E^\bullet), & n\le-p \end{cases}
+\]
+\bee
+\begin{tikzcd}[sep=small]
+\ldots \arrow[r]\arrow[d]& E^{-p-1} \arrow[r]\arrow[d]& E^{-p}\arrow[r]\arrow[d]& E^{-p+1} \arrow[r]\arrow[d]& \ldots\\
+\ldots \arrow[r]& E^{-p-1} \arrow[r]\arrow[u]& \ker d^{-p}\arrow[r]& 0 \arrow[r]&\ldots\\
+\end{tikzcd}
+\eee
+\end{itemize}
+\begin{to_ex}[Cпектральная последовательность фильтрованного комплекса $K^\bullet$]
+\end{to_ex}
+\[
+Z_r^{pq} = d^{-1}(F^{p+r}K^{p+q+1})\bigcap F^p K^{p+q}
+\]
+\[
+Z^{p+1; q-1}_{r-1} = d^{-1}(F^{p+r}K^{p+q+1})\bigcap F^{p+1}K^{p+q}
+\]
+Применим дифференциал к первому определению 
+\[
+d (Z_{r-1}^{p-r+1, q+r-2}) = d( F^{p-r+1}K^{p+q})\bigcap F^p K^{p+q+1}
+\]
+Утверждается, что спектральной последовательностью будет
+\[
+E^{pq}_r = \dfrac{Z_r^{pq}}{Z^{p+1, q-1}_{r-1} + dZ_{r-1}^{p-r+1, q+r-2}}
+\]
+Выписываем первый лист спектральной последовательности 
+\[
+E_0^{pq} = F^p K^{p+q} / F^{p+1}K^{p+q}
+\]
+Хотим показать, что таким образом заданная спектральная последовательность будет сходиться к градуировочным факторам заданнной фильтрации.
+\begin{itemize}
+    \item Дифференциал корректно определён $d_r^{pq}\colon E_r^{pq} \to E_r^{p+r, q-r+1}$
+    Нужно убедиться, что образ дифференциала при повторной факторизации уходит в ноль, то есть $d^2 = 0$
+    \[dZ_r^{pq}\subset Z_r^{p+r, q-r+1}\]
+    \item Изоморфизмы между когомологиями на листах
+    \[\dfrac{Z^{pq}_{r+1} + Z^{p+1; q-1}_{r-1}}{Z_{r-1}^{p+1, q-1} + dZ_{r-1}^{p-r+1, q+r-2}}\quad\to\quad Z(E_r^{pq})\]
+    \[
+    \dfrac{dZ^{p-r, q+r-1}_{r} + Z^{p+1; q-1}_{r-1}}{Z_{r-1}^{p+1, q-1} + dZ_{r-1}^{p-r+1, q+r-2}}\quad\to\quad B(E_r^{pq})
+    \]
+    \item Группы корректно определены, то есть 
+\end{itemize}
+\[
+Z(E^{pq}_r)=\dfrac{Z_r^{pq}\bigcap d^{-1}(Z_{r-1}^{p+r+1, q-2}+dZ_{r-1}^{p+1, q-1})}{Z_{r-1}^{p+r+1, q-r} + dZ_{r-1}^{p-r+1, q+r-2}}
+\]
+\[
+d^{-1}(Z_{r-1}^{p+r+1, q-r}+dZ_{r-1}^{p+1, q-1}) = d^{-1}(Z_{r-1}^{p+r+1, q-r})+Z_{r-1}^{p+1, q-1})
+\]
+Числитель = $
+Z_r^{pq}\bigcap (d^{-1}Z_{r-1}^{p+r+1, q-r}+Z_{r-1}^{p+1, q-1}) = Z_{r-1}^{p+1, q-1}+Z_r^{pq}\bigcapd^{-1}Z_{r-1}^{p+1, q-1}
+$
+\[
+Z_r^{pq}\bigcap d^{-1} (Z_{r-1}^{p+r+1, q-r}) = d^{-1}\left(F^{p+r}K^{p+q+1}\bigcap d^{-1}(Z_{r-1}^{p+r+1, q-r})\right)\bigcap F^p K^{p+q} \subset d^{-1}\left(F^{p+r+1}K^{p+q+1}\right)\bigcap F^pK^{p+q}\subset Z_{r+1}^{pq}
+\]
+\[
+\alpha_r^{pq}\colon H(E_r^{pq})\overset{\conq}{\to} E_{r+1}^{pq}
+\]
+\[
+E_{r+1}^{pq} = \dfrac{Z^{pq}_{r+1}}{Z_r^{p+1, q-1}+dZ_r^{p-r, q+r-1}}
+\]
+\textcolor{red}{ тут не успела за исправлениями 
+\[
+\dfrac{Z_{r+1}^{pq}+Z_{r-1}^{p+1, q-1}}{Z_{r-1}^{p+1, q-1}+dZ_r^{p-r, q+r-1}}= \dfrac{Z_{r+1}^{pq}}{\underset{Z_r^{p+1, q-1}}{Z_{r+1}^{pq}\bigcap(dZ_{r+1}^{p-r, q+r-1}+Z_{r-1}^{p+1, q})}} = \dfrac{Z_{r+1}^{pq}}{Z_r^{p+1, q-1}+dZ_r^{p-r, }}
+\]
+}
+Если фильтрация конечна на каждом $K^n$, то спектральная последовательность сходится 
+\[
+E_{\infty}^{pq} = \dfrac{Z_r^{pq}}{Z_{r-1}^{p+1, q-1}} \quad \text{при } r > r_0
+\]
+\[
+Z_r^{pq} = Z(F^p K^{p+q})
+\]
+\[
+Z_{r-1}^{p+1, q-1} = Z(F^{p+1}K^{p+q})
+\]
+\[
+\underset{p+q=r}{\oplus}E_{\infty}^{pq} = \oplus \mathbf{Gr} H^n (K^\bullet)
+\]
+Спектральная последовательность сходится к градуировочным факторам когомологий 
+\subsection{Лирическое отступление}
+Есть три основных источника спектральных последовательностей 
+\begin{itemize}
+    \item Спектральная последовательность фильтрованного комплекса
+    \item Спектральная последовательность двойного комплекса
+    \item Спектральная последовательность точной пары (Хатчер, Алгебраическая топология)
+\end{itemize}
+\subsection{Двойной комплекс}
+\begin{to_def}
+$K^{pq}$ -- двойной комплекс\footnote{$p$-- горизонтально, $q$ -- вертикально}
+\[d^{\rightarrow}\colon K^{pq}\to K^{p+1, q}\]
+\[d^{\uparrow}\colon K^{pq}\to K^{p, q+1}\]
+\[d^{\rightarrow}d^{\uparrow} + d^{\uparrow}d^{\rightarrow} = 0\]
+\[d^{\rightarrow}^2 = d^{\uparrow}^2 = 0\]
+\end{to_def}
+\begin{to_def}
+Тотальный комплекс
+\[Tot^{\oplus}(K^{\bullet\bullet})^n = \underset{p+q=n}{\oplus}K^{pq}\]
+\[Tot^{\prod}(K^{\bullet\bullet})^n = \underset{p+q=r}{\prod}K^{pq}\]
+\end{to_def}
+\begin{to_claim}
+Если комплекс находится в первом квадранте, то 
+\[Tot^{\oplus} \cong Tot^{\prod}\]
+\end{to_claim}
+\begin{to_claim}
+Пусть $K^{\bullet\bullet}$ -- ограничен (лежит в первом квадранте), а его строки \underline{или} столбцы ацикличны. Тогда $Tot(K)^\bullet$ -- ацикличен.
+\end{to_claim}
+\[(d^v + d^h)^2 = d^v^2 + d^h^2 + d^v d^h + d^h d^v = 0 \]
+\[
+d(z_0, z_1, z_2, \ldots z_n) = 0
+\]
+\begin{align*}
+    d^h z_0 + d^v z_1 = 0\\
+    d^h z_1 + d^v z_2 = 0\\
+    \ldots\\
+    d^v z_n + dz_{n-1} = 0
+\end{align*}
+\begin{align*}
+    b_0 \ldots b_{n+1}\\
+    b_0 = 0\\
+    \exists b_1\colon
+\end{align*}
+\bee
+\begin{tikzcd}
+    & \arrow[d]&\arrow[d] &\arrow[d] & \\
+    0&\arrow[l]K^{01}\arrow[d]& K^{11}\arrow[l]\arrow[d]&K^{21}\arrow[l]\arrow[d]&\arrow[l]\\
+    0&\arrow[l]K^{00}\arrow[d]& K^{10}\arrow[l]\arrow[d]&K^{20}\arrow[l]\arrow[d]&\arrow[l]\\
+     & 0 & 0 & 0 &
+\end{tikzcd}
+\eee
+\end{document}
