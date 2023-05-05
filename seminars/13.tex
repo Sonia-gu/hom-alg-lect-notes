@@ -129,16 +129,17 @@ E_0^{pq} = F^p K^{p+q} / F^{p+1}K^{p+q}
 \item[2]\textit{Изоморфизм между когомологиями}
 \ref{eq:Z} и \ref{eq:B} являются мономорфизмами, так как в числителе стоят подгруппы $Z^{pq}_r$, а фактор берётся по одним и тем же подгруппам. Теперь выпишем явно циклы. В них будут те элементы, по которым берётся фактор на следующем шаге, отфакторизованный по подгруппам из предыдущего шага 
 \[
-\mathcal{Z}(E^{pq}_r)=\dfrac{Z_r^{pq}\overset{\mathbf{(2)}}{\bigcap} d^{-1}\left(Z_{r-1}^{p+r+1, q-2}+dZ_{r-1}^{p+1, q-1}\right)^\mathbf{(1)}}{Z_{r-1}^{p+r+1, q-r} + dZ_{r-1}^{p-r+1, q+r-2}}
+\mathcal{Z}(E^{pq}_r)=\dfrac{Z_r^{pq}\overset{{\color{green}\mathbf{(2)}}}{\bigcap} d^{-1}\left(Z_{r-1}^{p+r+1, q-2}+dZ_{r-1}^{p+1, q-1}\right)^{\color{green}\mathbf{(1)}}}{Z_{r-1}^{p+r+1, q-r} + dZ_{r-1}^{p-r+1, q+r-2}}
 \]
 Выполняем "по действиям":
 \begin{align*}
-\mathbf{(1)} \quad& d^{-1}\left(Z_{r-1}^{p+r+1, q-r}+dZ_{r-1}^{p+1, q-1}\right) = d^{-1}\left(Z_{r-1}^{p+r+1, q-r}\right)+Z_{r-1}^{p+1, q-1}\\
-\mathbf{(2)} \quad& Z_r^{pq}\bigcap \left(d^{-1}\left(Z_{r-1}^{p+r+1, q-r}\right)+Z_{r-1}^{p+1, q-1}\right) = Z_{r-1}^{p+1, q-1}+Z_r^{pq}\bigcap d^{-1}Z_{r-1}^{p+r+1, q-r}
+{\color{green}\mathbf{(1)}}\quad& d^{-1}\left(Z_{r-1}^{p+r+1, q-r}+dZ_{r-1}^{p+1, q-1}\right) = d^{-1}\left(Z_{r-1}^{p+r+1, q-r}\right)+Z_{r-1}^{p+1, q-1}\\
+{\color{green}\mathbf{(2)}} \quad& Z_r^{pq}\bigcap \left(d^{-1}\left(Z_{r-1}^{p+r+1, q-r}\right)+Z_{r-1}^{p+1, q-1}\right) = Z_{r-1}^{p+1, q-1}+Z_r^{pq}\overset{{\color{green}\mathbf{(3)}}}{\bigcap} d^{-1}Z_{r-1}^{p+r+1, q-r}\\
+{\color{green}\mathbf{(3)}} \quad&Z_r^{pq}\bigcap d^{-1} Z_{r-1}^{p+r+1, q-r} = \left( d^{-1}\left(F^{p+r}K^{p+q+1}\right)\bigcap F^p K^{p+q} \right)\bigcap d^{-1}\left(Z_{r-1}^{p+r+1, q-r}\right)
+  &\subset d^{-1}\left(F^{p+r+1}K^{p+q+1}\right)\bigcap F^pK^{p+q}\\
+  &&\subset Z_{r+1}^{pq}
 \end{align*}
-\[
-Z_r^{pq}\bigcap d^{-1} (Z_{r-1}^{p+r+1, q-r}) = d^{-1}\left(F^{p+r}K^{p+q+1}\bigcap d^{-1}(Z_{r-1}^{p+r+1, q-r})\right)\bigcap F^p K^{p+q} \subset d^{-1}\left(F^{p+r+1}K^{p+q+1}\right)\bigcap F^pK^{p+q}\subset Z_{r+1}^{pq}
-\]
+Таким образом, для любого элемента цикла нашёлся элемент в факторе, то есть \ref{eq:Z} и \ref{eq:B} также являются эпиморфизмом. Таким образом, заданные отображения действительно будут изоморфизмами.
 \[
 \alpha_r^{pq}\colon H(E_r^{pq})\overset{\conq}{\to} E_{r+1}^{pq}
 \]
