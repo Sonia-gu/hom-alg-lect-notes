@@ -152,22 +152,14 @@ E_0^{pq} = F^p K^{p+q} / F^{p+1}K^{p+q}
 \dfrac{Z_{r+1}^{pq}+Z_{r-1}^{p+1, q-1}}{Z_{r-1}^{p+1, q-1}+dZ_{r}^{p-r, q+r-1}}= \dfrac{ Z_{r+1}^{pq} }
 {\underset{ = Z_r^{p+1, q-1}}{\underbrace{ Z_{r+1}^{pq}\bigcap(Z_{r-1}^{p+1, q}} } +\underset{\subset Z_{r+1}^{pq}} {\underbrace{dZ_{r}^{p-r, q+r-1}}})} = \dfrac{Z_{r+1}^{pq}}{Z_r^{p+1, q-1}+dZ_r^{p-r, q+r-1}} \overset{\text{ура!}}{=}E_{r+1}^{pq}
 \end{align*}
-
 \end{itemize}
-Если фильтрация конечна на каждом $K^n$, то спектральная последовательность сходится 
-\[
-E_{\infty}^{pq} = \dfrac{Z_r^{pq}}{Z_{r-1}^{p+1, q-1}} \quad \text{при } r > r_0
-\]
-\[
-Z_r^{pq} = Z(F^p K^{p+q})
-\]
-\[
-Z_{r-1}^{p+1, q-1} = Z(F^{p+1}K^{p+q})
-\]
-\[
-\underset{p+q=r}{\oplus}E_{\infty}^{pq} = \oplus \mathbf{Gr} H^n (K^\bullet)
-\]
-Спектральная последовательность сходится к градуировочным факторам когомологий 
+Если фильтрация конечна на каждом $K^n$, то спектральная последовательность сходится к градуировочным факторам когомологий:
+\begin{align*}
+&E_{\infty}^{pq} = \dfrac{Z_r^{pq}}{Z_{r-1}^{p+1, q-1}}, \qquad
+Z_r^{pq} = \mathcal{Z}(F^p K^{p+q}), \qquad
+Z_{r-1}^{p+1, q-1} = \mathcal{Z}(F^{p+1}K^{p+q}),\qquad \underset{p+q=r}{\oplus}E_{\infty}^{pq} = \oplus \mathbf{Gr} H^n (K^\bullet),\qquad \text{при } r > r_0.
+\end{align*}\footnote{ассоциированное пространство}
+
 \subsection{Лирическое отступление}
 Есть три основных источника спектральных последовательностей 
 \begin{itemize}
