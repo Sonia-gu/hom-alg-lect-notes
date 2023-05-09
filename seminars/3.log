@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.9)  10 MAY 2023 00:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.9)  9 MAY 2023 23:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**4.tex
-(./4.tex
+**3.tex
+(./3.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/subfiles/subfiles.cls
@@ -1364,8 +1364,12 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \c@ttlp@side=\count394
 \ttlp@side=\count395
 )))
-(./4.aux)
-\openout1 = `4.aux'.
+(./3.aux
+
+LaTeX Warning: Label `3:cone_short_exact_eq' multiply defined.
+
+)
+\openout1 = `3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
@@ -1462,9 +1466,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 2.
 LaTeX Info: Redefining \pageref on input line 2.
 LaTeX Info: Redefining \nameref on input line 2.
- (./4.out) (./4.out)
+ (./3.out) (./3.out)
 \@outlinefile=\write5
-\openout5 = `4.out'.
+\openout5 = `3.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
@@ -1528,18 +1532,18 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 Package xypdf Info: Line width: 0.4pt on input line 2.
 
-./4.tex:3: Extra }, or forgotten \endgroup.
+./3.tex:3: Extra }, or forgotten \endgroup.
 <recently read> }
                  
-l.3 ...�отопической категории}
-                                                  
+l.3 \section{Конус}
+                        
 ? s
 OK, entering \scrollmode...
-./4.tex:3: Missing } inserted.
+./3.tex:3: Missing } inserted.
 <inserted text> 
                 }
-l.3 ...�отопической категории}
-                                                  
+l.3 \section{Конус}
+                        
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -1547,63 +1551,87 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (7.55464pt too wide) detected at line 30
-[]
- []
+LaTeX Warning: Reference `B:zigzag_lemma' on page 1 undefined on input line 33.
 
 
-LaTeX Warning: Reference `PtoAc' on page 1 undefined on input line 31.
 
-
-LaTeX Warning: Reference `tactics' on page 1 undefined on input line 40.
+LaTeX Warning: Reference `hHom' on page 1 undefined on input line 83.
 
 [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
 
-LaTeX Warning: Reference `split1' on page 2 undefined on input line 83.
+LaTeX Warning: Reference `B:zigzag_lemma' on page 2 undefined on input line 134
+.
 
-[2] (./4.aux)
+./3.tex:169: Undefined control sequence.
+l.169 ...-1}^K\colon K_{i-1}\twoheadrightarrow \im
+                                                   d_{i-1}^K K_{i-1}$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[2]
+./3.tex:181: Undefined control sequence.
+<recently read> \im 
+                    
+l.181 ...доль эпиморфизма на $\im
+                                                   d_1 = \ker d_{1}$. Пол...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[3] (./3.aux)
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `4.out' has not changed.
-(rerunfilecheck)             Checksum: 7CC4BF15DB9516BCCD8DE8E21B476E2E;736.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `3.out' has not changed.
+(rerunfilecheck)             Checksum: 50D2552588553C8769C545AA785B573D;83.
  ) 
 Here is how much of TeX's memory you used:
- 35115 strings out of 478268
- 656637 string characters out of 5846348
- 1017770 words of memory out of 5000000
- 52588 multiletter control sequences out of 15000+600000
- 494560 words of font info for 107 fonts, out of 8000000 for 9000
+ 35071 strings out of 478268
+ 655267 string characters out of 5846348
+ 1009741 words of memory out of 5000000
+ 52522 multiletter control sequences out of 15000+600000
+ 493427 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,18n,105p,3298b,1132s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,18n,105p,3298b,1104s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc
-}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></
-usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb>
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pf
-b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.p
-fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10
-.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm
-7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eus
-m10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/e
-usm7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbol
-s/msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/sy
-mbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-supe
-r/sfbx0900.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/
-sfbx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sf
-rb1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm
+}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm5.pfb>
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb
+></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.p
+fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm5.
+pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7
+.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eusm
+10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eu
+sm7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msbm7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/
+sfbx0900.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sf
+bx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm
 0500.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm06
 00.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0700
 .pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0800.p
 fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb
 ></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb><
 /usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on 4.pdf (2 pages, 234645 bytes).
+Output written on 3.pdf (3 pages, 277205 bytes).
 PDF statistics:
- 149 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
- 16 named destinations out of 1000 (max. 500000)
+ 193 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

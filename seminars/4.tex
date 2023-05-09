@@ -1,3 +1,5 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
 \section{Проективные резольвенты в гомотопической категории, абелевость гомотопической категории}
 Мы движемся к тому, чтобы определить производную категорию -- это наша стратегическая цель. Наша тактическая цель на данном этапе -- установить  нужные нам свойства фунткора взятия проективной резольвенты.
 \begin{to_com}
@@ -11,7 +13,7 @@
 \end{align*}
 \end{to_suj}
 \begin{proof}
-Рассмотрим связывающий морфизм между резольвентой и объектом как морфизм комплексов $f\colon Q_\bullet \to N[0] $, тогда его конус это просто $P_\bullet\to Q \to 0$. Теперь, как обычно, имеем короткую точную последовательность, к которой можем применить функтор $\Hom(P_\bullet, - )$
+Рассмотрим связывающий морфизм между резольвентой и объектом как морфизм комплексов $f\colon Q_\bullet \to N[0] $, тогда его конус -- это просто $P_\bullet\to Q \to 0$. Теперь, как обычно, имеем короткую точную последовательность, к которой можем применить функтор $\hHom(P_\bullet, - )$ и из леммы о зигзаге получим длинную точную последовательность:
 \bee
 \begin{tikzcd}[sep=small] Q_\bullet  \arrow[r] & N[0] \arrow[r] & C(f) \arrow[r] & Q_\bullet [1] \end{tikzcd}
 \eee
@@ -42,10 +44,10 @@
     \end{align*}
 \end{to_con}
 \begin{to_com}
-$\mathcal{P}$ не является фунткор в категоию комплексов, но функтор в гомотопическую категорию.
+$\mathcal{P}$ не является фунткором в категоию комплексов, но является функтором в гомотопическую категорию.
 \end{to_com}
 \begin{to_com}
-Понятно, что категория комплексов являеься абелевой, так как все морфизмы берутся почленно, сохраняются ядра и коядра, однако гомотопическая категория абелевой вообще говоря не является.
+Понятно, что категория комплексов является абелевой, так как все ядра и коядра можно брат почленно, однако гомотопическая категория абелевой, вообще говоря, не является.
 \begin{align*}
     \mathcal{A} \in \mathbf{Ab}&\Rightarrow Kom\mathcal{(A)}\\
     \mathcal{A} \in \mathbf{Ab}&\nRightarrow \mathcal{K(A)}
@@ -61,12 +63,12 @@ $f: \Z \twoheadrightarrow \Z_p $ не является эпиморфизмом 
     \ldots \arrow[r] & 0 \arrow[r] & \Z_{p} \arrow[r] & 0 \arrow[r] & \ldots = C
 \end{tikzcd}
 \eee
-Тогда существует разложение
+В абелевой категории любой морфизм раскладывается в композицию $mono$ и $epi$.
 \bee
 \begin{tikzcd} A \arrow[r, "f"] \arrow[rd, twoheadrightarrow] & C\\ & im f = B \arrow[u, hookrightarrow] \end{tikzcd}
 \begin{tikzcd} A \arrow[r, "\alpha"]& B \arrow[r, "\beta"] & C\end{tikzcd}
 \eee
-Теперь снова рассмотрим точные тройки из последовательности с конусами, на диагграмме ниже дуговые стрелки гомотопны 0
+Теперь снова рассмотрим точные тройки из последовательности с конусами, на диаграмме ниже дуговые стрелки гомотопны 0
 \bee
 \begin{tikzcd}[sep = small]
 A\arrow[rr, bend left]\arrow[r]&B \arrow[r]&C(\alpha)\\
@@ -78,7 +80,7 @@ C(\beta)[-1]\arrow[rr, bend right]\arrow[r]&B \arrow[r]&C
     C(\beta)[-1]\arrow[r]&B \arrow[r]&C(\alpha)
 \end{tikzcd}
 \eee
-Таким образом получили, что $B$ -- расщипим. Тогда, используя \ref{split1} мы можем представить его в виде
+Таким образом получили, что $B$ -- расщепим. Тогда, используя \ref{split1} мы можем представить его в виде
 \bee
 \begin{tikzcd}
     \ldots\arrow[d] & \ldots\arrow[d] & \ldots\arrow[d]\\
@@ -102,7 +104,7 @@ C(\beta)[-1]\arrow[rr, bend right]\arrow[r]&B \arrow[r]&C
     \ldots & \ldots & \ldots
 \end{tikzcd}
 \eee
-Но тогда имеем последовательность следующую морфизмов и противоречие:
+Но тогда имеем следующую последовательность морфизмов и противоречие:
 \bee
 \begin{tikzcd}
     B_0 \arrow[r]\arrow[rrrr, bend left, "id"] & \Z_p\arrow[rr, bend right, "0"'] \arrow[r] & B_0 \arrow[r] & \Z \arrow[r] & B_0
@@ -111,12 +113,12 @@ C(\beta)[-1]\arrow[rr, bend right]\arrow[r]&B \arrow[r]&C
 \end{proof}
 \end{to_ex}
 \begin{to_def}
-$\mathcal{A}$ -- полупроста $\Leftrightarrow$ $\forall$ точная последовательность расщипима.
+$\mathcal{A}$ -- полупроста $\Leftrightarrow$ $\forall$ точная последовательность расщепима.
 \end{to_def}
 \begin{to_claim}
-$\mathcal{K(A)}$ -- абелева $\Leftrightarrow$ $\mathcal{A}$ -- полупроста\footnote{то есть $\forall$ точная последовательность расщипима}.
+$\mathcal{K(A)}$ -- абелева $\Leftrightarrow$ $\mathcal{A}$ -- полупроста\footnote{то есть $\forall$ точная последовательность расщепима}.
 \end{to_claim}
-\begin{to_ex}[Нерасщипимая короткая точная последовательность]
+\begin{to_ex}[Нерасщепимая короткая точная последовательность]
 \bee
 \begin{tikzcd}[sep=small]
 0 \arrow[r] &\Z \arrow[r, "\cdot p"] & \Z \arrow[r] & \Z_p \arrow[r] &  0
@@ -124,3 +126,4 @@ $\mathcal{K(A)}$ -- абелева $\Leftrightarrow$ $\mathcal{A}$ -- полуп
 \eee
 То есть $\mathbf{Ab}$ -- не полупроста.
 \end{to_ex}
+\end{document}

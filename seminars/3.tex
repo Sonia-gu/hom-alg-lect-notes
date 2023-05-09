@@ -2,7 +2,7 @@
 \begin{document}
 \section{Конус}
 \begin{to_def}
-Сдвигом комплекса $K[n]$ назовём комплекс с объектами $K[n]^i = K^{n+i}$ и дифференциалами $d[n]^i = (-1)^nd^{i+n}$
+Сдвигом комплекса $K[n]$ назовём комплекс с членами $K[n]^i = K^{n+i}$ и дифференциалами $d[n]^i = (-1)^nd^{i+n}$
 \end{to_def}
 \begin{to_def}
 Конусом $C[f]^\bullet$ морфизма комплексов $f^\bullet:K^\bullet\to L^\bullet$ называется комплекс с объектами $C[f]^i = K^{i+1}\oplus L^i$ и дифференциалами $d^i = \begin{pmatrix}-d_K^{i+1}&0\\f&d_K^i\end{pmatrix}$.
@@ -24,7 +24,7 @@ d^2 = \begin{pmatrix}-d&0\\f&d\end{pmatrix}^2 = \begin{pmatrix}d^2&0\\-fd + df&d
 \end{equation}
 \end{to_suj}
 \begin{proof}
-Приведённая последовательность расщипима в каждом члене.
+Приведённая последовательность расщепима в каждом члене.
 \end{proof}
 \begin{to_thr}
 $f$ --- квазиизоморфизм тогда и только тогда, когда $C(f)$ --- ацикличен.
@@ -32,10 +32,10 @@ $f$ --- квазиизоморфизм тогда и только тогда, к
 \begin{proof}
     Применим лемму о зигзаге \ref{B:zigzag_lemma} к последовательности \eqref{3:cone_short_exact_eq}.
 \end{proof}
-Дадим ещё несколько определений 
+Дадим ещё несколько определений.
 \begin{to_def}
 %% продолжу с этого момента
-$K^\bullet$ -- расщипимый комплекс, если 
+$K^\bullet$ -- расщепимый комплекс, если 
 \[\exists s^i\colon K^{i} \to K^{i-1} \quad \colon \quad dsd = d \]
 \end{to_def}
 \begin{to_def}
@@ -47,7 +47,7 @@ $K^\bullet$ -- стягиваемый, если $id_{K^\bullet}\sim 0$
 \begin{tikzcd}[sep=small] \ldots\arrow[r]& 0 \arrow[r]& M \arrow[r, "id"]& M \arrow[r]& 0 \arrow[r]& \ldots\end{tikzcd}
 \ee
 \end{to_ex}
-\begin{to_ex}[простейший расщипимый комплекс]
+\begin{to_ex}[простейший расщепимый комплекс]
 \be
 \label{eq:vid3}
 \begin{tikzcd}[sep=small] \ldots\arrow[r]& 0 \arrow[r]& M \arrow[r]& 0 \arrow[r]& \ldots\end{tikzcd}
@@ -55,7 +55,7 @@ $K^\bullet$ -- стягиваемый, если $id_{K^\bullet}\sim 0$
 $\NB$ он не стягиваемый
 \end{to_ex}
 \begin{to_suj}
-$(K^\bullet$ -- стягиваемый$)$ $\quad \Rightarrow \quad$ $(K^\bullet$ -- расщипимый$)$
+$(K^\bullet$ -- стягиваемый$)$ $\quad \Rightarrow \quad$ $(K^\bullet$ -- расщепимый$)$
 \bee
 \begin{tikzcd}
     \ldots\arrow[r]& K^{i-1}\arrow[r]\arrow[ld, "s^{i-1}"']\arrow[d, "id"']&K^{i}\arrow[r]\arrow[ld, "s^{i}"']\arrow[d, "id"']& K^{i+1}\arrow[r]\arrow[ld, "s^{i+1}"']\arrow[d, "id"']& \ldots\\
@@ -67,11 +67,11 @@ $(K^\bullet$ -- стягиваемый$)$ $\quad \Rightarrow \quad$ $(K^\bullet$
 Любой стягиваемый комплекс является суммой сдвигов комплексов вида \ref{idM}. 
 \end{to_suj}
 \begin{to_suj}
-$K^\bullet$ -- стягиваемый $\quad \Leftrightarrow \quad$ $K^\bullet$ -- расщипимый и ацикличный.
+$K^\bullet$ -- стягиваемый $\quad \Leftrightarrow \quad$ $K^\bullet$ -- расщепимый и ацикличный.
 \end{to_suj}
 \begin{to_suj}\label{split1}
-$K^\bullet$ -- ограниченный расщипимый комплекс $\quad \Rightarrow \quad$ $K^\bullet\overset{qis}{\sim}H^\bullet(K^\bullet)$. \\
-Иными словами любой расщипимый комплекс представляется в виде суммы комплексов вида \ref{eq:vid2} и \ref{eq:vid3}.
+$K^\bullet$ -- ограниченный расщепимый комплекс $\quad \Rightarrow \quad$ $K^\bullet\overset{qis}{\sim}H^\bullet(K^\bullet)$. \\
+Иными словами любой расщепимый комплекс представляется в виде суммы комплексов вида \ref{eq:vid2} и \ref{eq:vid3}.
 \end{to_suj}
 \begin{to_def}
     Морфизм комплексов $f\colon K^\bullet \to L^\bullet$ называется гомотопической эквивалентностью, если $\exists f\colon L^\bullet \to K^\bullet$ такой что $fg \sim id_{K^\bullet}$ и $gf\sim id_{L^\bullet}$
@@ -131,7 +131,7 @@ H^i (\hHom(K^\bullet, L^\bullet)) = \Hom_{\K{A}}(K^\bullet, L^\bullet[i])
 	\arrow[from=1-4, to=1-5]
 \end{tikzcd}
 \eee
-Имея теперь короткую точную последовательность комплексов, естественно применить лемму о зиг-заге \ref{B:zigzag_lemma}. Получим длинную точную последовательность когомологий комплексов морфизмов, которые в силу \ref{cohomology_comp_mor} являются просто гомотопическими классами эквивалентности морфизмов в сдвинутый комплекс, то есть
+Имея теперь короткую точную последовательность комплексов, естественно применить лемму о зигзаге \ref{B:zigzag_lemma}. Получим длинную точную последовательность когомологий комплексов морфизмов, которые в силу \ref{cohomology_comp_mor} являются просто гомотопическими классами эквивалентности морфизмов в сдвинутый комплекс, то есть
 \bee
 \begin{tikzcd}[sep=small]
 	\underset{0}{\Hom_{\K{A}}(X, {C(f)}[-1])} & \Hom_{\K{A}}(X, K) & \Hom_{\K{A}}(X, L) & \underset{0}{\Hom_{\K{A}}(X, {C(f)})} & \ldots
@@ -166,7 +166,7 @@ H^i (\hHom(K^\bullet, L^\bullet)) = \Hom_{\K{A}}(K^\bullet, L^\bullet[i])
     Пусть $P_\bullet$ -- проективная резольвента $M$, $K_\bullet$ -- какая-то резольвента $N$, также пусть есть морфизм $f \colon M \to N$. Тогда $\exists g_\bullet\colon P_\bullet\to K_\bullet$, такой, что $H^0(g_\bullet) = f$
 \end{to_lem}
 \begin{proof}
-    Просто построим этот морфизм комплексов. Дополним проективный комплекс до ацикличного. Далее доказательство будем проводить по индукции.  В силу проективности можем поднять $f\varepsilon$ вдоль эпиморфизма из крайнего члена резольвенты $K_\bullet$ до морфизма $f_0$. Аналогично далее все морфизмы диагональные морфизмы вида $f_i\circ d_{i-1}^P$ поднимаются вдоль эпиморфизмов вида $d_{i-1}^K\colon K_{i-1}\twoheadrightarrow \im d_{i-1}^K$.
+    Просто построим этот морфизм комплексов. Дополним проективный комплекс до ацикличного. Далее доказательство будем проводить по индукции.  В силу проективности можем поднять $f\varepsilon$ вдоль эпиморфизма из крайнего члена резольвенты $K_\bullet$ до морфизма $f_0$. Аналогично далее все морфизмы диагональные морфизмы вида $f_i\circ d_{i-1}^P$ поднимаются вдоль эпиморфизмов вида $d_{i-1}^K\colon K_{i-1}\twoheadrightarrow \im d_{i-1}^K K_{i-1}$.
     \bee
         \begin{tikzcd}
             \ldots\arrow[r]& P_2\arrow[d, "f_2"] \arrow[r]&P_1 \arrow[d, "f_1"]\arrow[rd]\arrow[r, "d^P_1"]&P_0\arrow[rd, "f\varepsilon"] \arrow[r, "\varepsilon"]\arrow[d, dashed, "f_0"]&M\arrow[r]\arrow[d, "f"]&0\\

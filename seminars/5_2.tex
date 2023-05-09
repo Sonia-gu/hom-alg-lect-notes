@@ -13,7 +13,7 @@ $Qis$ не явлется в общем случае локализующим с
 \begin{equation*}
 \xymatrix{
 \ldots\ar[r]&0\ar[r]\ar[d]&X\ar[r]\ar[d]_i&0\ar[d]\ar[r]&\ldots\\
-0\ar[r]&X\ar[r]^i&I_0\ar[r]&I_1\ar[r]&0\\
+0\ar[r]&0\ar[r]^i&I_0\ar[r]&I_1\ar[r]&0\\
 &\ldots\ar[r]&0\ar[r]\ar[u]&I_1\ar[u]_{id}\ar[r]&0\ar[u]
 }
 \end{equation*}
@@ -102,7 +102,7 @@ $Qis$ --- локализующее семейство в $\mathcal{K}(\mathcal{A
 	& \beta & f\alpha & hf\alpha
 	\arrow[from=1-2, to=1-3]
 	\arrow[from=1-3, to=1-4]
-	\arrow["{\Hom_{\mathcal{K}(\mathcal{A})}(C[hf][-1], \cdot)}", maps to, from=1-3, to=2-3]
+	\arrow["{\Hom_{\mathcal{K}(\mathcal{A})}(C[hf][-1], \cdot)}", Rightarrow, from=1-3, to=2-3]
 	\arrow[from=2-2, to=2-3]
 	\arrow[from=2-3, to=2-4]
 	\arrow[maps to, from=3-3, to=3-4]
@@ -113,13 +113,13 @@ $Qis$ --- локализующее семейство в $\mathcal{K}(\mathcal{A
 	\arrow[from=2-4, to=2-5]
 \end{tikzcd}
     \end{equation*}
-Применяя утверждение \ref{triangulation_33} к аналогичной \eqref{32_long_cone} последовательности для конуса $C[hf]$ получим, что $hf\alpha \sim 0$. Отсюда из точности этот порфизм поднимается до $\beta \in \Hom_{\mathcal{K}(\mathcal{A})}(C[hf][-1], Y)$.
+Применяя утверждение \ref{triangulation_33} к аналогичной \eqref{32_long_cone} последовательности для конуса $C[hf]$ получим, что $hf\alpha \sim 0$. Отсюда из точности этот морфизм поднимается до $\beta \in \Hom_{\mathcal{K}(\mathcal{A})}(C[hf][-1], Y)$.
 Докажем выполнение третьего условия Оре. Нам пригодится еще одно утверждение.
 \begin{to_lem}\label{32_additive_loc}
-Локализация аддитивной категории локализующим семейством тоже аддитивна.
+Локализация аддитивной категории по локализующему семейству тоже аддитивна.
 \end{to_lem}
 В силу аддитивности небоходимо доказать, что $sf\sim 0$, где $s$ из локализующего семейства, влечёт существование $t\in Qis: ft\sim 0$.
-Конструкция будет следующей. Опять возьмём конус $C[s]$, соответствующую точную последовательность и применим функтор $\Hom_{\mathcal{K}(\mathcal{A})}(X, \cdot)$.
+Конструкция будет следующей: опять возьмём конус $C[s]$, соответствующую точную последовательность и применим функтор $\Hom_{\mathcal{K}(\mathcal{A})}(X, \cdot)$.
     \begin{equation*}
         \begin{tikzcd}[sep=small]
 	&& X&C[f'][-1] \\
@@ -131,7 +131,7 @@ $Qis$ --- локализующее семейство в $\mathcal{K}(\mathcal{A
 	\arrow["s", from=2-3, to=2-4]
 	\arrow[from=2-4, to=2-5]
 	\arrow[from=2-1, to=2-2]
-	\arrow["{\Hom_{\mathcal{K}(\mathcal{A})}(X, \cdot)}", maps to, from=2-3, to=3-3]
+	\arrow["{\Hom_{\mathcal{K}(\mathcal{A})}(X, \cdot)}", Rightarrow, from=2-3, to=3-3]
 	\arrow[from=3-2, to=3-3]
 	\arrow[from=3-1, to=3-2]
 	\arrow[from=3-3, to=3-4]
