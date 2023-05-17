@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.9)  10 MAY 2023 12:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.9)  16 MAY 2023 22:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**spec_example.tex
-(./spec_example.tex
+**14.tex
+(./14.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/subfiles/subfiles.cls
@@ -1364,30 +1364,30 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \c@ttlp@side=\count394
 \ttlp@side=\count395
 )))
-(./spec_example.aux)
-\openout1 = `spec_example.aux'.
+(./14.aux)
+\openout1 = `14.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Info: Redefining \th on input line 3.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Info: Redefining \th on input line 2.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1445,7 +1445,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 3.
+Package hyperref Info: Link coloring ON on input line 2.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1459,12 +1459,12 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count402
 )
-LaTeX Info: Redefining \ref on input line 3.
-LaTeX Info: Redefining \pageref on input line 3.
-LaTeX Info: Redefining \nameref on input line 3.
- (./spec_example.out) (./spec_example.out)
+LaTeX Info: Redefining \ref on input line 2.
+LaTeX Info: Redefining \pageref on input line 2.
+LaTeX Info: Redefining \nameref on input line 2.
+ (./14.out) (./14.out)
 \@outlinefile=\write5
-\openout5 = `spec_example.out'.
+\openout5 = `14.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
@@ -1480,179 +1480,136 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-LaTeX Font Info:    Trying to load font information for U+zeur on input line 3.
+LaTeX Font Info:    Trying to load font information for U+zeur on input line 2.
 
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/eulervm/uzeur.fd
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
 )
-LaTeX Font Info:    Trying to load font information for U+zeus on input line 3.
+LaTeX Font Info:    Trying to load font information for U+zeus on input line 2.
 
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/eulervm/uzeus.fd
 File: uzeus.fd 2005/01/11 v4.0 (WaS)
 )
-LaTeX Font Info:    Trying to load font information for U+zeuex on input line 3
+LaTeX Font Info:    Trying to load font information for U+zeuex on input line 2
 .
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/eulervm/uzeuex.fd
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+esvect on input line 
-3.
+2.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
-LaTeX Font Info:    Trying to load font information for U+esint on input line 3
+LaTeX Font Info:    Trying to load font information for U+esint on input line 2
 .
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 3.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 2.
 
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Package xypdf Info: Line width: 0.4pt on input line 3.
+Package xypdf Info: Line width: 0.4pt on input line 2.
 
-./spec_example.tex:4: Extra }, or forgotten \endgroup.
-<recently read> }
-                 
-l.4 ...�полнительные примеры. }
-                                                  
+
+LaTeX Warning: Reference `doublecomlex' on page 1 undefined on input line 3.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+./14.tex:64: Undefined control sequence.
+l.64     0& \arrow[l] P_0\otimesB
+                                 &\arrow[l] P_1\otimesB&\arrow[l] P_2\otimesB&
 ? s
 OK, entering \scrollmode...
-./spec_example.tex:4: Missing } inserted.
-<inserted text> 
-                }
-l.4 ...�полнительные примеры. }
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+./14.tex:64: Undefined control sequence.
+l.64 ...arrow[l] P_0\otimesB&\arrow[l] P_1\otimesB
+                                                  &\arrow[l] P_2\otimesB&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
+./14.tex:64: Undefined control sequence.
+l.64 ...arrow[l] P_1\otimesB&\arrow[l] P_2\otimesB
+                                                  &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-LaTeX Warning: Reference `B:snake_lemma' on page 1 undefined on input line 14.
+[1
 
-./spec_example.tex:17: Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.17 \eee
-         
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+./14.tex:80: Undefined control sequence.
+l.80     0 \arrow[r]& H_n(P)\otimesM
+                                     \arrow[r]& H_n(P\otimes M)\arrow[r]& To...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-./spec_example.tex:17: Missing \endcsname inserted.
-<to be read again> 
-                   \global 
-l.17 \eee
-         
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-
-./spec_example.tex:17: LaTeX Error: Environment \end {equation*} undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.17 \eee
-         
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./spec_example.tex:18: LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.18 \begin{equation*}
-                      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./spec_example.tex:34: Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.34 \end{equation*}
-                    
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./spec_example.tex:34: Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.34 \end{equation*}
-                    
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-]
-[2] (./spec_example.aux)
+[2] (./14.aux)
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `spec_example.out' has not changed.
-(rerunfilecheck)             Checksum: C701E6386B5C15B5B69121F31EE95263;1364.
+Package rerunfilecheck Info: File `14.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34351 strings out of 478268
- 638117 string characters out of 5846348
- 999219 words of memory out of 5000000
- 51838 multiletter control sequences out of 15000+600000
- 487013 words of font info for 85 fonts, out of 8000000 for 9000
+ 35132 strings out of 478268
+ 657936 string characters out of 5846348
+ 1036469 words of memory out of 5000000
+ 52621 multiletter control sequences out of 15000+600000
+ 488814 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,15n,105p,3293b,990s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,15n,105p,3299b,1091s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc
-}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb><
-/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb
-></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pf
-b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.
-pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7
-.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eusm
-10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/
-msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx
-0900.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx10
-00.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200
-.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0700.p
-fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb
-></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb><
-/usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on spec_example.pdf (2 pages, 158714 bytes).
+}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb>
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pf
+b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.p
+fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10
+.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm
+7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eus
+m10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/e
+usm7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbol
+s/msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/sy
+mbols/msam7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-s
+uper/sfbx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-sup
+er/sfrm0600.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super
+/sfrm0700.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/s
+frm0800.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfr
+m1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1
+000.pfb>
+Output written on 14.pdf (2 pages, 183779 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
- 37 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

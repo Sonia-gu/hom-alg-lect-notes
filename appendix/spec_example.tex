@@ -37,11 +37,38 @@
 \begin{table}[h]
 \begin{minipage}{.4\linewidth}
 \centering
+\begin{tabular}{ |c c c c c c } 
+ 0 & $\rightarrow$ & 0 & $\rightarrow$ & 0 \\ 
+ $C^{20}$ & $\rightarrow$ & $C^{21}$ & $\rightarrow$ & 0 \\
+ $C^{10}$ & $\rightarrow$ & $C^{11}$ & $\rightarrow$ & 0 \\
+ $C^{00}$ & $\rightarrow$ & $C^{01}$ & $\rightarrow$ & 0 \\
+ 0 & $\rightarrow$ & 0 & $\rightarrow$ & 0 \\ 
+ \hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}{.4\linewidth}
+\centering
+\begin{tabular}{ |c c c c c c c c} 
+ 0 $\rightarrow$& 0 & $\rightarrow$ & 0 & $\rightarrow$ & 0 & $\rightarrow$ & 0\\ 
+ 0 $\rightarrow$& $C^{00}$ & $\rightarrow$ & $C^{10}$ & $\rightarrow$ & $C^{20}$ & $\rightarrow$ & 0\\
+ 0 $\rightarrow$& $C^{01}$ & $\rightarrow$ & $C^{11}$ & $\rightarrow$ & $C^{21}$ & $\rightarrow$ & 0 \\
+ \hline
+\end{tabular}
+\end{minipage}
+\end{table}
+
+\begin{table}[h]
+\begin{minipage}{.4\linewidth}
+\centering
 \begin{tabular}{ |c c c } 
  0 & 0 & 0 \\ 
- $C^{00}$ & $C^{01}$ & 0 \\
- $C^{10}$ & $C^{11}$ & 0 \\
- $C^{20}$ & $C^{21}$ & 0 \\
+ $\uparrow$   &	 $\uparrow$   & $\uparrow$   \\
+ $\ker\gamma$ & $\coker\gamma$ & 0 \\
+ $\uparrow$   &	 $\uparrow$   & $\uparrow$   \\
+ $\ker\beta$ & $\coker\beta$ & 0 \\
+ $\uparrow$   &	 $\uparrow$   & $\uparrow$   \\
+ $\ker\alpha$ & $\coker\alpha$ & 0 \\
+ $\uparrow$   &	 $\uparrow$   & $\uparrow$   \\
  0 & 0 & 0 \\ 
  \hline
 \end{tabular}
@@ -50,12 +77,39 @@
 \centering
 \begin{tabular}{ |c c c c c} 
  0 & 0 & 0 & 0 & 0\\ 
- 0 & $C^{00}$ & $C^{10}$ & $C^{20}$ & 0\\
- 0 & $C^{01}$ & $C^{11}$ & $C^{21}$ & 0 \\
+ 0 & 0 & 0 & 0 & 0\\
+ 0 & 0 & 0 & 0 & 0 \\
  \hline
 \end{tabular}
 \end{minipage}
 \end{table}
+
+\begin{table}[h]
+\begin{minipage}{.4\linewidth}
+\centering
+\begin{tabular}{ |c c c } 
+ 0 & 0 & 0 \\ 
+ $\uparrow$   &	 $\uparrow$   & $\uparrow$   \\
+ $\ker(\ker\beta \rightarrow \ker\gamma)$ & $\coker\gamma$ & 0 \\
+ $\uparrow$   &	 $\uparrow$   & $\uparrow$   \\
+ $\ker\beta$ & $\coker\beta$ & 0 \\
+ $\uparrow$   &	 $\uparrow$   & $\uparrow$   \\
+ $\ker\alpha$ & $\coker\alpha$ & 0 \\
+ $\uparrow$   &	 $\uparrow$   & $\uparrow$   
+ \hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}{.4\linewidth}
+\centering
+\begin{tabular}{ |c c c c c} 
+ 0 & 0 & 0 & 0 & 0\\ 
+ 0 & 0 & 0 & 0 & 0\\
+ 0 & 0 & 0 & 0 & 0 \\
+ \hline
+\end{tabular}
+\end{minipage}
+\end{table}
+
 \subsection{Что-то о нётеровых кольцах}
 Несколько примеров фильтрации из коммутативной алгебры.
 \begin{to_ex}[Фильтрация кольца]

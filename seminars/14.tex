@@ -1,0 +1,106 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+Рассмотрим два примера, когда один из тотальных комплексов оказывается неточным:
+\begin{to_ex}[$Tot^{\oplus}$ -- точен, $Tot^{\prod}$ -- нет]
+\bee
+L_1^{\bullet\bullet} \qquad
+\begin{tikzcd}
+\Z &\arrow[l]\Z \arrow[d]&\arrow[l]0\arrow[d]& \arrow[l]0\arrow[d]\\
+0 &\arrow[l]\Z \arrow[d]&\arrow[l]\Z\arrow[d]& \arrow[l]0\arrow[d]\\
+0 &\arrow[l]0 &\arrow[l]\Z& \arrow[l]0\\
+\end{tikzcd}
+\eee
+\bee
+L_2^{\bullet\bullet} \qquad
+\begin{tikzcd}
+\Z &\arrow[l]\Z &\arrow[l]0& \arrow[l]0\\
+0 &\arrow[l]\Z &\arrow[l]\Z& \arrow[l]0\\
+0 &\arrow[l]0 &\arrow[l]\Z& \arrow[l]\Z\\
+\end{tikzcd}
+\eee
+$Tot^{\oplus}(L_1) \ni (1, 0, 0, \ldots)$ -- точен, 
+$Tot^{\prod}(L_2)\ni (1, -1, 1, \ldots)$ -- не точен, 
+\end{to_ex}
+Cуществует две стандартные фильтрации двойных комплексов -- по строкам и по столбцам 
+\begin{align*}
+    F^p Tot (L)^n = \underset{i+j = n, i\ge p}{\oplus} L^{ij}\\
+    F^q Tot (L)^n = \underset{i+j = n, j\ge q}{\oplus} L^{ij}
+\end{align*}
+
+Существует спектральная последовательность с $E_2^{pq} = H_I^{q}(H_{II}^p(L^{\bullet, q}))$, сходящийся к $H^{p+q}(Tot(L^{\bullet\bullet}))$
+\begin{to_ex}
+\bee
+\begin{tikzcd}
+    0\arrow[r]&A' \arrow[r]& B' \arrow[r]& C' \arrow[r]& 0\\
+    0\arrow[r]&A \arrow[r]\arrow[u, "\cong"]& B \arrow[r]\arrow[u] &C \arrow[r]\arrow[u, "\cong"]& 0
+\end{tikzcd}
+\eee
+$\ker f = \coker f = 0 $ $\Rightarrow$ $f$ -- $iso$.
+\end{to_ex}
+\begin{to_ex}
+\bee
+\begin{tikzcd}
+    A' \arrow[r]& B' \arrow[r]& C' \arrow[r]&D' \arrow[r]&E' \\
+    A \arrow[r]\arrow[u, two heads]& B \arrow[r]\arrow[u, "\cong"] &C \arrow[r]\arrow[u, "f"]&D \arrow[r]\arrow[u, "\cong"]&E \arrow[u, hook]
+\end{tikzcd}
+\eee
+$\ker f = \coker f = 0 $ $\Rightarrow$ $f$ -- $iso$.
+\end{to_ex}
+\begin{to_ex}
+$Tor(A, B)\cong Tor(B, A)$. Выберем две проективные резолвенты: $P_\bullet \to A$, $Q_\bullet \to B$. \\
+\[
+(P_\bullet \otimes Q_\bullet)_{ij} = P_i\otimes Q_j
+\]
+\bee\label{tens}
+\begin{tikzcd}
+    0& P_0\otimes Q_2 \arrow[l]\arrow[d] & P_1\otimes Q_2 \arrow[l]\arrow[d] & P_2\otimes Q_2 \arrow[l]\arrow[d]\\
+    0& P_0\otimes Q_1 \arrow[l]\arrow[d] & P_1\otimes Q_1 \arrow[l]\arrow[d] & P_2\otimes Q_1 \arrow[l]\arrow[d]\\
+    0& P_0\otimes Q_0 \arrow[l]& P_1\otimes Q_0 \arrow[l] & P_2\otimes Q_0 \arrow[l]
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}
+    0& \arrow[l] P_0\otimesB&\arrow[l] P_1\otimesB&\arrow[l] P_2\otimesB&
+\end{tikzcd}
+\eee
+\[
+E_r^{pq} \Rightarrow Tor^{p+q}(A, B) \cong Tor^{p+q}(B, A)
+\]
+\end{to_ex}
+\begin{to_ex}[Спектральная последовательность Кюннеты\footnote{Künneth}]
+Пусть $P^{\bullet\bullet}$ -- ограниченный снизу комплекс плоских модулей, а $M$ -- произвольный модуль. Тогда существует спектральная последовательность с листом 
+\begin{align*}
+    E^{pq}_2 = Tor_p(H_q(P),M)\quad \Rightarrow \quad H_{p+q}(P \otimes M)
+\end{align*}
+Имеет место формула Кюннета:\\
+Пусть дополнительно $d(P_\bullet)$ -- тоже плосский для $\forall n$. Тогда $\exists k$:
+\bee
+\begin{tikzcd}
+    0 \arrow[r]& H_n(P)\otimesM \arrow[r]& H_n(P\otimes M)\arrow[r]& Tor_1(H_{n-1}(P), M) \arrow[r]& 0
+\end{tikzcd}
+\eee
+\end{to_ex}
+\begin{proof}
+$Q_\bullet \to M$ -- плоская резоьвента. Рассмотрим $(P_\bullet\otimes Q_\bullet)$. Восползуемся результатом \ref{tens} и выпишем второйлист спектральной последовательности 
+\bee
+I\colon \qquad
+\begin{tikzcd}
+    ^I E_1 \colon & 0 &\arrow[l] P_0 \otimes M & \arrow[l] P_1 \otimes M \arrow[l]& \ldots\\
+    ^I E_2 = E_{\infty};& & H_0(P_0\otimes M); & H_1(P\otimes M) &\ldots
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}
+    II &^{II}E_1= H_q(P)\otimes Q_p\\
+       &^{II}E_2= Tor_p(H_q (P), M)
+\end{tikzcd}
+\eee
+\end{proof}
+\bee
+\begin{tikzcd}
+    0 \arrow[r]& dP_{q+1} \arrow[r]& \mathcal{Z}_q \arrow[r]&H_q(P) \arrow[r]& 0 \\
+    0 & H_q(P)\otimes M & Tor_1(H_q(P), M) & 0& \\
+    0 & H_{q-1}(P)\otimes M & Tor_1(H_{q-1}(P), M) & 0& 
+\end{tikzcd}
+\eee
+\end{document}

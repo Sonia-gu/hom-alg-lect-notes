@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.9)  6 MAY 2023 01:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.9)  17 MAY 2023 11:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1347,7 +1347,7 @@ Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 \WF@everypar=\toks63
 Package: wrapfig 2003/01/31  v 3.6
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 181.
+Package hyperref Info: Option `colorlinks' set `true' on input line 182.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
@@ -1569,17 +1569,26 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 [2]
-Overfull \hbox (25.57825pt too wide) detected at line 141
-\U/zeur/m/n/10 Z[] [] d[]\U/zeus/m/n/10 ¨\U/zeur/m/n/10 Z[]\U/zeus/m/n/10 © ½ \
-U/zeur/m/n/10 d[] [] [] F[]K[] \U/zeus/m/n/10 ^^Z \U/zeur/m/n/10 d[] [] [] F[]K
-[] \U/zeus/m/n/10 ^^Z \U/zeur/m/n/10 Z[]
+Overfull \hbox (28.31798pt too wide) detected at line 141
+[]
  []
 
-./13.tex:143: Undefined control sequence.
+./13.tex:147: Undefined control sequence.
 <argument> \conq 
                  
-l.143 ...pq}\colon H(E_r^{pq})\overset{\conq}{\to}
-                                                   E_{r+1}^{pq}
+l.147 \end{align*}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./13.tex:147: Undefined control sequence.
+<argument> \conq 
+                 
+l.147 \end{align*}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1587,69 +1596,127 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [3]
-./13.tex:181: Double superscript.
-l.181 \[d^{\rightarrow}^
-                        2 = d^{\uparrow}^2 = 0\]
+./13.tex:176: Double superscript.
+<argument> ...»Ñ‘Ð½, Ñ‚. Ðµ. $(d^v + d^h)^2 = d^v^
+                                                  2 + d^h^2 + d^v d^h + d^h ...
+l.176 ... d^v^2 + d^h^2 + d^v d^h + d^h d^v = 0 $}
+                                                  
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./13.tex:181: Double superscript.
-l.181 \[d^{\rightarrow}^2 = d^{\uparrow}^
-                                         2 = 0\]
+./13.tex:176: Double superscript.
+<argument> ...‚. Ðµ. $(d^v + d^h)^2 = d^v^2 + d^h^
+                                                  2 + d^v d^h + d^h d^v = 0 $
+l.176 ... d^v^2 + d^h^2 + d^v d^h + d^h d^v = 0 $}
+                                                  
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./13.tex:195: Double superscript.
-l.195 \[(d^v + d^h)^2 = d^v^
-                            2 + d^h^2 + d^v d^h + d^h d^v = 0 \]
+[4]
+./13.tex:239: Double superscript.
+l.239 ...Ð¼Ð¼Ñ‹ $Tot^{\oplus}(L_1)$ $Tot^{\oplus}^
+                                                  0 \ni (1, 0, 0, \ldots)$,
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./13.tex:195: Double superscript.
-l.195 \[(d^v + d^h)^2 = d^v^2 + d^h^
-                                    2 + d^v d^h + d^h d^v = 0 \]
-I treat `x^1^2' essentially like `x^1{}^2'.
 
-[4] (./13.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+
+ []
+
+[5]
+./13.tex:281: Undefined control sequence.
+l.281     0& \arrow[l] P_0\otimesB
+                                  &\arrow[l] P_1\otimesB&\arrow[l] P_2\otimesB&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./13.tex:281: Undefined control sequence.
+l.281 ...rrow[l] P_0\otimesB&\arrow[l] P_1\otimesB
+                                                  &\arrow[l] P_2\otimesB&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./13.tex:281: Undefined control sequence.
+l.281 ...rrow[l] P_1\otimesB&\arrow[l] P_2\otimesB
+                                                  &
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./13.tex:297: Undefined control sequence.
+l.297     0 \arrow[r]& H_n(P)\otimesM
+                                      \arrow[r]& H_n(P\otimes M)\arrow[r]& T...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `tens' on page 6 undefined on input line 302.
+
+[6] (./13.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `13.out' has not changed.
 (rerunfilecheck)             Checksum: 3165233F41DED36E55F2362E627964C7;942.
  ) 
 Here is how much of TeX's memory you used:
- 34772 strings out of 478268
- 647468 string characters out of 5846348
- 989650 words of memory out of 5000000
- 52222 multiletter control sequences out of 15000+600000
- 498763 words of font info for 118 fonts, out of 8000000 for 9000
+ 35825 strings out of 478268
+ 674096 string characters out of 5846348
+ 1051778 words of memory out of 5000000
+ 53254 multiletter control sequences out of 15000+600000
+ 500708 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,15n,105p,3299b,1087s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc
-}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
-/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><
-/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm5.pfb>
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb
-></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.p
-fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm5.
-pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7
+ 109i,20n,105p,3299b,1087s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exis
+t, replaced by a fixed one
+
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}{
+/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/l
+ocal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm5.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb><
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb
+></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm5.pf
+b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.p
+fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10
 .pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eusm
-10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/
-msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx
-0900.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx10
-00.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200
-.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrb0700.p
-fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrb1000.pfb
-></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb><
-/usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr
-/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/l
-ocal/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/loc
-al/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local
-/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on 13.pdf (4 pages, 323173 bytes).
+7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/m
+sam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbo
+ls/msam7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/sy
+mbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-supe
+r/sfbx0900.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/
+sfbx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sf
+bx1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrb
+0700.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrb10
+00.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0500
+.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0600.p
+fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb
+></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on 13.pdf (6 pages, 383179 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
+ 265 PDF objects out of 1000 (max. 8388607)
+ 197 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
  45 words of extra memory for PDF output out of 10000 (max. 10000000)
 
