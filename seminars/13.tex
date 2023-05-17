@@ -83,7 +83,7 @@ H^n (F^p E^\bullet) \begin{cases} 0, &n > -p \\ H^n(E^\bullet), & n\le-p \end{ca
 \bee
 \begin{tikzcd}[sep=small]
 \ldots \arrow[r]\arrow[d]& E^{-p-1} \arrow[r]\arrow[d]& E^{-p}\arrow[r]\arrow[d]& E^{-p+1} \arrow[r]\arrow[d]& \ldots\\
-\ldots \arrow[r]& E^{-p-1} \arrow[r]\arrow[u]& \ker d^{-p}\arrow[r]& 0 \arrow[r]&\ldots\\
+\ldots \arrow[r]& E^{-p-1} \arrow[r]& \ker d^{-p}\arrow[r]& 0 \arrow[r]&\ldots\\
 \end{tikzcd}
 \eee
 \end{itemize}
@@ -241,34 +241,15 @@ L_2^{\bullet\bullet} &&&&&\\
 \end{to_ex}
 Cуществует две стандартные фильтрации двойных комплексов -- по строкам и по столбцам:
 \begin{align*}
-    F^p Tot (L)^n = \underset{i+j = n, i\ge p}{\oplus} L^{ij}\\
-    F^q Tot (L)^n = \underset{i+j = n, j\ge q}{\oplus} L^{ij}
+    F^p Tot (L)^n = \myunder[]{\bigoplus}{i+j = n\\ i\ge p}L^{ij}\\
+    F^q Tot (L)^n = \myunder[]{\bigoplus}{i+j = n\\ j\ge q}L^{ij}
 \end{align*}
-
-Существует спектральная последовательность с $E_2^{pq} = H_I^{q}(H_{II}^p(L^{\bullet, q}))$, сходящаяся к $H^{p+q}(Tot(L^{\bullet\bullet}))$.
-\begin{to_ex}
-\bee
-\begin{tikzcd}
-    0\arrow[r]&A' \arrow[r]& B' \arrow[r]& C' \arrow[r]& 0\\
-    0\arrow[r]&A \arrow[r]\arrow[u, "\cong"]& B \arrow[r]\arrow[u] &C \arrow[r]\arrow[u, "\cong"]& 0
-\end{tikzcd}
-\eee
-$\ker f = \coker f = 0 $ $\Rightarrow$ $f$ -- $iso$.
+\begin{to_claim}
+Существует спектральная последовательность с $E_2^{pq} = H_I^{q}(H_{II}^p(L^{\bullet, q}))$, сходящаяся к $H^{p+q}(Tot(L^{\bullet\bullet}))$.\footnote{На самом деле две спектральные последовательности, соответствующие двум различным фильтрациям.}
+\end{to_claim}
+\begin{to_ex}[Балансировка $Tor$]
+$Tor(A, B)\cong Tor(B, A)$.\footnote{Это утверждение может быть доказано и без спектральной последовательности, так как для вычисления производного для точного справа по первому сомножителю можно выписать проективные резольвенты, а для точного слева инъективные.}
 \end{to_ex}
-\begin{to_ex}
-\bee
-\begin{tikzcd}
-    A' \arrow[r]& B' \arrow[r]& C' \arrow[r]&D' \arrow[r]&E' \\
-    A \arrow[r]\arrow[u, two heads]& B \arrow[r]\arrow[u, "\cong"] &C \arrow[r]\arrow[u, "f"]&D \arrow[r]\arrow[u, "\cong"]&E \arrow[u, hook]
-\end{tikzcd}
-\eee
-$\ker f = \coker f = 0 $ $\Rightarrow$ $f$ -- $iso$.
-\end{to_ex}
-\begin{to_ex}
-$Tor(A, B)\cong Tor(B, A)$. Выберем две проективные резолвенты: $P_\bullet \to A$, $Q_\bullet \to B$. \\
-\[
-(P_\bullet \otimes Q_\bullet)_{ij} = P_i\otimes Q_j
-\]
 \bee\label{tens}
 \begin{tikzcd}
     0& P_0\otimes Q_2 \arrow[l]\arrow[d] & P_1\otimes Q_2 \arrow[l]\arrow[d] & P_2\otimes Q_2 \arrow[l]\arrow[d]\\
@@ -276,15 +257,14 @@ $Tor(A, B)\cong Tor(B, A)$. Выберем две проективные рез�
     0& P_0\otimes Q_0 \arrow[l]& P_1\otimes Q_0 \arrow[l] & P_2\otimes Q_0 \arrow[l]
 \end{tikzcd}
 \eee
-\bee
-\begin{tikzcd}
-    0& \arrow[l] P_0\otimesB&\arrow[l] P_1\otimesB&\arrow[l] P_2\otimesB&
-\end{tikzcd}
-\eee
+Выберем две проективные резолвенты: $P_\bullet \to A$ и $Q_\bullet \to B$. Перемножим эти резольвенты и получим двойной комплекс $(P_\bullet \otimes Q_\bullet)_{ij} = P_i\otimes Q_j$. Мы теперь знаем, то такому комплексу соответствуют две спектральные последовательности, сходящиеся к когомологиям тотального комплекса $Tot(P\otimes Q)$. Из \ref{projisflat} следует, что функтор $P\otimes(\text{-})$ -- точный, а значит, его можно выносить за знак когомологий, то есть $H^{pq}(P_\bullet\otimes Q) = P_\bullet\otimes(H^q(Q))$.  Поэтому вторые страницы спектральных последовательностей будут:
+\begin{align*}
+^I E_r^{pq} &= \begin{cases}H^{pq}(P\otimes B) =\mathcal{L}^p(\otimes B)(A),& q = 0\\ 0,& \tetx{иначе}  \end{cases}\\
+^{II} E_r^{pq} &= \begin{cases}H^{pq}(A\otimes Q) =\mathcal{L}^q(A \otimes)(B),& q = 0\\ 0,& \tetx{иначе}  \end{cases}\\
+\end{align*}
 \[
 E_r^{pq} \Rightarrow Tor^{p+q}(A, B) \cong Tor^{p+q}(B, A)
 \]
-\end{to_ex}
 \begin{to_ex}[Спектральная последовательность Кюннета\footnote{Künneth}]
 Пусть $P^{\bullet\bullet}$ -- ограниченный снизу комплекс плоских модулей, а $M$ -- произвольный модуль. Тогда существует спектральная последовательность с листом 
 \begin{align*}

@@ -10,6 +10,22 @@
 \end{itemize}
 Такая спектральная последовательность стабилизируется на первом листе, так как нетривиальные дифференциалы присутствовали лишь на нулевом. 
 \end{to_ex}
+\subsection{Доказательство пять-леммы с помощью спектральной последовательности}
+\begin{to_ex}[Пять-лемма]
+Спектральная последовательность по столбцам сходится к $0$, поэтому средняя стрелка на второй диаграмме ниже -- изоморфизм.
+\bee
+\begin{tikzcd}
+    0\arrow[r]&A' \arrow[r]& B' \arrow[r]& C' \arrow[r]& 0\\
+    0\arrow[r]&A \arrow[r]\arrow[u, "\cong"]& B \arrow[r]\arrow[u, "\beta"] &C \arrow[r]\arrow[u, "\cong"]& 0
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}
+    0\arrow[r]&0 \arrow[r]& \coker\beta \arrow[r]& 0 \arrow[r]& 0\\
+    0\arrow[r]&0 \arrow[r]\arrow[u, "\cong"]& \ker\beta \arrow[r]\arrow[u] &0 \arrow[r]\arrow[u, "\cong"]& 0
+\end{tikzcd}
+\eee
+\end{to_ex}
 \subsection{Доказательство леммы о змее с помощью спектральной последовательности}
 Докажем лемму о змее \ref{B:snake_lemma}, используя спектральную последовательность. Диаграмма в этой лемме представляет собой двойной комплекс $C^{\bullet\bullet}$ с точными строками в абелевой категории. 
 \bee
@@ -50,8 +66,8 @@
 \centering
 \begin{tabular}{ |c c c c c c c c} 
  0 $\rightarrow$& 0 & $\rightarrow$ & 0 & $\rightarrow$ & 0 & $\rightarrow$ & 0\\ 
- 0 $\rightarrow$& $C^{00}$ & $\rightarrow$ & $C^{10}$ & $\rightarrow$ & $C^{20}$ & $\rightarrow$ & 0\\
  0 $\rightarrow$& $C^{01}$ & $\rightarrow$ & $C^{11}$ & $\rightarrow$ & $C^{21}$ & $\rightarrow$ & 0 \\
+ 0 $\rightarrow$& $C^{00}$ & $\rightarrow$ & $C^{10}$ & $\rightarrow$ & $C^{20}$ & $\rightarrow$ & 0\\
  \hline
 \end{tabular}
 \end{minipage}
@@ -85,44 +101,93 @@
 \end{table}
 
 \begin{table}[h]
+\begin{minipage}{.3\linewidth}
+\centering
+\begin{tabular}{ |c  } 
+\bee
+\begin{tikzcd}
+ 0 & 0  \\ 
+ \ker\gamma/\ker\beta & 0 \\
+ 0 & 0\arrow[luu] \\
+ 0 & \ker(\coker\alpha \to \coker\beta)\arrow[luu, "\delta^{-1}"']
+\end{tikzcd}
+\eee\\
+ \hline
+\end{tabular}
+\end{minipage}
+\end{table}
+
+\subsection{Доказательство расширенной пять-леммы с помощью спектральной последовательности}
+\bee
+\begin{tikzcd}
+    A' \arrow[r]& B' \arrow[r]& C' \arrow[r]&D' \arrow[r]&E' \\
+    A \arrow[r]\arrow[u, two heads, "\alpha"]& B \arrow[r]\arrow[u, "\cong"] &C \arrow[r]\arrow[u, "f"]&D \arrow[r]\arrow[u, "\cong"]&E \arrow[u, hook, "\varepsilon"]
+\end{tikzcd}
+\eee
+По строкам:
+\begin{table}[h]
 \begin{minipage}{.4\linewidth}
 \centering
-\begin{tabular}{ |c c c } 
- 0 & 0 & 0 \\ 
- $\uparrow$   &	 $\uparrow$   & $\uparrow$   \\
- $\ker(\ker\beta \rightarrow \ker\gamma)$ & $\coker\gamma$ & 0 \\
- $\uparrow$   &	 $\uparrow$   & $\uparrow$   \\
- $\ker\beta$ & $\coker\beta$ & 0 \\
- $\uparrow$   &	 $\uparrow$   & $\uparrow$   \\
- $\ker\alpha$ & $\coker\alpha$ & 0 \\
- $\uparrow$   &	 $\uparrow$   & $\uparrow$   
+\begin{tabular}{ |c  } 
+\bee
+\begin{tikzcd}
+0 & 0& 0& 0& 0\\
+    A' \arrow[u]& 0 \arrow[u]& 0 \arrow[u]&0 \arrow[u]&E'\arrow[u] \\
+    A \arrow[u]& 0 \arrow[u] &0 \arrow[u]&0 \arrow[u]&E \arrow[u]\\
+    0 \arrow[u]& 0 \arrow[u] &0 \arrow[u]&0 \arrow[u]&0 \arrow[u]
+\end{tikzcd}
+\eee\\
  \hline
 \end{tabular}
 \end{minipage}
 \begin{minipage}{.4\linewidth}
 \centering
 \begin{tabular}{ |c c c c c} 
- 0 & 0 & 0 & 0 & 0\\ 
- 0 & 0 & 0 & 0 & 0\\
- 0 & 0 & 0 & 0 & 0 \\
+\bee
+\begin{tikzcd}
+0 & 0& 0& 0& 0\\
+     0 & 0 & 0 &0 &\Im\varepsilon \\
+    \ker\alpha & 0 \arrow[luu] &0 \arrow[luu]&0 \arrow[luu]&0\arrow[luu]\\
+    0 & 0 \arrow[luu] &0 \arrow[luu]&0\arrow[luu]&0 \arrow[luu]
+\end{tikzcd}
+\eee\\
  \hline
 \end{tabular}
 \end{minipage}
 \end{table}
 
-\subsection{Что-то о нётеровых кольцах}
-Несколько примеров фильтрации из коммутативной алгебры.
-\begin{to_ex}[Фильтрация кольца]
-Убывающей мкльтипликативной фильрацией кольца $R$ называется убывающая последовательность идеалов вида 
-\[
-R = I_0 \supset I_1 \supset I_2 \supset \ldots
-\]
-Удовлетворяющая условию $I_i I_j \subset I_{i+j}$ $\forall$ $i, j$.
-Эта конструкция чаще всего используется, в случае, когда $I_j = I^j$ -- степени одного идеала $I$, это называется $I$-адической фильтрацией. В приложениях чаще всего встречается ситуация локального нётерова кольца 
- и его максимального идеала.\\
- Полезно обобщить эту конструкцию на $R-mod$  иизучать фильтрации модулей
- \[M \supset IM \supset I^2 M \supset \ldots\]
- Однако, пересекая члены такой фильтрации с некоторым подмодулем $M' \subset M$ в общем случае мы не получим $I$-адическую фильтрацию $M'$.
-\end{to_ex}
+По столбцам:
+\begin{table}[h!]
+\begin{minipage}{.4\linewidth}
+\centering
+\begin{tabular}{ |c  } 
+\bee
+\begin{tikzcd}
+    0 & \Im \varepsilon \\
+    0 \arrow[u]& 0\arrow[u]\\
+    ? \arrow[u]&?\arrow[u]\\
+    0 \arrow[u]& 0\arrow[u]\\
+    \ker \alpha \arrow[u]&   0\arrow[u]\\
+\end{tikzcd}
+\eee\\
+ \hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}{.4\linewidth}
+\centering
+\begin{tabular}{ |c} 
+\bee
+\begin{tikzcd}
+    0 & \Im \varepsilon\\
+    0 & 0 \\
+    ? &?\arrow[luu]\\
+    0 & 0\arrow[luu] \\
+    \ker \alpha &   0\arrow[luu] 
+\end{tikzcd}
+\eee\\
+ \hline
+\end{tabular}
+\end{minipage}
+\end{table}
 \end{document}
 

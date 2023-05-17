@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.9)  10 MAY 2023 12:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.9)  17 MAY 2023 18:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1347,7 +1347,7 @@ Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 \WF@everypar=\toks63
 Package: wrapfig 2003/01/31  v 3.6
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 181.
+Package hyperref Info: Option `colorlinks' set `true' on input line 185.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
@@ -1547,54 +1547,54 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-LaTeX Warning: Reference `B:snake_lemma' on page 1 undefined on input line 14.
+LaTeX Warning: Reference `B:snake_lemma' on page 1 undefined on input line 31.
 
-./spec_example.tex:17: Missing \endcsname inserted.
+./spec_example.tex:34: Missing \endcsname inserted.
 <to be read again> 
                    \global 
-l.17 \eee
+l.34 \eee
          
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./spec_example.tex:17: Missing \endcsname inserted.
+./spec_example.tex:34: Missing \endcsname inserted.
 <to be read again> 
                    \global 
-l.17 \eee
+l.34 \eee
          
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
 
-./spec_example.tex:17: LaTeX Error: Environment \end {equation*} undefined.
+./spec_example.tex:34: LaTeX Error: Environment \end {equation*} undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.17 \eee
+l.34 \eee
          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./spec_example.tex:18: LaTeX Error: Bad math environment delimiter.
+./spec_example.tex:35: LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.18 \begin{equation*}
+l.35 \begin{equation*}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./spec_example.tex:34: Missing \endgroup inserted.
+./spec_example.tex:51: Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.34 \end{equation*}
+l.51 \end{equation*}
                     
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1602,57 +1602,142 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./spec_example.tex:34: Missing \endgroup inserted.
+./spec_example.tex:51: Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.34 \end{equation*}
+l.51 \end{equation*}
                     
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+./spec_example.tex:115: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.115 \eee
+          \\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (46.14398pt too wide) in paragraph at lines 107--118
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+./spec_example.tex:150: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.150 \eee
+          \\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./spec_example.tex:164: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.164 \eee
+          \\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./spec_example.tex:182: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.182 \eee
+          \\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./spec_example.tex:196: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.196 \eee
+          \\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-[2] (./spec_example.aux)
+[2] [3] (./spec_example.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `spec_example.out' has not changed.
-(rerunfilecheck)             Checksum: C701E6386B5C15B5B69121F31EE95263;1364.
+(rerunfilecheck)             Checksum: 931CC3E54750915A329A048698228224;2640.
  ) 
 Here is how much of TeX's memory you used:
- 34351 strings out of 478268
- 638117 string characters out of 5846348
- 999219 words of memory out of 5000000
- 51838 multiletter control sequences out of 15000+600000
- 487013 words of font info for 85 fonts, out of 8000000 for 9000
+ 35437 strings out of 478268
+ 665495 string characters out of 5846348
+ 1091488 words of memory out of 5000000
+ 52913 multiletter control sequences out of 15000+600000
+ 487449 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,15n,105p,3293b,990s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,26n,105p,3293b,1382s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc
 }{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
 /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></u
 sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb><
 /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb
-></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pf
-b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.
-pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7
-.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eusm
-10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/
-msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx
-0900.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx10
-00.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200
+></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm5.pf
+b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.p
+fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10
+.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eurm
+7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/eus
+m10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/euler/e
+usm7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbol
+s/msam10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sf
+bx0900.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx
+1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx12
+00.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0500
 .pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0700.p
 fb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb
 ></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb><
 /usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on spec_example.pdf (2 pages, 158714 bytes).
+Output written on spec_example.pdf (3 pages, 182304 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
- 37 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 160 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
+ 19 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

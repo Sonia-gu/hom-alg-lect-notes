@@ -98,7 +98,7 @@
 \renewcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
 
-\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\renewcommand{\Im}{\mathop{\mathrm{im}}\nolimits}
 \renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
 \renewcommand{\div}{\mathop{\mathrm{div}}\nolimits}
 \renewcommand{\d}{\, d}
@@ -168,7 +168,10 @@
   \mathop{\mathpalette\varlim@{\rightarrowfill@\scriptscriptstyle}}\nmlimits@
 }
 
-\DeclareMathOperator{\coker}{Coker}
+\DeclareMathOperator{\coker}{coker}
+\newcommand{\myunder}[3][black]{
+  \underset{\mbox{\scriptsize\color{#1}\sffamily\begin{tabular}{@{}c@{}}#3\end{tabular}}}{#2}
+}
 
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
