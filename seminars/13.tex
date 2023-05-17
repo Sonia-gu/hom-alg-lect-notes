@@ -262,43 +262,52 @@ $Tor(A, B)\cong Tor(B, A)$.\footnote{Это утверждение может б
 ^I E_r^{pq} &= \begin{cases}H^{pq}(P\otimes B) =\mathcal{L}^p(\otimes B)(A),& q = 0\\ 0,& \tetx{иначе}  \end{cases}\\
 ^{II} E_r^{pq} &= \begin{cases}H^{pq}(A\otimes Q) =\mathcal{L}^q(A \otimes)(B),& q = 0\\ 0,& \tetx{иначе}  \end{cases}\\
 \end{align*}
-\[
-E_r^{pq} \Rightarrow Tor^{p+q}(A, B) \cong Tor^{p+q}(B, A)
-\]
-\begin{to_ex}[Спектральная последовательность Кюннета\footnote{Künneth}]
-Пусть $P^{\bullet\bullet}$ -- ограниченный снизу комплекс плоских модулей, а $M$ -- произвольный модуль. Тогда существует спектральная последовательность с листом 
+То есть из сходимости, мы получаем требуемое:
 \begin{align*}
-    E^{pq}_2 = Tor_p(H_q(P),M)\quad \Rightarrow \quad H_{p+q}(P \otimes M)
+E_r^{pq} \Rightarrow Tor^{p+q}(A, B) \cong Tor^{p+q}(B, A)
 \end{align*}
-Имеет место формула Кюннета:\\
-Пусть дополнительно $d(P_\bullet)$ -- тоже плосский для $\forall n$. Тогда $\exists k$:
-\bee
-\begin{tikzcd}
-    0 \arrow[r]& H_n(P)\otimesM \arrow[r]& H_n(P\otimes M)\arrow[r]& Tor_1(H_{n-1}(P), M) \arrow[r]& 0
-\end{tikzcd}
-\eee
-\end{to_ex}
+\begin{to_suj}[Спектральная последовательность Кюннета\footnote{Künneth}]
+Пусть $P^{\bullet}$ -- ограниченный снизу комплекс плоских $R$-модулей, а $M$ -- произвольный $R$-модуль. Тогда существует сходящаяся с. п.:
+\begin{align*}
+    E_{pq}^2 = Tor_p(H_q(P),M)\quad \Rightarrow \quad H_{p+q}(P \otimes M)
+\end{align*}
+\end{to_suj}
 \begin{proof}
-$Q_\bullet \to M$ -- плоская резоьвента. Рассмотрим $(P_\bullet\otimes Q_\bullet)$. Восползуемся результатом \ref{tens} и выпишем второйлист спектральной последовательности 
+Пусть $Q_\bullet \to M$ -- плоская резольвента. Рассмотрим снова двойной комплекс $(P_\bullet\otimes Q_\bullet)_{ij}$. Рассмотрим сначала вертикальные когомологии и воспользуемся тем, что $P$ -- плоская, а $Q$ -- проективная резольвенты:
+\begin{align*}
+^{v}E_{pq}^1&=H_q^{v}(P\otimes Q) = P_p\otimes H_q(Q)\\
+^{v}E_{pq}^2&=^{I}E_{pq}^{\infty} =\begin{cases} H_p(P\otimes M), & q = 0\\ 0, & \text{иначе}\end{cases}
+\end{align*}
+Мы получили, что такая спектральная последовательность сходится к $H_p(P\otimes Q) = H_p( P\otimes M)$. Рассмотрев горизонтальную фильтрацию, получим требуемое:
+\begin{align*}
+^{h}E_{pq}^1&= H_q(P)\otimes Q_p\\
+^{h}E_{pq}^2&= H_p(H_q(P)\otimes Q) =Tor_p(H_q (P), M).
+\end{align*}
+\end{proof}
+\begin{to_suj}[формула Кюннета]
+Пусть дополнительно границы $d(P_\bullet)$ -- тоже плоские для $\forall n$. 
+Тогда $\exists$ к. т. п.:
 \bee
-I\colon \qquad
 \begin{tikzcd}
-    ^I E_1 \colon & 0 &\arrow[l] P_0 \otimes M & \arrow[l] P_1 \otimes M \arrow[l]& \ldots\\
-    ^I E_2 = E_{\infty};& & H_0(P_0\otimes M); & H_1(P\otimes M) &\ldots
+    0 \arrow[r]& H_n(P)\otimes M \arrow[r]& H_n(P \otimes M)\arrow[r]& Tor_1(H_{n-1}(P), M) \arrow[r]& 0
+\end{tikzcd}
+\eee\footnote{То есть $Tor$ является мерой неточности выноса $M$ из-под когомологий.}
+\end{to_suj}
+\begin{proof}
+Комплексу соответствуют две точные последовательности:
+\bee
+\begin{tikzcd}
+0\arrow[r]& d(P_{p+1}) \arrow[r]&\mathcal{Z}_p\arrow[r]& H_p(P)\arrow[r]& 0
 \end{tikzcd}
 \eee
+Так как $d(P_p)$ и $P_p$ -- плоские, то $\mathcal{Z}_p$ -- тоже плоский \footnote{из д.т.п. для $\otimes$ $(0\to\mathcal{Z}_p \to P_p\to d(P_p)\to 0)$}, то есть $H_p(P)$ имеет плоскую размерность $1$. В этом случае не нулевые только столбцы с $p=0, 1$, поэтому спектральная последовательность сходится на второй странице $E_2^{pq} = E^{\infty}_{pq}$ к градуировочным факторам фильтрации. Из 2-фильтрации $H_p(P\otimes Q)$ группой $H_p(P)\otimes M$ мы получаем формулу Кюннета:
 \bee
 \begin{tikzcd}
-    II &^{II}E_1= H_q(P)\otimes Q_p\\
-       &^{II}E_2= Tor_p(H_q (P), M)
+0 & 0 & \ldots & \ldots & 0 & 0\\
+0 & 0 & H_q(P)\otimes M & Tor_1(H_q(P), M) & 0 & 0\\
+0 & 0 & H_{q-1}(P)\otimes M & \underline{Tor_1(H_{q-1}(P), M)} & 0 & 0\\
+0 & 0 & \ldots & \ldots & 0 & 0
 \end{tikzcd}
 \eee
 \end{proof}
-\bee
-\begin{tikzcd}
-    0 \arrow[r]& dP_{q+1} \arrow[r]& \mathcal{Z}_q \arrow[r]&H_q(P) \arrow[r]& 0 \\
-    0 & H_q(P)\otimes M & Tor_1(H_q(P), M) & 0& \\
-    0 & H_{q-1}(P)\otimes M & Tor_1(H_{q-1}(P), M) & 0& 
-\end{tikzcd}
-\eee
 \end{document}
