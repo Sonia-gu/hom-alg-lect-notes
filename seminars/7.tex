@@ -186,4 +186,77 @@ $\exists \psi\colon \Kl{\mathcal{R}}[QIS_{\mathcal{R}}^{-1}]\to \Dl{\A}$ -- эк
      Далее мы проверим, что таким образом опредлённый морфизм является естественным преобразованием функторов и не завиcит от выбора $Z$.
      \item \textit{Универсальность} \textit{to be continued...}\label{natural}
 \end{enumerate}
+\subsection{Производный функтор}
+Пусть $\mathcal{F}: \A \rightarrow \B$ -- точный слева или справа функтор между абелевыми категориями. Мы хотим продолжить его на производную категорию. Для этого нужно выбрать класс приспособленных объектов $\mathcal{R} \in \A$. Приспособленных объектов должно быть достаточно много \footnote{то есть любой комплекс в $\A$ должен ими накрываться}. Также под действием функтора ацикличный комплекс, состоящий из приспособленных объектов должен переходить в ацикличный. Отсюда, в частности, следует, что этот функтор будет сохранять $qis$.\footnote{Точный справа (или слева) функтор сохраняет выделенные треугольники и конусы. Конус $qis$ ацикличен. Если под действием функтора конус остался ацкличным, то и $qis$ остался $qis$'ом.}
+Ранее была построена эквивалентность категорий.
+\bee
+\begin{tikzcd}[sep = small]
+    \Kl{R} \arrow[r, "\psi"] & \Dl{A}
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}[sep=small]
+    \Dl{A} \arrow[r, "\varphi"]\arrow[rrr, bend right, "\DlF{F}"'] & \Kl{R} \arrow[r, "\KlF{F}"] & \Kl{B} \arrow[r, "Q_{\B}"] & \Dl{B}
+\end{tikzcd}
+\eee
+\begin{to_com}
+При определении производного функтора мы делаем два неканонических  выбора. Во-первых, выбор эквивалентности $\varphi: \Dl{A} \rightarrow \Kl{A}$. Во-вторых, выбор класса приспособленных объектов $\mathcal{R}$\footnote{если в классе приспособленных объектов выделить достаточно большой подкласс, то он тоже будет приспособленным}.
+\end{to_com}
+Напоминание с определением производного функтора \ref{derived_functor}
+\bee
+\begin{tikzcd}
+\Kl{R} \arrow[r, "\KlF{F}"]\arrow[d, "Q_{\A}"'] & \Kl{B} \arrow[d, "Q_{\B}"] \\
+\Dl{A} \arrow[r, "\DlF{F}"]\arrow[r, dashed, bend right, "G"'] & \Dl{B}
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}
+      Q_{\B}\KlF{F} \arrow[r, "\varepsilon_{\F}"]\arrow[rd] &\DlF{F} Q_{\A} \arrow[d, dashed, "\exists ! \eta"]\\
+     & G
+\end{tikzcd}
+\eee
+Продолжаем построение...
+\begin{itemize}
+\item[ \ref{natural}.] \textit{Универсальность}
+Для компоненты по $X \in \Kl{A}$ определим естественное преобразование как  $Y = \varphi\psi (X)$. Применим к нему $Q_{\B}\KlF{F}$ и получим морфизм в $\Dl{B}$. Образ этого морфизма в $\Dl{B}$ не зависит от выбора расширения.
+\bee
+\begin{tikzcd}[sep=small]
+     & Z & \\
+    X\arrow[ru]\arrow[rd]\arrow[r]& Z''& Y\arrow[lu]\arrow[ld]\arrow[l] \\
+     & Z' &
+\end{tikzcd}
+\eee
+Доказательство естественности преобразования $\varepsilon_{\mathcal{F}}$\footnote{естественное преобразование коммутирует с морфизмами}
+\bee
+\begin{tikzcd}
+    X_1\arrow[r, "\alpha_X"]\arrow[d]& Y_1\arrow[d]\\
+    X_2\arrow[r]& Y_2
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}
+    Q_{\B}\KlF{F}(X_1)\arrow[r, "\varepsilon_{\mathcal{F}}"]\arrow[d]& \DlF{F}(Y_1)\arrow[d]\\
+    Q_{\B}\KlF{F}(X_2)\arrow[r, "\varepsilon_{\mathcal{F}}"]& \DlF{F}(Y_2)
+\end{tikzcd}
+\eee
+\item[4.]Теперь построим естественное преобразование $\eta$ для объекта $X\in\Kl{A}$, вложенного в $\Dl{A}$ как $Q_{\A}X$\footnote{{\color{red}возможно, стоит подробнее описать как устроено }}
+\bee
+\begin{tikzcd}
+    X\arrow[d, "\cong"] & &Q_{\B}\KlF{F}(X)\arrow[d] \arrow[r, "\varepsilon_X"]& G(X) \arrow[d, "\overset{\theta}{\cong}"]\\
+    \phi\psi X         & &\underset{\DlF{F}(X)}{\underset{\cong}{Q_{\B}\KlF{F}(\phi Q_{\A} X)}} \arrow[ru, "\eta_X" description]\arrow[r, "\varepsilon_{Q_{\A}X}"]& G(\phi \psi X)
+\end{tikzcd}    
+ \eee
+ \begin{align*}
+     \eta_{X} = \theta^{-1}\varepsilon_{Q_{\A}X}
+ \end{align*}
+ \end{itemize}
+ \begin{to_claim}
+Если в $\A$ достаточно много инъективных(проективных) объектов, то их класс приспособлен к любому точному слева (справа) функтору.
+ \end{to_claim}
+ \begin{proof}
+ Нужно показать, что любой точный слева функтор ограниченные слева инъктивные комплексы переводит в ацикличные. Мы знаем, что любой морфизм из инъективного комплекса в ацикличный гомотопен 0. 
+ \begin{align*}
+     id_{I^\bullet} \sim 0 \Rightarrow id_{\mathcal{F}(I^\bullet)}\sim 0 \Rightarrow \mathcal{F}(I^\bullet) \text{ -- ацикличный.}
+ \end{align*}
+ \end{proof}
 \end{document}

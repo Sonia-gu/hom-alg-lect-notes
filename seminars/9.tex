@@ -1,6 +1,6 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-\section{Класс приспособленных объектов, градуированная алгебра $Ext$}
+\section{Класс приспособленных объектов}
 Пусть $\A$, $\B$ -- абелевы категории.
 \begin{tikzcd}
 \A \arrow[r]\arrow[rrr, bend right, "\Rn{n}{F}" '] & \Dr{A} \arrow[r, "\DrF{F}"] & \Dr{B} \arrow[r, "H^0\circ (n)" ] & \mathcal{B}
@@ -30,44 +30,5 @@ $\forall$ достаточно большой $\mathcal{Z}$ приспособл
 \end{to_claim}
 \begin{to_claim}
 В достаточно большом $\mathcal{Z}$ лежат все инъективные\footnote{точный справа} и проективные \footnote{точный слева} объекты категории $\A$.
-\end{to_claim}
-Пусть есть расширение $Ext^1(C, A)$ и морфизм $\alpha\colon A\rightarrow X$. Если $\alpha$ продолжаем на $B$, то есть $\exists \alpha' \colon B \rightarrow X$, тогда можно построить диаграмму:
-\bee
-\begin{tikzcd}[sep=small]
-    0\arrow[r]& A \arrow[r]\arrow[d, "\alpha"] & B \arrow[r]\arrow[d, "(\alpha' \pi)"]& C \arrow[r]\arrow[d, "id"]& 0\\
-    0\arrow[r]& X \arrow[r] & X \oplus C \arrow[r]& C \arrow[r]& 0\\
-              &             & X \underset{A}{\coprod} B
-\end{tikzcd}
-\eee
-Таким образом можно сказать, что существование нетривиальных $Ext$' ов препятствует продолжению морфизмов.
-\subsection{Умножение $Ext$' ов}
-Пусть имеем 2 расширения длины 1 $\gamma \in Ext^1(C, A)$ и $\delta \in Ext^1(Z, C)$. Опустив $C$ в цепочке морфизмов мы получим некоторый элемент $Ext^2(Z, A)$.
-\bee
-\begin{tikzcd}[sep=small]
-    \gamma \colon & 0 \arrow[r] & A \arrow[r] & X \arrow[r] & C \arrow[r]&0\\
-    \delta \colon & 0 \arrow[r] & C \arrow[r] & Y \arrow[r] & Z \arrow[r]&0\\
-    \gamma * \delta \colon & A \arrow[r] & X \arrow[r] & \cancel{C} \arrow[r]& Y \arrow[r] & Z\arrow[r]&0
-\end{tikzcd}
-\eee
-\[
-* \colon Ext^m (C, A) \times Ext^n(Z, C) \rightarrow Ext^{n+m}(Z, A)
-\]
-Таким образом может быть задана структура градуированной алгебры\footnote{градуированной некоммутативной $\Z_{\ge 0}$--алгебры при совпадающих аргументах, если не фиксировать аргумент, то алгебра градуирована целыми неотрицательными числами и парами объектов
-} $Ext_{R}^\bullet (A, A)$, $A\in R-mod $.\\
-$Ext_{R}^\bullet(A, B)$ -- это модуль над $Ext_{R}^\bullet(A, A)$, $A, B \in R\text{-mod} $
-\begin{to_claim}
-\[Ext_{\A}^i(A, B) \cong Hom_{\D{A}}(A[0], B[i])\]
-\bee
-    \begin{tikzcd}
-        0\arrow[r]& B\arrow[r]\arrow[ld]& X_n\arrow[r]&\cdots\arrow[r]& X_1\arrow[r]\arrow[rd]& A\\
-        B[-n]     &                     &             &               &                       &A[0]
-    \end{tikzcd}
-\eee
-\end{to_claim}
-{\color{green} Про сцепление комплексов по общему крайнему члену писать пока лень... Потом добавлю}
-\begin{to_claim}
-\[
-Ext^n(A, -) = R^n Hom(A^\bullet, -)
-\]
 \end{to_claim}
 \end{document}
