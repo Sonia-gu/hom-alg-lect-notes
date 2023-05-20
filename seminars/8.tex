@@ -1,6 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-\section{Kлассический $Ext$, сложение по Бэру, градуированная алгебра $Ext$}
+\section{Классический производный функтор и класс приспособленных объектов}
+Пусть $\A$, $\B$ -- абелевы категории.
  \begin{to_def}
 Функтор $\mathcal{H}: \D{A}\rightarrow\B$ называется когомологическим, если выделенные треугольники \begin{tikzcd}[sep=small]X \arrow[r]& Y \arrow[r]& Z \arrow[r]& X[1] \end{tikzcd} он переводит в длинные точные последовательности
 \begin{tikzcd}[sep=small]\ldots \arrow[r] & H(X[i]) \arrow[r]& H(Y[i]) \arrow[r]& H(Z[i]) \arrow[r]& H(X[i+1])\arrow[r]&\ldots \end{tikzcd}
@@ -20,8 +21,12 @@ $ $
     \Rn{i}{F} = H^{i}(\DlF{F})\\
     \Ln{i}{F}, \Rn{i}{F}: \A \rightarrow \B
 \end{align*}
+\bee
+\begin{tikzcd}
+\A \arrow[r, "Q_{\A}^-"]\arrow[rrr, bend right, "\Rn{n}{F}" '] & \Dr{A} \arrow[r, "\DrF{F}"] & \Dr{B} \arrow[r, "H^0\circ (n)" ] & \mathcal{B}
+\end{tikzcd}
+\eee
 \end{to_def}
-
 \begin{to_claim}
 Пусть $\F$ -- точный слева функтор. \begin{tikzcd}[sep=small]0 \arrow[r]& Y \arrow[r]& Z \arrow[r]& 0 \end{tikzcd} -- короткая точная последовательность. Тогда $\exists$ длинная точная последовательность вида:
 \bee
@@ -62,183 +67,30 @@ X[0] \arrow[r, "f"] & Y[0] \arrow[r] & Y \arrow[u]      &C(f)\cong Z[0]\\
 \end{tikzcd}
 \eee
 \end{proof}
-\subsection{Функтор $Ext$ по Йонеде}
 \begin{to_def}
-Пусть $\A$ -- абелева категория. Расширением объекта $C$ с помощью объекта $A$ длины $1$ будем называть короткую точную последовательность вида:
-\bee
-\begin{tikzcd}[sep=small]
-    0 \arrow[r]& A \arrow[r]& B\arrow[r]& C\arrow[r]& 0
-\end{tikzcd}
-\eee
-Аналогично расширение длины $n$ определим как:
-\bee
-\begin{tikzcd}[sep=small]
-    0 \arrow[r]& A \arrow[r]& B_1\arrow[r]&\ldots \arrow[r]&B_n\arrow[r]& C\arrow[r]& 0
-\end{tikzcd}
-\eee
+Объект $X$ называется $\F$--ацикличным, если $\Rn{n}{F}(X) = 0$ $\forall n\neq 0$.
 \end{to_def}
-\begin{to_not_def}
-Два расширения называются эквивалентными, если существует морфизм расширений как комплексов $\alpha = \{\alpha_i\}_i^{n}$
-\bee
-\begin{tikzcd}
-        0 \arrow[r]& A\arrow[d, "id"] \arrow[r]& B_1\arrow[d, "\alpha_1"]\arrow[r]&\ldots \arrow[r]&B_n\arrow[d, "\alpha_n"]\arrow[r]& C\arrow[d, "id"]\arrow[r]& 0\\
-        0 \arrow[r]& A \arrow[r]& B'_1\arrow[r]&\ldots \arrow[r]&B'_n\arrow[r]& C\arrow[r]& 0\\
-\end{tikzcd}
-\eee
-\end{to_not_def}
-\begin{to_com}
-Введённое отношение эквивалентности не является отношением эквивалентности. Правильное определение должно являться минимальным отношением такого вида. Правильнее было бы сказать, что расширения должны быть квазиизоморфны как комплексы, однако, проверка квазиизоморфности комплексов крайне алгоритмически сложна. Но в силу того, что мы рассматриваем ацикличные комплексы, проверка квазиизоморфности может быть выполнена за $2n$ шагов.
-\end{to_com}
-В случае расширений длины $1$ по лемме о 5 два расширения будут эквивалентны тогда и только тогда, когда изоморфны средние члены последовательностей. 
-\bee
-\begin{tikzcd}
-        0 \arrow[r]& A\arrow[d, "id"] \arrow[r]& B\arrow[d, "\cong"]\arrow[r]& C\arrow[d, "id"]\arrow[r]& 0\\
-        0 \arrow[r]& A \arrow[r]& B'\arrow[r]&C\arrow[r]& 0
-\end{tikzcd}
-\eee
-Таким образом может быть определено множество классов эквивалентности расширений $Ext^1(C, A)$.
-\begin{to_ex}
-Неэквивалентные расширения $Ext^1(\Z_2, \Z)$
-\bee
-\begin{tikzcd}
-        0 \arrow[r]& \Z\arrow[d, "id"] \arrow[r, "\cdot 2"]& \Z\arrow[r]& \Z_2\arrow[d, "id"]\arrow[r]& 0\\
-        0 \arrow[r]& \Z \arrow[r]& \Z\oplus\Z_2 \arrow[r]&\Z_2\arrow[r]& 0
-\end{tikzcd}
-\eee
-\end{to_ex}
-\begin{to_ex}
-$Ext^1(\Z_m, A) = A /mA$
-\bee
-\begin{tikzcd}[sep=small]
-        0 \arrow[r] & \underset{g}{A} \arrow[r, "\alpha"] & \underset{\alpha g = m u}{B}\arrow[r, "\beta"]& \Z_n(c) \arrow[r]& 0\\
-                    &                       &a\arrow[r, mapsto]&     c             &  \end{tikzcd}
-\eee
-
-\begin{align*}
-    &\forall b \in B,\quad h \in \{1, ..., m-1\} \\
-    \alpha b &= a + h u \\
-    mb &= m\alpha a + h\underset{\in\ker \beta }{(mu)}\\
-    mu &= \alpha g, \quad g \in A
-\end{align*}
-\begin{align*}
-    (\alpha a + h u )+(\alpha a' + h'u) = \begin{cases}\alpha(a + a') + (h + h')u, & h + h' \le m \\ \alpha(a+a'+g) + (h + h' - m)u, & h+h' \geq m \end{cases}
-\end{align*}
-Задание элемента $g$ однозначно задаёт сложение в группе $B$. Несмотря на то, что сам элемент $g$ определён неоднозначно, класс смежности в образе определён однозначно. Это и означает, что существует биекция между классами смежности и всевозможными расширениями $\Z_m$. 
-\end{to_ex} 
-\subsection{Сложение по Бэру}
-Приведённый пример наводит на мысль, что на множестве $Ext$' ов может быть задана групповая структура. Может и будет задана. Для этого введём сложение расширений по Бэру:
+Обозначим $\mathcal{Z}$ класс $\F$-- ацикличных объектов. До сих пор мы получали существование производного функтора из наличия приспособленного класса. Имеет место следующее частичное обращение этого рассуждения:
 \begin{to_claim}
-Пусть есть расширение \begin{tikzcd} E \colon A \arrow[r, "\alpha"] & B \arrow[r, "\beta"] & C \end{tikzcd} и морфизм $\gamma\colon C' \rightarrow C$. Тогда $\exists ! $ расширение $E'$, которое начинается на $A$ и заканчивается на $C'$, задаваемое морфизмом комплексов $(id_{A}, \delta, \gamma): E' \rightarrow E$.
-\bee
-\begin{tikzcd}
-        0 \arrow[r]& \overset{a}{A}\arrow[d, "id_{A}"] \arrow[r]& \overset{(a, 0)}{B\underset{C}{\times}C'} \arrow[d, "\delta"]\arrow[r, "\beta'"]& C'\arrow[d, "\gamma"]\arrow[r]& 0\\
-        0 \arrow[r]& A \arrow[r, "\alpha"]& \underset{a}{B}\arrow[r, "\beta"]&\underset{0}{C}\arrow[r]& 0
-\end{tikzcd}
-\eee
-\begin{align*}
-    B \underset{C}{\times} C' &= \{ (b, c)\in B\oplus C' |\quad \beta\delta (b) = \gamma\beta' (c)\}\\
-    \delta(b, c) &= b\\
-    \beta'(b, c') &= c'
-\end{align*}
-Проведя двойственные рассуждения можем получить аналогичное утверждение для $\gamma'\colon A \rightarrow A'$\\
-\bee
-\begin{tikzcd}
-        0 \arrow[r]& A\arrow[d, "\gamma'"] \arrow[r, "\alpha"]& B \arrow[d, "\delta"]\arrow[r, "id_C"]& C\arrow[d]\arrow[r]& 0\\
-        0 \arrow[r]& A' \arrow[r, "\alpha'"]& A'\underset{A}{\coprod} B \arrow[r]&C\arrow[r]& 0
-\end{tikzcd}
-\eee
+$\exists$ класс приспособленных к $\F$ объектов $\Leftrightarrow$
+    $\exists$ достаточно большой\footnote{$\forall$ $X \in \A$ является подобъектом $\F$--ацикличного (если $\F$-- точен слева), или факторобъектом ацикличного (если $\F$-- точен справа)} $\mathcal{Z}$.
 \end{to_claim}
-
-Опишем теперь алгоритм сложения двух расширений:
+\begin{proof} Проведём доказательство для точного слева функтора $\F$.\\
+$\Leftarrow$ Пусть $\mathcal{R}$-- класс приспособленных к $\F$ объектов. Тогда $\DF{F}(X[0])\overset{qis}{\cong} \F(X)[0]$ $\forall X \in \mathcal{R}$, поэтому $\mathcal{R} \subset \mathcal{Z}$ и $\mathcal{Z}$-- достаточно большой, так как $\mathcal{R}$-- достаточно большой.\\
+$\Rightarrow$ Пусть теперь $\mathcal{R} \subset \mathcal{Z}$ -- достаточно большой подкласс $\mathcal{F}$-ацикличных объектов. Чтобы установить приспособленность достаточно показать, что $\F$ переводит ацикличные комплексы из $Kom^{\pm}(\mathcal{R})$ в ацикличные. Если мы имеем ацикличную тройку вида \begin{tikzcd}[sep=small] 0 \arrow[r]& K^0 \arrow[r] & K^1 \arrow[r] & K^2 \arrow[r] & 0 \end{tikzcd}, то точность \begin{tikzcd}[sep=small] 0 \arrow[r]& \F(K^0) \arrow[r] & \F(K^1) \arrow[r] & \F(K^2) \arrow[r] & 0 \end{tikzcd} следует из $\mathcal{R}^1\F(K^0)=0$. В общем случае можно отщиплять точные тройки следующим образом:
 \bee
 \begin{tikzcd}[sep=small]
-        0 \arrow[r]& A \arrow[r]& B\arrow[r]& C\arrow[r]& 0\\
-        0 \arrow[r]& A \arrow[r]& B'\arrow[r]&C\arrow[r]& 0 
-\end{tikzcd}
-=
-\begin{tikzcd}
-    0 \arrow[r]& A \arrow[r]& B'''\arrow[r]&C\arrow[r]& 0 
+    0 \arrow[r]& K^0 \arrow[r, "d^0"] = X^0& K^1 \arrow[r, "d^1"]\arrow[rd]& K2 \arrow[r]& \ldots\\
+               &               &                            & im d^1 \arrow[u]=X^1       & \\
+               &               &                            & X^i = im d^i &
 \end{tikzcd}
 \eee
-\newline
-\bee
-\begin{tikzcd}
-        0 \arrow[r]& A \arrow[r]&A \underset{A\oplus A}{\coprod} B''\arrow[r] = B'''& C \arrow[r]&0\\
-        0 \arrow[r]& A\oplus A\arrow[d] \arrow[u]\arrow[r]& (B\oplus B')\underset{C\oplus C}{\times}C \arrow[u]\arrow[d]\arrow[r] = B''& C\arrow[u]\arrow[d, "\Delta"]\arrow[r]& 0\\
-        0 \arrow[r]& A\oplus A \arrow[r]& B\oplus B'\arrow[r]&C\oplus C\arrow[r]& 0
-\end{tikzcd}
-\eee
-Итак, мы ввели сложение расширений по Бэру, задав на них групповую структуру. Несложно убедиться, что нейтральным по сложению элементом данной группы является тривиальное расширение \begin{tikzcd}[sep = small] 0\arrow[r]& A \arrow[r]& A\oplus C \arrow[r]& C \arrow[r]& 0\end{tikzcd}.
-\subsection{Сложение $Ext$ длины $n$}
-Пусть имеем два расширения $\xi, \xi'$ и морфизм комплексов, тождественный на $A$ и $B$.
-\bee
-\begin{tikzcd}[sep=small]
-\xi\colon& 0\arrow[r]& B\arrow[r]\arrow[d, "id_B"]& X_n\arrow[r]&\cdots\arrow[r]& X_1\arrow[r]& A\arrow[d, "id_A"]\arrow[r]&0\\
-\xi'\colon& 0\arrow[r]& B\arrow[r]& X'_n\arrow[r]&\cdots\arrow[r]& X'_1\arrow[r]& A\arrow[r]&0
-\end{tikzcd}
-\eee
-Тогда суммой по Бэру двух таких расширений будет комплекс
-\bee
-\begin{tikzcd}[sep=small]
-0\arrow[r]& B\arrow[r]& X''_n\arrow[r]& X_{n-1}\oplus X'_{n-1}\arrow[r]&\cdots\arrow[r]& X_2\oplus X'_2\arrow[r]& X''_1\arrow[r]& A\arrow[r] & 0\\
-          &           &   \underset{B}{X_n \coprod X_n'}                &               &                        & &X_1\underset{A}{\times}X_1'&           
-\end{tikzcd}
-\eee
-Пусть есть расширение $Ext^1(C, A)$ и морфизм $\alpha\colon A\rightarrow X$. Если $\alpha$ продолжаем на $B$, то есть $\exists \alpha' \colon B \rightarrow X$, тогда можно построить диаграмму:
-\bee
-\begin{tikzcd}[sep=small]
-    0\arrow[r]& A \arrow[r]\arrow[d, "\alpha"] & B \arrow[r]\arrow[d, "(\alpha' \pi)"]& C \arrow[r]\arrow[d, "id"]& 0\\
-    0\arrow[r]& X \arrow[r] & X \oplus C \arrow[r]& C \arrow[r]& 0\\
-              &             & X \underset{A}{\coprod} B
-\end{tikzcd}
-\eee
-Таким образом можно сказать, что существование нетривиальных $Ext$' ов препятствует продолжению морфизмов.
-\subsection{Умножение $Ext$' ов}
-Пусть имеем 2 расширения длины 1 $\gamma \in Ext^1(C, A)$ и $\delta \in Ext^1(Z, C)$. Опустив $C$ в цепочке морфизмов мы получим некоторый элемент $Ext^2(Z, A)$.
-\bee
-\begin{tikzcd}[sep=small]
-    \gamma \colon & 0 \arrow[r] & A \arrow[r] & X \arrow[r] & C \arrow[r]&0\\
-    \delta \colon & 0 \arrow[r] & C \arrow[r] & Y \arrow[r] & Z \arrow[r]&0\\
-    \gamma * \delta \colon & A \arrow[r] & X \arrow[r] & \cancel{C} \arrow[r]& Y \arrow[r] & Z\arrow[r]&0
-\end{tikzcd}
-\eee
-\[
-* \colon Ext^m (C, A) \times Ext^n(Z, C) \rightarrow Ext^{n+m}(Z, A)
-\]
-Таким образом может быть задана структура градуированной алгебры\footnote{градуированной некоммутативной $\Z_{\ge 0}$--алгебры при совпадающих аргументах, если не фиксировать аргумент, то алгебра градуирована целыми неотрицательными числами и парами объектов
-} $Ext_{R}^\bullet (A, A)$, $A\in R-mod $.\\
-$Ext_{R}^\bullet(A, B)$ -- это модуль над $Ext_{R}^\bullet(A, A)$, $A, B \in R\text{-mod} $
-\begin{to_claim}
-\[Ext_{\A}^i(A, B) \cong Hom_{\D{A}}(A[0], B[i])\]
-\bee
-    \begin{tikzcd}
-        0\arrow[r]& B\arrow[r]\arrow[ld]& X_n\arrow[r]&\cdots\arrow[r]& X_1\arrow[r]\arrow[rd]& A\\
-        B[-n]     &                     &             &               &                       &A[0]
-    \end{tikzcd}
-\eee
-\end{to_claim}
-{\color{green} Про сцепление комплексов по общему крайнему члену писать пока лень... Потом добавлю}
-\begin{to_claim}
-\[
-Ext^n(A, -) = R^n Hom(A^\bullet, -)
-\]
-\end{to_claim}
-\begin{to_claim}
-Не бывает отрицательных $Ext'$ов.\\
-$\forall$ $A$, $B$ $\in$ $\mathcal{A}$ $Ext^n (A, B) = 0$, $n<0$.
-\begin{proof}
-Пусть $0 \neq f \in \Hom_{\mathcal{D(A)}}(A, B[-n])$
-\bee
-\begin{tikzcd}[sep=small]
-    & M \arrow[ld]\arrow[rd]& \\
-  A & & B[-n]  
-\end{tikzcd}
-\sim\text{ }
-\begin{tikzcd}[sep=small]
-    & M \arrow[ld, "\tau_{n \curlyeqsucc 0}"']\arrow[rd]& \\
-  A & & B[-n]  
-\end{tikzcd}
-\eee
+Далее так как $X^i, K^{i+1} \in \mathcal{Z}$ $\Rightarrow$ $X^i \in \mathcal{Z}$ $\Rightarrow$ \begin{tikzcd}[sep=small] 0 \arrow[r]& \F(X^i) \arrow[r]& \F(K^{i+1})\arrow[r]& \F(X^{i+1}) \arrow[r] & 0 \end{tikzcd} -- точны $\Rightarrow$ $\F(K^\bullet)$ -- ацикличен.
 \end{proof}
+\begin{to_claim}
+$\forall$ достаточно большой $\mathcal{Z}$ приспособлен к $\F$\footnote{любой класс приспособленных лежит в достаточно большом $\mathcal{Z}$}
+\end{to_claim}
+\begin{to_claim}
+В достаточно большом $\mathcal{Z}$ лежат все инъективные\footnote{точный справа} и проективные \footnote{точный слева} объекты категории $\A$.
 \end{to_claim}
 \end{document}
