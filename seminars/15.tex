@@ -1,42 +1,46 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
-В предыдущих сериях мы рассматривали двойной ограниченный комплекс $L^{ij}$, его тотальный комплекс $Tot^{\oplus}(K^{\bullet\bullet})^n = \myunder[]{\bigoplus}{p+q=n}K^{pq}$ и соответствующие фильтрации:
+В предыдущих сериях мы рассматривали двойной ограниченный комплекс $L^{ij}$, его тотальный комплекс $Tot^{\oplus}(K^{\bullet\bullet})^n = \underset{p+q=n}{\oplus}K^{pq}$ и соответствующие фильтрации:
 \[
-^I F^p(Tot L)^n = \myunder[]{\bigoplus}{i+j = n,\\ i\ge p}L^{ij}
+^I F^p(Tot L)^n = \underset{i+j = n, i\ge p}{\oplus}L^{ij}
 \]
 \[
-^{II} F^q(Tot L )^n = \myunder[]{\bigoplus}{i+j = n,\\ i\ge q}L^{ij}
+^{II} F^q(Tot L )^n = \underset{i+j = n, i\ge q}{\oplus}L^{ij}
 \]
 \begin{align*}
     \exists \text{с. п.} ^I E_r^{pq} = H^p_I(H_{II}^q) \Rightarrow H^{p+q}(Tot L)
 \end{align*}
 Если мы делаем фильтрацию типа $I$, дифференциал бьёт в бок, на втором листе будут стоять горизонтальные когомологии.
-\begin{align*}
-E_r^{pq} \colon \qquad Z_1^{pq} &= (d_I + d_II)^{-1}(F^{p+1}Tot ^{p+q+1}L)\bigcap F^p Tot^{p+q}L\\ \\
-&=(d_I + d_{II})^{-1}\left(\myunder[]{\bigoplus}{$i+j = p+q$\\$ i\ge p+1$}L^{ij}\right)\bigcap \left(\myunder[]{\bigoplus}{$i+j = p+q$\\$i\ge p$}L^{ij}\right)
-= \ker d_{II}^{pq}\bigoplus\left(\myunder[]{\bigoplus}{$i+j=p+q$\\$i\ge p+1$}L^{ij}\right)
-\end{align*}
-\begin{align*}
-E_r^{pq} = \dfrac{Z_2^{pq}}{Z_{r-1}^{p+1, q-1} + dZ_{r-1}^{p-r+1;q+r-2}} \overset{r=1}{=}
-\dfrac{\ker d^{pq}\bigoplus\left(\myunder[]{\bigoplus}{$i+j = p+q$\\$i\ge p+1$}L^{ij}\right)}{\left(\myunder[]{\bigoplus}{$i+j=p+q$\\$i \ge p+1$}L^{ij} + \Im d^{p, q+1}\right)} = H_{II}^{pq}(L^{\bullet\bullet}) = E_1^{pq}
-\end{align*}
-\begin{align*}
-E_2^{pq}=&H_I^{p}(H_{II}^q(L^{\bullet\bullet}))\\
-\\
-Z_0^{p+1, q-1}= \myunder[]{\bigoplus}{$i+j = p+q$\\$i\ge p+1$} L^{ij} &\qquad
-Z_0^{p, q-1}= \myunder[]{\bigoplus}{$i+j = p+q-1$\\$i\ge p$} L^{ij}
-\end{align*}
+%align
+\[
+E_i^{pq} \colon Z_1^{pq} = (d_I + d_II)^{-1}(F^{p+1}Tot ^{p+q+1}L)\bigcap F^p Tot^{p+q}L = (d_I + d_{II})^{-1}
+(\underset{i+j = p+q, i\ge p+1}{\oplus}L^{ij})\bigcap (\underset{i+j = p+q, i\ge p}{\oplus}L^{ij}) = \ker d_{II}^{pq}\oplus(\underset{i+j=p+q, i\ge p+1}{\oplus}L^{ij})\]
+\[
+E_r^{pq} = \dfrac{Z_2^{pq}}{Z_{r-1}^{p+1, q-1} + dZ_{r-1}^{p-r+1;q+r-2}} \overset{r=1}{=} \dfrac{\ker d^{pq}\oplus(\underset{i+j = p+q, i\ge p+1}{\oplus}L^{ij})}{(\underset{i+j=p+q, i \ge p+1}{\oplus}L^{ij} + \Im d^{p, q+1})} = H_{II}^{pq}(L^{\bullet\bullet}) = E_1^{pq}
+\]
+\[
+E_2^{pq} = H_I^{p}(H_{II}^q(L^{\bullet\bullet}))
+\]
+\[
+Z_0^{p+1, q-1} = \underset{i+j = p+q, i\ge p+1}{\oplus} L^{ij}
+\]
+\[
+Z_0^{p, q-1} = \underset{i+j = p+q-1, i\ge p}{\oplus} L^{ij}
+\]
 $K^\bullet$ -- комплекс.
 \subsection{Cпектральная последовательность комплекса с "глупой" фильтрацией}
-\begin{align*}
+\[
 E_r^{pq} = \dfrac{Z_2^{pq}}{Z_{r-1}^{p+1, q-1} + dZ_{r-1}^{p-r+1;q+r-2}} =
-\\ \\
-E_2^{pq}\begin{cases} 0, &q\neq 0 \\ H^p(K^\bullet), &q=0; r\ge 2
-\end{cases}\\
-\\
-E_2^{pq} \Rightarrow H^n(K^\bullet)\\\\
+\]
+\[E_2^{pq}\begin{cases} 0, &q\neq 0 \\ H^p(K^\bullet), &q=0; r\ge 2
+\end{cases}
+\]
+\[
+E_2^{pq} \Rightarrow H^n(K^\bullet)
+\]\footnote{каноническая фильтрация идёт в другую сторону}
+\[
 f_{*}: mod\text{-}S \to mod\text{-}R
-\end{align*}\footnote{каноническая фильтрация идёт в другую сторону}
+\]
 \begin{to_ex}
 Пусть есть $R$, $S$ -- коммутативные кольца. $f\colon R \to S$. Пусть $A\in R$-$mod$, $B\in S$-$mod$. $\exists$ с. п. $E_r^{pq}=Tor_p^S(Tor_q^R(A; S); B) \Rightarrow Tor_{p+q}^R(A; B)$
 \end{to_ex}
@@ -49,19 +53,20 @@ $P_\bullet\to A\to 0$ -- прроективная резольвента $A$ к�
     0& 0& 0&0
 \end{tikzcd}
 \eee
-\begin{align*}
+\[
 ^{II}H_q(P_\bullet\otimes Q_p) = H_q(P_\bullet \otimes_R S \otimes_S Q_p) = H_q(P_\bullet \otimes_R S)\otimes_S Q_p = Tor_q^R(A, S)\otimesQ_p
-\end{align*}
-\begin{align*}
+\]
+\[
 E_r^{pq} = Tor_p^S (Tor_q^R(A, S); B)
-\end{align*}
+\]
 \begin{to_thr}[Гротендик]
 $\A$, $\B$, $\mathcal{C}$ -- абелевы категории. $\F \colon \A \to \B$, $\mathcal{G}\colon \B \to \mathcal{C}$ -- точные слева. $\mathcal{R}_{\A}$, $\mathcal{R}_{\B}$ -- соответствующие классы приспособленных объектов. Пусть также $\F(\mathcal{R}_{\A}) \subset \mathcal{R}_{\B}$
 \begin{itemize}
-    \item Тогда $\exists$ естественный изоморфизм между функторами $R(\mathcal{G}\circ \F)\cong R\mathcal{G}\circ R\mathcal{F}$.
+    \item Тогда $\exists$ естественный изоморфизм -- между функторами $R(\mathcal{G}\circ \F)\cong R\mathcal{G}\circ R\mathcal{F}$.
     \item $\exists$ с. п. Гротендика $E_2^{pq} = R^p \mathcal{G} (R^q\F(X))$ $\Rightarrow$ $R^{p+q}(\F \circ \G)(X)$
 \end{itemize}
 \end{to_thr}
+Мы хотим взять произвольный элемент производной категории и подействовать на него функтором 
 \begin{proof}
 \begin{to_def}[Резольвента Картана-Эйленберга]
 $K^\bullet$ -- комплекс $L^{ij}$ -- резольвента К.-Э. для $K^\bullet$:
@@ -72,7 +77,6 @@ $K^\bullet$ -- комплекс $L^{ij}$ -- резольвента К.-Э. дл�
 \end{itemize}
 \end{to_def}
 \begin{to_thr}
-$ $\\
 \begin{itemize}
     \item $K^\bullet$ -- имеет резолвенту К.-Э.
     \item Она определена однозначно с точностью до гомотопической эквивалентности комлексов.
@@ -81,7 +85,7 @@ $ $\\
 \end{to_thr}
 \end{proof}
 \begin{to_suj}[Миттаг-Леффлер]
-$\lbrace p_1, \ldots, p_N\rbrace \in \mathbb{C}$. Хотим построить мероморфную функцию с фикс. главными частями рядов Лорана в точках $p_1, \ldots, p_N$. Выберем $U_i \supset p_i$ -- откр. окр. т. $p_i$. Тогда локально решение существует $f_i$ -- соответствующая мероморфная функция, решающая заадчу в $U_i$.\\
+$\lbrace p_1, \ldots, p_N\rbrace \in \mathbb{C}$. Хотим построить мероморфную функцию с фикс. главными частями рядов Лорана в точках $p_!, \ldots, p_N$. Выберем $U_i \supset p_i$ -- откр. окр. т. $p_i$. Тогда локально решение существует $f_i$ -- соответствующая мероморфная функция, решающая заадчу в $U_i$.\\
 $\mathcal{O}$ -- пучок регулярных функций. $M$ -- пучок мероморфныз функций. $f_{ij} = (f_i - f_j)\vert_{U_i\bigcap U_j}$ $\in$ $\mathcal{O}(U_i\bigcap U_j)$.
 \[ f_{ij} + f_{jk} + f_{ki} = 0\]
 \[
@@ -120,7 +124,7 @@ $\F$ -- пучок на $X$. $\F \in Sh(X)$. В категории пучков 
 $\F_x \hookrightarrow I(x)$, $\mathcal{I}(U) = \prod_{x\in U} I(x)$ -- инъективный.\\
 Проективных не достаточно много. $X$-- топологическое пространство, локально односвязно, у точек нет минимальных(?) окрестностей.
 \[
-i \colon\lbrace x \rbrace \hookrightarrow X
+i \colon\lbarce x \rbrace \hookrightarrow X
 \]
 $i_* \Z$ -- пучок-небоскрёр. Выберем произвольную окрестность $U(x)$, $V(x)\subset U$. Предположим существует проективное накрытие $P \twoheadrightarrow i_*\Z(U)$. Продолжение нулём $\Z_V$
 \[W \mapsto \begin{cases}
@@ -128,20 +132,21 @@ $i_* \Z$ -- пучок-небоскрёр. Выберем произвольну
 \end{cases}\]
 \bee
 \begin{tikzcd}
-     & P \arrow[d]\arrow[ld]\\
+     & P \arrow[d]\\
     \Z_V \arrow[r, two head]& i_*\Z 
 \end{tikzcd}
-\qquad
+\eee
+\bee
 \begin{tikzcd}
-     & P(U) \arrow[d]\arrow[ld]\\
-    \underset{=0}{\Z_V(U)} \arrow[r, two head]& i_*\Z (U)
+     & P(U) \arrow[d]\\
+    \Z_V(U)=0 \arrow[r, two head]& i_*\Z (U)
 \end{tikzcd}
 \eee
 \end{proof}
 \begin{to_com}
-В $Sh(X)$ -- достаточно много инъективных объектов $\Rightarrow$ $\exists R \Gamma \colon \mathcal{D}^+(Sh) \to \mathcal{D}^+(\Ab)$
+В $Sh(X)$ -- достаточно много инъективных объектов $\Rightarrow$ $\exists R \Gamma \colon \D^+(Sh) \to \D^+(Ab)$
 \end{to_com}
-\begin{to_def}[Когомологии Чеха с коэффициентами в пучке]
+\begin{to_def}[Когомологии Чеха(с коэффициентами в пучке)]
 $X$ -- т.п., $R_x$ -- пучок колец, $\F$ -- пучок $R_x$-$mod$. $U = \lbrace U_{\alpha}\rbrace$ -- локально конечное покрытие.
 \[C^0(U, \F) = \prod_{\alpha\in \A}\F(U_{\alpha})\]
 \[C^1(U, \F) = \prod_{\alpha_0 \neq \alpha_1 }\F(U_{\alpha_0}\bigcap U_{\alpha_1})\]
