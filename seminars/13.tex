@@ -310,4 +310,24 @@ E_r^{pq} \Rightarrow Tor^{p+q}(A, B) \cong Tor^{p+q}(B, A)
 \end{tikzcd}
 \eee
 \end{proof}
+\begin{to_ex}
+Пусть есть $R$, $S$ -- коммутативные кольца. $f\colon R \to S$. Пусть $A\in R$-$mod$, $B\in S$-$mod$. $\exists$ с. п. $E_r^{pq}=Tor_p^S(Tor_q^R(A; S); B) \Rightarrow Tor_{p+q}^R(A; B)$
+\end{to_ex}
+\begin{proof}
+$P_\bullet\to A\to 0$ -- прроективная резольвента $A$ как $R$-$mod$. $Q_\bullet\to B\to 0$ -- прроективная резольвента $B$ как $S$-$mod$.
+\bee\label{tens}
+\begin{tikzcd}
+    0& P_0\otimes_R Q_2 \arrow[l]\arrow[d] & P_1\otimes_R Q_2 \arrow[l]\arrow[d] & P_2\otimes_R Q_2 \arrow[l]\arrow[d]\\
+    0& P_0\otimes_R Q_1 \arrow[l]\arrow[d] & P_1\otimes_R Q_1 \arrow[l]\arrow[d] & P_2\otimes_R Q_1 \arrow[l]\arrow[d]\\
+    0& P_0\otimes_R Q_0 \arrow[l]\arrow[d] & P_1\otimes_R Q_0 \arrow[l]\arrow[d] & P_2\otimes_R Q_0 \arrow[l]\arrow[d]\\
+    0& 0& 0&0
+\end{tikzcd}
+\eee
+\begin{align*}
+^{II}H_q(P_\bullet\otimes Q_p) = H_q(P_\bullet \otimes_R S \otimes_S Q_p) = H_q(P_\bullet \otimes_R S)\otimes_S Q_p = Tor_q^R(A, S)\otimesQ_p
+\end{align*}
+\begin{align*}
+E_r^{pq} = Tor_p^S (Tor_q^R(A, S); B)
+\end{align*}
+\end{proof}
 \end{document}

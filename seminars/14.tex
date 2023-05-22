@@ -37,24 +37,6 @@ E_2^{pq}\begin{cases} 0, &q\neq 0 \\ H^p(K^\bullet), &q=0; r\ge 2
 E_2^{pq} \Rightarrow H^n(K^\bullet)\\\\
 f_{*}: mod\text{-}S \to mod\text{-}R
 \end{align*}\footnote{каноническая фильтрация идёт в другую сторону}
-\begin{to_ex}
-Пусть есть $R$, $S$ -- коммутативные кольца. $f\colon R \to S$. Пусть $A\in R$-$mod$, $B\in S$-$mod$. $\exists$ с. п. $E_r^{pq}=Tor_p^S(Tor_q^R(A; S); B) \Rightarrow Tor_{p+q}^R(A; B)$
-\end{to_ex}
-$P_\bullet\to A\to 0$ -- прроективная резольвента $A$ как $R$-$mod$. $Q_\bullet\to B\to 0$ -- прроективная резольвента $B$ как $S$-$mod$.
-\bee\label{tens}
-\begin{tikzcd}
-    0& P_0\otimes_R Q_2 \arrow[l]\arrow[d] & P_1\otimes_R Q_2 \arrow[l]\arrow[d] & P_2\otimes_R Q_2 \arrow[l]\arrow[d]\\
-    0& P_0\otimes_R Q_1 \arrow[l]\arrow[d] & P_1\otimes_R Q_1 \arrow[l]\arrow[d] & P_2\otimes_R Q_1 \arrow[l]\arrow[d]\\
-    0& P_0\otimes_R Q_0 \arrow[l]\arrow[d] & P_1\otimes_R Q_0 \arrow[l]\arrow[d] & P_2\otimes_R Q_0 \arrow[l]\arrow[d]\\
-    0& 0& 0&0
-\end{tikzcd}
-\eee
-\begin{align*}
-^{II}H_q(P_\bullet\otimes Q_p) = H_q(P_\bullet \otimes_R S \otimes_S Q_p) = H_q(P_\bullet \otimes_R S)\otimes_S Q_p = Tor_q^R(A, S)\otimesQ_p
-\end{align*}
-\begin{align*}
-E_r^{pq} = Tor_p^S (Tor_q^R(A, S); B)
-\end{align*}
 \begin{to_thr}[Гротендик]
 $\A$, $\B$, $\mathcal{C}$ -- абелевы категории. $\F \colon \A \to \B$, $\mathcal{G}\colon \B \to \mathcal{C}$ -- точные слева. $\mathcal{R}_{\A}$, $\mathcal{R}_{\B}$ -- соответствующие классы приспособленных объектов. Пусть также $\F(\mathcal{R}_{\A}) \subset \mathcal{R}_{\B}$
 \begin{itemize}
