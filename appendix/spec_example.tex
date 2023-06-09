@@ -189,5 +189,24 @@
 \end{tabular}
 \end{minipage}
 \end{table}
+\begin{to_ex}[Эйлерова характеристика]
+$\chi \colon \Ab \to G$, $G$ -- абелева группа. 
+Фильтрация длины 1
+\bee
+\begin{tikzcd}[sep=small]
+0 \arrow[r]& A \arrow[r] & B \arrow[r] &C \arrow[r] & 0
+\end{tikzcd}
+\qquad \chi(B) = \chi(A) + \chi(C)
+\eee
+\[
+\chi (K^\bullet) = \sum_{}^{}(-1)^n \chi (K^\bullet) = \sum (-1)^n \chi (H^n(K^\bullet))
+\]
+$\chi (E^n) = ?$\\
+$E^{pq}_r \Rightarrow E^n$
+Вычислим альтернированную сумму на листе $r$
+\[E_{pq}^{\bullet} = \underset{p+q = \bullet}{\oplus} E_r^{pq}\]
+\[\chi (E^{\bullet \bullet}_r) = \sum (-1)^k \chi(H^k(E_r^{\bullet})) = \chi(E_{r+1}^{\bullet}) =\ldots = \chi(E_{\infty}^{\bullet})\]
+\[\chi(E^n) = \sum \chi (F^pE^n / F^{p+1}E^n) = \chi(E^{\bullet \bullet}_{\infty})\]
+\end{to_ex}
 \end{document}
 
