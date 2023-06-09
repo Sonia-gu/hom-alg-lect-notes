@@ -75,15 +75,17 @@ H^n(\widetilde{F}^p E^n) = \begin{cases} 0, &n < p\\ \ker d^p, & n=p \\ E^n, & n
 \eee
 \item \textit{Каноническая фльтрация}
 \[
-F_p E^n = \begin{cases} E^n, &n < -p \\ \ker d^p, & n = -p \\ 0, & n>-p \end{cases}
+F_p E^n = \begin{cases} E^n, &n < -p \\ \ker d^{-p}, & n = -p \\ 0, & n>-p \end{cases}
 \]
 \[
 H^n (F^p E^\bullet) \begin{cases} 0, &n > -p \\ H^n(E^\bullet), & n\le-p \end{cases}
 \]
 \bee
 \begin{tikzcd}[sep=small]
-\ldots \arrow[r]\arrow[d]& E^{-p-1} \arrow[r]\arrow[d]& E^{-p}\arrow[r]\arrow[d]& E^{-p+1} \arrow[r]\arrow[d]& \ldots\\
-\ldots \arrow[r]& E^{-p-1} \arrow[r]& \ker d^{-p}\arrow[r]& 0 \arrow[r]&\ldots\\
+\ldots \arrow[r]\arrow[d]& E^{-p-1} \arrow[r]\arrow[d]& \ker d^{-p}\arrow[r]\arrow[d]& 0 \arrow[r]\arrow[d]&0\ldots\\
+\ldots \arrow[r]\arrow[d]& E^{-p-1} \arrow[r]\arrow[d]& E{-p}\arrow[r]\arrow[d]& \ker d^{-p} \arrow[r]\arrow[d]&0\ldots\\
+		\ldots&		\ldots	&	\ldots		&\ldots &\\
+\ldots \arrow[r]& E^{-p-1} \arrow[r]& E^{-p}\arrow[r]& E^{-p+1} \arrow[r]& \ldots
 \end{tikzcd}
 \eee
 \end{itemize}
