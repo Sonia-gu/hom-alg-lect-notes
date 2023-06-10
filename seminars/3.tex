@@ -24,7 +24,7 @@ d^2 = \begin{pmatrix}-d&0\\f&d\end{pmatrix}^2 = \begin{pmatrix}d^2&0\\-fd + df&d
 \end{equation}
 \end{to_suj}
 \begin{proof}
-Приведённая последовательность расщепима в каждом члене.
+Приведённая последовательность расщипима в каждом члене.
 \end{proof}
 \begin{to_thr}
 $f$ --- квазиизоморфизм тогда и только тогда, когда $C(f)$ --- ацикличен.
@@ -35,7 +35,7 @@ $f$ --- квазиизоморфизм тогда и только тогда, к
 Дадим ещё несколько определений.
 \begin{to_def}
 %% продолжу с этого момента
-$K^\bullet$ -- расщепимый комплекс, если 
+$K^\bullet$ -- расщипимый комплекс, если 
 \[\exists s^i\colon K^{i} \to K^{i-1} \quad \colon \quad dsd = d \]
 \end{to_def}
 \begin{to_def}
@@ -47,7 +47,7 @@ $K^\bullet$ -- стягиваемый, если $id_{K^\bullet}\sim 0$
 \begin{tikzcd}[sep=small] \ldots\arrow[r]& 0 \arrow[r]& M \arrow[r, "id"]& M \arrow[r]& 0 \arrow[r]& \ldots\end{tikzcd}
 \ee
 \end{to_ex}
-\begin{to_ex}[простейший расщепимый комплекс]
+\begin{to_ex}[простейший расщипимый комплекс]
 \be
 \label{eq:vid3}
 \begin{tikzcd}[sep=small] \ldots\arrow[r]& 0 \arrow[r]& M \arrow[r]& 0 \arrow[r]& \ldots\end{tikzcd}
@@ -55,7 +55,7 @@ $K^\bullet$ -- стягиваемый, если $id_{K^\bullet}\sim 0$
 $\NB$ он не стягиваемый
 \end{to_ex}
 \begin{to_suj}
-$(K^\bullet$ -- стягиваемый$)$ $\quad \Rightarrow \quad$ $(K^\bullet$ -- расщепимый$)$
+$(K^\bullet$ -- стягиваемый$)$ $\quad \Rightarrow \quad$ $(K^\bullet$ -- расщипимый$)$
 \bee
 \begin{tikzcd}
     \ldots\arrow[r]& K^{i-1}\arrow[r]\arrow[ld, "s^{i-1}"']\arrow[d, "id"']&K^{i}\arrow[r]\arrow[ld, "s^{i}"']\arrow[d, "id"']& K^{i+1}\arrow[r]\arrow[ld, "s^{i+1}"']\arrow[d, "id"']& \ldots\\
@@ -67,11 +67,11 @@ $(K^\bullet$ -- стягиваемый$)$ $\quad \Rightarrow \quad$ $(K^\bullet$
 Любой стягиваемый комплекс является суммой сдвигов комплексов вида \ref{idM}. 
 \end{to_suj}
 \begin{to_suj}
-$K^\bullet$ -- стягиваемый $\quad \Leftrightarrow \quad$ $K^\bullet$ -- расщепимый и ацикличный.
+$K^\bullet$ -- стягиваемый $\quad \Leftrightarrow \quad$ $K^\bullet$ -- расщипимый и ацикличный.
 \end{to_suj}
 \begin{to_suj}\label{split1}
-$K^\bullet$ -- ограниченный расщепимый комплекс $\quad \Rightarrow \quad$ $K^\bullet\overset{qis}{\sim}H^\bullet(K^\bullet)$. \\
-Иными словами любой расщепимый комплекс представляется в виде суммы комплексов вида \ref{eq:vid2} и \ref{eq:vid3}.
+$K^\bullet$ -- ограниченный расщипимый комплекс $\quad \Rightarrow \quad$ $K^\bullet\overset{qis}{\sim}H^\bullet(K^\bullet)$. \\
+Иными словами любой расщипимый комплекс представляется в виде суммы комплексов вида \ref{eq:vid2} и \ref{eq:vid3}.
 \end{to_suj}
 \begin{to_def}
     Морфизм комплексов $f\colon K^\bullet \to L^\bullet$ называется гомотопической эквивалентностью, если $\exists f\colon L^\bullet \to K^\bullet$ такой что $fg \sim id_{K^\bullet}$ и $gf\sim id_{L^\bullet}$
