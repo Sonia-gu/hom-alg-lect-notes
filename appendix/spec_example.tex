@@ -124,17 +124,15 @@
     A \arrow[r]\arrow[u, two heads, "\alpha"]& B \arrow[r]\arrow[u, "\cong"] &C \arrow[r]\arrow[u, "f"]&D \arrow[r]\arrow[u, "\cong"]&E \arrow[u, hook, "\varepsilon"]
 \end{tikzcd}
 \eee
-По строкам:
+$E_1^{\bullet \bullet}$ с фильтрацией по строкам и по столбцам:
 \begin{table}[h]
 \begin{minipage}{.4\linewidth}
 \centering
 \begin{tabular}{ |c  } 
 \bee
 \begin{tikzcd}
-0 & 0& 0& 0& 0\\
-    A' \arrow[u]& 0 \arrow[u]& 0 \arrow[u]&0 \arrow[u]&E'\arrow[u] \\
-    A \arrow[u]& 0 \arrow[u] &0 \arrow[u]&0 \arrow[u]&E \arrow[u]\\
-    0 \arrow[u]& 0 \arrow[u] &0 \arrow[u]&0 \arrow[u]&0 \arrow[u]
+    A' & 0 & 0 &0 &E' \\
+    A \arrow[u]& 0 \arrow[u] &0 \arrow[u]&0 \arrow[u]&E \arrow[u]
 \end{tikzcd}
 \eee\\
  \hline
@@ -145,50 +143,15 @@
 \begin{tabular}{ |c c c c c} 
 \bee
 \begin{tikzcd}
-0 & 0& 0& 0& 0\\
-     0 & 0 & 0 &0 &\Im\varepsilon \\
-    \ker\alpha & 0 \arrow[luu] &0 \arrow[luu]&0 \arrow[luu]&0\arrow[luu]\\
-    0 & 0 \arrow[luu] &0 \arrow[luu]&0\arrow[luu]&0 \arrow[luu]
+0 \arrow[r]                 & 0 \arrow[r] & ? \arrow[r] & 0 \arrow[r] & \ker\alpha \\
+\coker\varepsilon \arrow[r] & 0 \arrow[r] & ? \arrow[r] & 0 \arrow[r] & 0         
 \end{tikzcd}
 \eee\\
  \hline
 \end{tabular}
 \end{minipage}
 \end{table}
-
-По столбцам:
-\begin{table}[h!]
-\begin{minipage}{.4\linewidth}
-\centering
-\begin{tabular}{ |c  } 
-\bee
-\begin{tikzcd}
-    0 & \Im \varepsilon \\
-    0 \arrow[u]& 0\arrow[u]\\
-    ? \arrow[u]&?\arrow[u]\\
-    0 \arrow[u]& 0\arrow[u]\\
-    \ker \alpha \arrow[u]&   0\arrow[u]\\
-\end{tikzcd}
-\eee\\
- \hline
-\end{tabular}
-\end{minipage}
-\begin{minipage}{.4\linewidth}
-\centering
-\begin{tabular}{ |c} 
-\bee
-\begin{tikzcd}
-    0 & \Im \varepsilon\\
-    0 & 0 \\
-    ? &?\arrow[luu]\\
-    0 & 0\arrow[luu] \\
-    \ker \alpha &   0\arrow[luu] 
-\end{tikzcd}
-\eee\\
- \hline
-\end{tabular}
-\end{minipage}
-\end{table}
+Так как обе спектральные последовательности сходятся к когомологиям тотального комплекса $?=0$, т. е. $f$ -- изоморфизм.
 \begin{to_ex}[Эйлерова характеристика]
 $\chi \colon \Ab \to G$, $G$ -- абелева группа. 
 Фильтрация длины 1
