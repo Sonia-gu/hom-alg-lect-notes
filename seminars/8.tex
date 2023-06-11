@@ -3,7 +3,7 @@
 \section{Классический производный функтор и класс приспособленных объектов}
 Пусть $\A$, $\B$ -- абелевы категории.
  \begin{to_def}
-Функтор $\mathcal{H}: \D{A}\rightarrow\B$ называется когомологическим, если выделенные треугольники \begin{tikzcd}[sep=small]X \arrow[r]& Y \arrow[r]& Z \arrow[r]& X[1] \end{tikzcd} он переводит в длинные точные последовательности
+Функтор $H: \D{A}\rightarrow\B$ называется когомологическим, если выделенные треугольники \begin{tikzcd}[sep=small]X \arrow[r]& Y \arrow[r]& Z \arrow[r]& X[1] \end{tikzcd} он переводит в длинные точные последовательности
 \begin{tikzcd}[sep=small]\ldots \arrow[r] & H(X[i]) \arrow[r]& H(Y[i]) \arrow[r]& H(Z[i]) \arrow[r]& H(X[i+1])\arrow[r]&\ldots \end{tikzcd}
 \end{to_def}
 \begin{to_ex}
@@ -28,7 +28,7 @@ $ $
 \eee
 \end{to_def}
 \begin{to_claim}
-Пусть $\F$ -- точный слева функтор. \begin{tikzcd}[sep=small]0 \arrow[r]& Y \arrow[r]& Z \arrow[r]& 0 \end{tikzcd} -- короткая точная последовательность. Тогда $\exists$ длинная точная последовательность вида:
+Пусть $\F$ -- точный слева функтор. \begin{tikzcd}[sep=small]0 \arrow[r] & X \arrow[r]& Y \arrow[r]& Z \arrow[r]& 0 \end{tikzcd} -- короткая точная последовательность. Тогда $\exists$ длинная точная последовательность вида:
 \bee
 \begin{tikzcd}[sep=small]
     0 \arrow[r] &\F(X) \arrow[r] &\F(Y)\arrow[r] &\F(Z)\arrow[r] &\Rn{1}{F}(X) \arrow[r] &\Rn{1}{F}(Y)\arrow[r] &\Rn{1}{F}(Z) \arrow[r]& \ldots  
@@ -57,13 +57,13 @@ X[0] \arrow[r, "f"] & Y[0] \arrow[r] & Y \arrow[u]      &C(f)\cong Z[0]\\
 \bee
 \begin{tikzcd}[sep=small]
     \Rn{\bullet}{}_X \arrow[r]& \Rn{\bullet}{}_Y \arrow[r]&\Rn{\bullet}{}_Z \arrow[r]&\Rn{\bullet}{}_Z[1]\\
-    \KlF{}\Rn{\bullet}{}_X \arrow[r]& \KlF{}\Rn{\bullet}{}_Y \arrow[r]&\KlF{}\Rn{\bullet}{}_Z \arrow[r]&\KlF{}\Rn{\bullet}{}_Z[1]\\
+    \KlF{F}\Rn{\bullet}{F}_X \arrow[r]& \KlF{F}\Rn{\bullet}{}_Y \arrow[r]&\KlF{F}\Rn{\bullet}{}_Z \arrow[r]&\KlF{F}\Rn{\bullet}{}_Z[1]\\
 \end{tikzcd}
 \eee
  Когомологический функтор $H^0$ сделает из выделенного треугольника длинную точную последовательность когомологий:
  \bee
 \begin{tikzcd}[sep=small]
-    0 \arrow[r] &H^0\DlF{}\Rn{\bullet}{}_X \arrow[r] &H^0\DlF{}\Rn{\bullet}{}_Y \arrow[r] &H^0\DlF{}\Rn{\bullet}{}_Z\arrow[r] &H^0\circ[1](\DlF{}\Rn{\bullet}{}_X) \arrow[r] & \ldots  
+    0 \arrow[r] &H^0\DlF{F}\Rn{\bullet}{}_X \arrow[r] &H^0\DlF{F}\Rn{\bullet}{}_Y \arrow[r] &H^0\DlF{F}\Rn{\bullet}{}_Z\arrow[r] &H^0\circ[1](\DlF{F}\Rn{\bullet}{}_X) \arrow[r] & \ldots  
 \end{tikzcd}
 \eee
 \end{proof}
