@@ -5,7 +5,7 @@
 Сдвигом комплекса $K[n]$ назовём комплекс с членами $K[n]^i = K^{n+i}$ и дифференциалами $d[n]^i = (-1)^nd^{i+n}$
 \end{to_def}
 \begin{to_def}
-Конусом $C[f]^\bullet$ морфизма комплексов $f^\bullet:K^\bullet\to L^\bullet$ называется комплекс с объектами $C[f]^i = K^{i+1}\oplus L^i$ и дифференциалами $d^i = \begin{pmatrix}-d_K^{i+1}&0\\f&d_K^i\end{pmatrix}$.
+Конусом $C[f]^\bullet$ морфизма комплексов $f^\bullet:K^\bullet\to L^\bullet$ называется комплекс с объектами $C[f]^i = K^{i+1}\oplus L^i$ и дифференциалами $d^i = \begin{pmatrix}-d_K^{i+1}&0\\f^{i+1}&d_L^i\end{pmatrix}$.
 \end{to_def}
 Простая выкладка (индексы опущены для простоты) показывает корректность определения:
 \begin{equation*}
@@ -42,16 +42,16 @@ $K^\bullet$ -- расщепимый комплекс, если
 $K^\bullet$ -- стягиваемый, если $id_{K^\bullet}\sim 0$
 \end{to_def}
 \begin{to_ex}[простейший стягиваемый комплекс]\label{idM}
-\be
+\bee
 \label{eq:vid2}
 \begin{tikzcd}[sep=small] \ldots\arrow[r]& 0 \arrow[r]& M \arrow[r, "id"]& M \arrow[r]& 0 \arrow[r]& \ldots\end{tikzcd}
-\ee
+\eee
 \end{to_ex}
 \begin{to_ex}[простейший расщепимый комплекс]
-\be
+\bee
 \label{eq:vid3}
 \begin{tikzcd}[sep=small] \ldots\arrow[r]& 0 \arrow[r]& M \arrow[r]& 0 \arrow[r]& \ldots\end{tikzcd}
-\ee
+\eee
 $\NB$ он не стягиваемый
 \end{to_ex}
 \begin{to_suj}
@@ -64,10 +64,13 @@ $(K^\bullet$ -- стягиваемый$)$ $\quad \Rightarrow \quad$ $(K^\bullet$
 \eee
 \end{to_suj}
 \begin{to_suj}
-Любой стягиваемый комплекс является суммой сдвигов комплексов вида \ref{idM}. 
-\end{to_suj}
-\begin{to_suj}
 $K^\bullet$ -- стягиваемый $\quad \Leftrightarrow \quad$ $K^\bullet$ -- расщепимый и ацикличный.
+\end{to_suj}
+\begin{proof}
+$(\Rightarrow)$ $d = d\circ id_K = d\circ(ds + sd) = dsd$, т.е. K -- расщепим. Гомотопный нулю морфизм комплексов индуцирует нулевое отображение на когомологиях, а именно: $H(id_K) = id_{H(K)} = H(0) = 0$ $\Rightarrow H(K)=0$. $(\Leftarrow)$ комплекс вида \label{eq:vid3} расщепим, если он ещё и ацикличен, то $M = 0$. Далее по индукции.
+\end{proof}
+\begin{to_suj}
+Любой стягиваемый комплекс является суммой сдвигов комплексов вида \ref{idM}. 
 \end{to_suj}
 \begin{to_suj}\label{split1}
 $K^\bullet$ -- ограниченный расщепимый комплекс $\quad \Rightarrow \quad$ $K^\bullet\overset{qis}{\sim}H^\bullet(K^\bullet)$. \\
