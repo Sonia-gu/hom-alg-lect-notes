@@ -164,6 +164,26 @@ E_1^{pq} = \begin{cases} H^p(K^\bullet), & q = -2p \\ 0 & q \neq -2p \end{cases}
 E^{pq}_{r} = E^{pq}_{\infty}= E_1^{pq} \qquad d_r = 0 \qquad \forall r\ge 1\\
 E^n = H^n(K^\bullet) \qquad F^pE^n = \begin{cases} E^n & n \le -p \\ 0 & n>-p \end{cases}
 \end{align*}
+%\bee
+%\begin{tikzcd}[sep=small]
+%               & F^2 & \ldots \arrow[r] & \ker d^{-2} \arrow[r] & 0 \arrow[r]           & 0     \\
+%F^pK^\bullet : & F^1 & \ldots \arrow[r] & K^{-2} \arrow[r]      & \ker d^{-1} \arrow[r] & 0     \\
+%               & F^0 & \ldots \arrow[r] & K^{-2} \arrow[r]      & K^{-1} \arrow[r]      & K^{0}
+%\end{tikzcd}
+%\eee
+\bee
+\begin{tikzcd}[sep=small]
+          & \ldots \arrow[r] & B^{-2} \arrow[r] & Z^{-2} \arrow[r] & 0 \arrow[r]      & 0   \\
+E_0^{pq}: & \ldots \arrow[r] & 0 \arrow[r]      & B^{-1} \arrow[r] & Z^{-1} \arrow[r] & 0   \\
+          & \ldots \arrow[r] & 0 \arrow[r]      & 0 \arrow[r]      & B^0 \arrow[r]    & K^0
+\end{tikzcd}
+\qquad
+\begin{tikzcd}[sep=small]
+          & \ldots \arrow[r] & 0 \arrow[r] & H^{-2} \arrow[r] & 0 \arrow[r]      & 0   \\
+E_1^{pq}: & \ldots \arrow[r] & 0 \arrow[r] & 0 \arrow[r]      & H^{-1} \arrow[r] & 0   \\
+          & \ldots \arrow[r] & 0 \arrow[r] & 0 \arrow[r]      & 0 \arrow[r]      & H^0
+\end{tikzcd}
+\eee
 \end{to_ex}
 \subsection{Двойной комплекс}
 \bee
