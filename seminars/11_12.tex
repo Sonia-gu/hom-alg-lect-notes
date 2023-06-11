@@ -79,13 +79,14 @@ Tor_n (\Z_p, A)
 \end{align*}
 \end{to_ex}
 \begin{to_ex}
-Если же $A$-- произвольная группа, то она являеься пределом конечнопорждённых груп $A = \underrightarrow{\lim} A_i$, а также всегда представима в виде прямой суммы свободной группы и группы кручения $A \cong \mathcal{T}A\oplus\F A$ $\Rightarrow$ если $A$ -- без кручения, то $Tor(A; B)=0$.
+Если же $A$-- произвольная группа, то она является пределом конечнопорждённых груп $A = \underrightarrow{\lim} A_i$, а также всегда представима в виде прямой суммы свободной группы и группы кручения $A \cong \mathcal{T}A\oplus\F A$ $\Rightarrow$ если $A$ -- без кручения, то $Tor(A; B)=0$.
 \end{to_ex}
 \begin{to_def}
 $A$ -- \textbf{плоский} $\Leftrightarrow$ $Tor_1(A; B) = 0$, $\forall$ $B$.
 \end{to_def}
+Если $A$ -- плоский, то функтор $A\otimes(-)$-- точный.
 \begin{to_claim}
-Плоские модули -- приспособлены к функтору $(-)\otimes B$ ($A\otimes(-)$-- точный).
+Плоские модули -- приспособлены к функтору $(-)\otimes B$.
 \end{to_claim}
 \begin{to_claim}\label{projisflat}
 Проективный модуль $\Rightarrow$ плоский.
@@ -109,10 +110,10 @@ $A$ -- \textbf{плоский} $\Leftrightarrow$ $Tor_1(A; B) = 0$, $\forall$ $B
 Применяя функтор $\underset{k[x; y]}{\otimes}\mathbf{k} (-)$, получаем комплекс с нулевыми морфизмами:\\
 \bee
 \begin{tikzcd}[sep=small]
-    0 \arrow[r]& \mathbf{k} \arrow[r, "0"]& \mathbf{k} \oplus \mathbf{k} \arrow[r, "0"]& 0 \end{tikzcd}
+    0 \arrow[r]& \mathbf{k} \arrow[r, "0"]& \mathbf{k} \oplus \mathbf{k} \arrow[r, "0"]& \mathbf{k} \arrow[r]& 0 \end{tikzcd}
 \eee
 \[
-Tor_1(A, \mathbf{k}) = \mathbf{k} \neq 0
+Tor_1(A, \mathbf{k}) =\mathbf{k} \oplus \mathbf{k} \neq 0
 \]
 \end{to_claim}
 \begin{to_ex}[кольцо с делителями нуля]
