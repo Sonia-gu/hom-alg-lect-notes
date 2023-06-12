@@ -156,11 +156,21 @@ $Ext_{R}^\bullet(A, B)$ -- это модуль над $Ext_{R}^\bullet(A, A)$, $
 \eee
 \end{to_claim}
 {\color{green} Про сцепление комплексов по общему крайнему члену писать пока лень... Потом добавлю}
-\begin{to_claim}
+\begin{to_claim}\label{pred}
 \[
 Ext^n(A, -) = R^n Hom(A^\bullet, -)
 \]
 \end{to_claim}
+\begin{proof}
+Возьмём объект $B$ и его инъективную резольвенту $\mathcal{I}_B^\bullet$. С одной стороны из \ref{pred}:
+\[
+Ext^i_{\A}(A, B) = Hom_{\D{A}} (A[0],\mathcal{I}_B^\bullet [i]) = Hom_{\K{A}}(A[0],\mathcal{I}_B^\bullet [i])
+\]
+С другой стороны из определения классического производного функтора и используя равенство $\hHom^\bullet(A[0], \mathcal{I}_B^\bullet) \cong Hom(A, B)$, получим:
+\[
+R^i Hom(A, B) = H^i(\hHom^\bullet(A[0], \mathcal{I}_B^\bullet))=Hom_{\K{A}}(A[0], \mathcal{I}_B^\bullet [i])
+\]
+\end{proof}
 \begin{to_claim}
 Не бывает отрицательных $Ext'$ов.\\
 $\forall$ $A$, $B$ $\in$ $\mathcal{A}$ $Ext^n (A, B) = 0$, $n<0$.
