@@ -147,15 +147,29 @@ $Ext^1(\Z_m, A) = A /mA$
 } $Ext_{R}^\bullet (A, A)$, $A\in R-mod $.\\
 $Ext_{R}^\bullet(A, B)$ -- это модуль над $Ext_{R}^\bullet(A, A)$, $A, B \in R\text{-mod} $
 \begin{to_claim}
-\[Ext_{\A}^i(A, B) \cong Hom_{\D{A}}(A[0], B[i])\]
+\[Ext_{\A}^n(A, B) \cong Hom_{\D{A}}(A[0], B[n])\]
+\end{to_claim}
+\begin{proof}
+$(\Rightarrow)$ Каждому расширению длины $n$ можно сопоставить домик в производной категории вида: 
 \bee
     \begin{tikzcd}
         0\arrow[r]& B\arrow[r]\arrow[ld]& X_n\arrow[r]&\cdots\arrow[r]& X_1\arrow[r]\arrow[rd]& A\\
         B[-n]     &                     &             &               &                       &A[0]
     \end{tikzcd}
 \eee
-\end{to_claim}
-{\color{green} Про сцепление комплексов по общему крайнему члену писать пока лень... Потом добавлю}
+$(\Leftarrow)$ Каждый домик из $Hom_{\D{A}}(A[0], B[n])$ представляет класс квазиизоморфных комплексов с нетривиальными когомологиями только в нулевом члене. Обрезав такой комплекс, мы получим расширение длины $n$.
+\bee
+\begin{tikzcd}[sep=small]
+       & K^\bullet \arrow[ld, "qis"'] \arrow[rd] &        \\
+{A[0]} &                                 & {B[n]}
+\end{tikzcd}
+\eee
+\bee
+\begin{tikzcd}[sep=small]
+K^{\bullet} \arrow[r, "\tau_{ \curlyeqsucc n}", Rightarrow] & B \arrow[r] & \cancel{0} \arrow[r] & Z^n(K^{\bullet})=B^n(K^{\bullet}) \arrow[r] & K^{n+1} \arrow[r] & \ldots \arrow[r] & K^0 \arrow[r] & A
+\end{tikzcd}
+\eee
+\end{proof}
 \begin{to_claim}\label{pred}
 \[
 Ext^n(A, -) = R^n Hom(A^\bullet, -)
