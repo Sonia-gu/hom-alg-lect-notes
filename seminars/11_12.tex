@@ -100,11 +100,10 @@ $A$ -- \textbf{плоский} $\Leftrightarrow$ $Tor_1(A; B) = 0$, $\forall$ $B
 \[\underrightarrow{\lim}\text{ }\Z/p\Z = \Q / \Z\]\footnote{при подстановке в $Tor$ получаем прямой предел подгрупп элементов имеющий заднаный порядок для всех возможных порядков, то есть кручение группы. $\underrightarrow{\lim}$ учитывает пересечения всех таких подгрупп}
 \end{to_claim}
 \begin{to_claim}[$\mathcal{T}=0$, $Tor \neq 0$]
-Рассмотрим пример, когда модуль без кручения над кольцом $\mathcal{R}\neq$ \textbf{PID}, имеет ненулевые $Tor$. Стандартным примером не \textbf{PID} является $\mathcal{R} =\mathbf{k}\left[x, y\right]$. Рассмотрим в нём модуль $A = (x; y) \neq$ \textbf{PI}. Напишем резольвенту Кошуля
+Рассмотрим пример, когда модуль без кручения над кольцом $\mathcal{R}\neq$ \textbf{PID}, имеет ненулевые $Tor$. Стандартным примером не \textbf{PID} является $\mathcal{R} =\mathbf{k}\left[x, y\right]$. Рассмотрим в нём модуль $A = (x; y) \neq$ \textbf{PI}. Напишем резольвенту Кошуля:
 \bee
 \begin{tikzcd}
-    0 \arrow[r]& \mathcal{R} \arrow[r, "{\begin{pmatrix} -y \\ x \end{pmatrix}}"]& \mathcal{R}\oplus \mathcal{R} \arrow[r, "{\begin{pmatrix}x & $ $ y \end{pmatrix}}"]& \mathbf{k} \arrow[r]& 0\\
-    0 \arrow[r]& \mathcal{R} \arrow[r, "{\begin{pmatrix} -y \\ x \end{pmatrix}}"]& \mathcal{R}\oplus \mathcal{R} \arrow[r, "{\begin{pmatrix}x & $ $ y \end{pmatrix}}"]& (x; y) \arrow[r]& 0
+    0 \arrow[r]& \mathcal{R} \arrow[r, "{\begin{pmatrix} -y \\ x \end{pmatrix}}"]& \mathcal{R}\oplus \mathcal{R} \arrow[r, "{\begin{pmatrix}x & $ $ y \end{pmatrix}}"]& \mathbf{k}\cong\mathbf{k}/(x; y) \arrow[r]& 0
 \end{tikzcd}
 \eee
 Применяя функтор $\underset{k[x; y]}{\otimes}\mathbf{k} (-)$, получаем комплекс с нулевыми морфизмами:\\
