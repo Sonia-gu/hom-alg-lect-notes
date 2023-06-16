@@ -50,7 +50,7 @@ $\NB$ Знание градуировочных факторов фильтра�
 \widetilde{F}_p K^n = \begin{cases} 0, &n < p \\ K^n, & n \ge p \end{cases}
 \]
 \[
-H^n(\widetilde{F}^p K^n) = \begin{cases} 0, &n < p\\ \ker d^p, & n=p \\ K^n, & n > p \end{cases}
+H^n(\widetilde{F}^p K^n) = \begin{cases} 0, &n < p\\ \ker d^p, & n=p \\ H^n(K^\bullet), & n > p \end{cases}
 \]
 \bee
 \begin{tikzcd}[sep=small]
@@ -59,13 +59,11 @@ H^n(\widetilde{F}^p K^n) = \begin{cases} 0, &n < p\\ \ker d^p, & n=p \\ K^n, & n
 \ldots \arrow[r]& K^{n-1} \arrow[r]& K^{n}\arrow[r]& 0 \arrow[r]&\ldots\\
 \end{tikzcd}
 \eee
-\item \textit{Каноническая фльтрация}
-\[
-F_p K^n = \begin{cases} K^n, &n < -p \\ \ker d^{-p}, & n = -p \\ 0, & n>-p \end{cases}
-\]
-\[
-H^n (F^p K^\bullet) \begin{cases} 0, &n > -p \\ H^n(K^\bullet), & n\le-p \end{cases}
-\]
+\item \textit{Каноническая фильтрация}
+\begin{align*}
+F_p K^n = \begin{cases} K^n, &n < -p \\ \ker d^{-p}, & n = -p \\ 0, & n>-p \end{cases}\\
+H^n (F^p K^\bullet)= \begin{cases} 0, &n > -p \\ H^n(K^\bullet), & n\le-p \end{cases}
+\end{align*}
 \bee
 \begin{tikzcd}[sep=small]
 \ldots \arrow[r]\arrow[d]& K^{-p-1} \arrow[r]\arrow[d]& \ker d^{-p}\arrow[r]\arrow[d]& 0 \arrow[r]\arrow[d]&0\ldots\\
