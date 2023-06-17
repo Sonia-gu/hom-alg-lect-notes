@@ -77,7 +77,7 @@ $K^\bullet$ -- ограниченный расщепимый комплекс $\
 Иными словами любой расщепимый комплекс представляется в виде суммы комплексов вида \ref{vid2} и \ref{vid3}.
 \end{to_suj}
 \begin{to_def}
-    Морфизм комплексов $f\colon K^\bullet \to L^\bullet$ называется гомотопической эквивалентностью, если $\exists g\colon L^\bullet \to K^\bullet$ такой что $fg \sim id_{K^\bullet}$ и $gf\sim id_{L^\bullet}$
+    Морфизм комплексов $f\colon K^\bullet \to L^\bullet$ называется гомотопической эквивалентностью, если $\exists g\colon L^\bullet \to K^\bullet$ такой что $fg \sim id_{L^\bullet}$ и $gf\sim id_{K^\bullet}$
 \end{to_def}
 \begin{to_suj}
 \label{hom_eq_con}
@@ -169,7 +169,7 @@ H^i (\hHom(K^\bullet, L^\bullet)) = \Hom_{\K{A}}(K^\bullet, L^\bullet[i])
     Пусть $P_\bullet$ -- проективная резольвента $M$, $K_\bullet$ -- какая-то резольвента $N$, также пусть есть морфизм $f \colon M \to N$. Тогда $\exists g_\bullet\colon P_\bullet\to K_\bullet$, такой, что $H^0(g_\bullet) = f$
 \end{to_lem}
 \begin{proof}
-    Просто построим этот морфизм комплексов. Дополним проективный комплекс до ацикличного. Далее доказательство будем проводить по индукции.  В силу проективности можем поднять $f\varepsilon$ вдоль эпиморфизма из крайнего члена резольвенты $K_\bullet$ до морфизма $f_0$. Аналогично далее все диагональные морфизмы вида $f_i\circ d_{i-1}^P$ поднимаются вдоль эпиморфизмов вида $d_{i-1}^K\colon K_{i-1}\twoheadrightarrow \im d_{i-1}^K K_{i-1}$.
+    Просто построим этот морфизм комплексов. Дополним проективный комплекс до ацикличного. Далее доказательство будем проводить по индукции.  В силу проективности можем поднять $f\varepsilon$ вдоль эпиморфизма из крайнего члена резольвенты $K_\bullet$ до морфизма $f_0$. Аналогично далее все диагональные морфизмы вида $f_i\circ d_{i+1}^P$ поднимаются вдоль эпиморфизмов вида $d_{i-1}^K\colon K_{i-1}\twoheadrightarrow \im d_{i-1}^K K_{i-1}$.
     \bee
         \begin{tikzcd}
             \ldots\arrow[r]& P_2\arrow[d, "f_2"] \arrow[r]&P_1 \arrow[d, "f_1"]\arrow[rd]\arrow[r, "d^P_1"]&P_0\arrow[rd, "f\varepsilon"] \arrow[r, "\varepsilon"]\arrow[d, dashed, "f_0"]&M\arrow[r]\arrow[d, "f"]&0\\
@@ -181,7 +181,7 @@ H^i (\hHom(K^\bullet, L^\bullet)) = \Hom_{\K{A}}(K^\bullet, L^\bullet[i])
     Любой морфизм из ограниченного справа комплекса из проективных объектов в ацикличный гомотопен нулю. 
 \end{to_lem}
 \begin{proof}
-Крайний морфизм строится по проективности $P_0$ поднятием вдоль эпиморфизма на $\im d_1 = \ker d_{1}$. Получили базу индукции $f_0 = d_1 h_0 - 0 $.
+Крайний морфизм строится по проективности $P_0$ поднятием вдоль эпиморфизма на $im d_1 = \ker d_{1}$. Получили базу индукции $f_0 = d_1 h_0 - 0 $.
         \bee
         \begin{tikzcd}
             \ldots\arrow[r]& P_2\arrow[d, "f_2"] \arrow[r]&P_1 \arrow[d, "f_1"]\arrow[r, "d^P_1"]&P_0\arrow[d, "f_0"]\arrow[ld, "h_0"]\arrow[r]&0\arrow[r]\arrow[d, "f_{-1}"]&\ldots\\
