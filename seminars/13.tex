@@ -55,8 +55,8 @@ H^n(\widetilde{F}^p K^n) = \begin{cases} 0, &n < p\\ \ker d^p, & n=p \\ H^n(K^\b
 \bee
 \begin{tikzcd}[sep=small]
 \ldots \arrow[r]\arrow[d]& 0 \arrow[r]\arrow[d]& 0\arrow[r]\arrow[d]& K^{n+1} \arrow[r] \arrow[d]&\ldots\\
-\ldots \arrow[r]\arrow[d]& K^{n-1} \arrow[r]\arrow[d]& K^{n}\arrow[r]\arrow[d]& K^{n+1} \arrow[r] \arrow[d]&\ldots\\
-\ldots \arrow[r]& K^{n-1} \arrow[r]& K^{n}\arrow[r]& 0 \arrow[r]&\ldots\\
+\ldots \arrow[r]\arrow[d]& 0 \arrow[r]\arrow[d]& K^{n}\arrow[r]\arrow[d]& K^{n+1} \arrow[r] \arrow[d]&\ldots\\
+\ldots \arrow[r]& K^{n-1} \arrow[r]& K^{n}\arrow[r]& K^{n+1} \arrow[r]&\ldots\\
 \end{tikzcd}
 \eee
 \item \textit{Каноническая фильтрация}
@@ -186,16 +186,16 @@ E_1^{pq}: & \ldots \arrow[r] & 0 \arrow[r] & 0 \arrow[r]      & H^{-1} \arrow[r]
 \subsection{Двойной комплекс}
 \bee
 \begin{tikzcd}
-    & \arrow[d]&\arrow[d] &\arrow[d] & \\
-    0&\arrow[l]K^{01}\arrow[d]& K^{11}\arrow[l]\arrow[d]&K^{21}\arrow[l]\arrow[d]&\arrow[l]\\
-    0&\arrow[l]K^{00}\arrow[d]& K^{10}\arrow[l]\arrow[d]&K^{20}\arrow[l]\arrow[d]&\arrow[l]\\
-     & 0 & 0 & 0 &
+\ldots	     & 0 & 0 & 0 &\\
+    \ldots&\arrow[r]K^{0,-2}\arrow[u]& K^{0,-1}\arrow[r]\arrow[u]&K^{0,0}\arrow[r]\arrow[u]&0\\
+    \ldots&\arrow[r]K^{-1,-2}\arrow[u]& K^{-1,-1}\arrow[r]\arrow[u]&K^{-1,0}\arrow[r]\arrow[u]&0\\
+    \ldots	     & \ldots\arrow[u] & \ldots\arrow[u] &  \ldots\arrow[u] &
 \end{tikzcd}
 \eee
 \begin{to_def}\label{double_complex}
 Двойной комплекс $K^{pq}$ \footnote{$p$-- горизонтально, $q$ -- вертикально} состоит из "матраса" объектов и двух дифференциалов -- вертикального и горизонтального. Помимо стандартного  $d^2=0$ также требуют, чтобы эти дифференциалы антикоммутировали.
-\[d^{\rightarrow}\colon K^{pq}\to K^{p+1, q}\]
-\[d^{\uparrow}\colon K^{pq}\to K^{p, q+1}\]
+\[d^{\rightarrow}\colon K^{pq}\to K^{p, q+1}\]
+\[d^{\uparrow}\colon K^{pq}\to K^{p+1, q}\]
 \[d^{\rightarrow}d^{\uparrow} + d^{\uparrow}d^{\rightarrow} = 0\]
 \[(d^{\rightarrow})^2 = (d^{\uparrow})^2 = 0\]\footnote{так определённые дифференциалы вообще говоря не являются морфизмами комплексов, однако соглашение о знаках гарантирует, что индуцированный дифференциал в тотальном комплексе будет корректно определён, т. е. $(d^v + d^h)^2 = d^v^2 + d^h^2 + d^v d^h + d^h d^v = 0 $}
 \end{to_def}
