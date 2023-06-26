@@ -79,7 +79,7 @@
 \end{equation}
 $Kom^\le(\A), Kom^\ge(\A), Kom^b(\A)$ соответственно обозночают ограниченные справа, слева, с двух сторон комплексы.
 \end{to_def}
-Естественный вопрос, который можно задать к определению \ref{complex} --- выполняется ли $\Im d^i = \Ker d^{i+1}$ (тогда комплекс --- точная последовательность) и если невыполняется, то насколько. Ответ на этот вопрос даёт следующее определение.
+Естественный вопрос, который можно задать к определению \ref{complex} --- выполняется ли $\Im d^i = \Ker d^{i+1}$ (тогда комплекс --- точная последовательность) и если не выполняется, то насколько. Ответ на этот вопрос даёт следующее определение.
 \begin{to_def}
 Назовём 
 \begin{itemize}
@@ -268,7 +268,7 @@ $\A$ --- полная подкатегория в $Kom(\A)$.\footnote{доказ
 \end{tikzcd}
     \end{equation*}
     И получим существование свободного модуля $F$ с парой морфизмов $f, g$, дающих $gf=id_M$. Покажем, что $F\cong P\oplus M$, где $M$ --- какой-то $R$-модуль. Предлагается использовать следующее утверждение.
-    \begin{to_suj}[Splitting lemma]
+    \begin{to_suj}[Splitting lemma]\label{1:split_lemma}
     Пусть дана короткая точная последовательность.
     \begin{equation*}
         \begin{tikzcd}
@@ -279,7 +279,7 @@ $\A$ --- полная подкатегория в $Kom(\A)$.\footnote{доказ
 	\arrow[from=1-4, to=1-5]
 \end{tikzcd}
     \end{equation*}
-    $B\cong A\oplus C$ тогда и только тогда, когда существует $g$ такой, что $g\circ a = id$ или $b\circ g = id$.
+    $B\cong A\oplus C$ (причём морфизмы тогда являются каноническим вложением и проекцией бипроизведения соответственно) тогда и только тогда, когда существует $g$ такой, что $g\circ a = id$ или $b\circ g = id$.
     \end{to_suj}
     В нашем случае применение этого утверждения к точной последовательности ниже даёт $P\oplus \Ker f \cong F$.
     \begin{equation*}
@@ -305,6 +305,35 @@ $\A$ --- полная подкатегория в $Kom(\A)$.\footnote{доказ
 	\arrow["f\pi"{description}, from=1-1, to=2-2]
 \end{tikzcd}
     \end{equation*}
+\end{proof}
+\begin{proof}[Доказательство леммы о расщиплении]
+  Если $B\cong A\oplus C$, то утверждение тривиально. Докажем в обратную.
+  \begin{equation*}
+    \begin{tikzcd}
+	&& B \\
+	0 & A && C & 0 \\
+	&& {A\oplus C}
+	\arrow["{i_A}", from=2-2, to=3-3]
+	\arrow["{i_C}", from=2-4, to=3-3, bend left]
+	\arrow["{\pi_A}", from=3-3, to=2-2, bend left]
+	\arrow["{\pi_C}", from=3-3, to=2-4]
+	\arrow["a"', from=2-2, to=1-3]
+	\arrow["b"', from=1-3, to=2-4]
+	\arrow["g"', from=2-4, to=1-3, bend right]
+	\arrow[from=2-4, to=2-5]
+	\arrow[from=2-2, to=2-1]
+	\arrow["u"', from=3-3, to=1-3]
+\end{tikzcd}
+  \end{equation*}
+  Пусть $bg=id$. Положим $u=a\pi_A + g\pi_C$. Мы утверждаем, что такой морфизм делает диаграмму выше коммутативной. Тогда 5-лемма(\ref{B:five_lemma}) заканчивает доказательство. Коммутативность следует из следующих выкладок.
+  \begin{equation*}
+    bu = ba\pi_A + bg\pi_C = \pi_C
+  \end{equation*}
+  \begin{equation*}
+    ui_A = a\pi_Ai_A + g\pi_Ci_A = a,
+  \end{equation*}
+  Где использована точность в виде $ba = 0$, $\pi_Ci_A=0$.
+
 \end{proof}
 Понятие, двойственное проективному объекту --- инъективный объект.
 \begin{to_def}\label{injective_def}
