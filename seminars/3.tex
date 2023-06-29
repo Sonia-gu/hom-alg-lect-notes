@@ -31,7 +31,50 @@ d^2 = \begin{pmatrix}-d&0\\f&d\end{pmatrix}^2 = \begin{pmatrix}d^2&0\\-fd + df&d
 $f$ --- квазиизоморфизм тогда и только тогда, когда $C(f)$ --- ацикличен.
 \end{to_thr}
 \begin{proof}
-    Применим лемму о зигзаге \ref{B:zigzag_lemma} к последовательности \eqref{3:cone_short_exact_eq}.
+  Применим лемму о зигзаге \ref{B:zigzag_lemma} к последовательности \eqref{3:cone_short_exact_eq}. Покажем, что $\delta$ из леммы о зиг-заге --- это $f^*$. После этого утверждение будет следовать из точности последовательности из леммы и того факта, что $H^i(K[1])\cong H^{i+1}(K)$.
+  Для этого вернёмся доказательству леммы и вспомним, что $i\delta(k) \in Im d_{C(f)}$ для $k\in \Ker d_K$. Это означает существование некоторого прообраза дифференциала конуса $(\alpha, \beta) \in L^i\oplus K^{i+1}$.
+  \begin{equation*}
+\begin{tikzcd}
+	&&& {\Ker d_K} \\
+	0 & {L^i} & {L^i\oplus K^{i+1}} & {K^{i+1}} & 0 \\
+	0 & {L^{i+1}} & {L^{i+1}\oplus K^{i+2}} & {K^{i+2}} & 0 \\
+	& {\coker d_L} & {\coker d_{C(f)}} \\
+	&& {(\alpha, \beta)\in L^i\oplus K^{i+1}} & {k\in \Ker d_K} \\
+	& {l\in L^{i+1}} & {(l, 0)\in L^{i+1}\oplus K^{i+2}} \\
+	& {\delta(k)\in \coker d_L} & {0\in \coker d_{C(f)}}
+	\arrow["{-d_K}", from=2-4, to=3-4]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-3, to=2-4]
+	\arrow[from=2-4, to=2-5]
+	\arrow[from=1-4, to=2-4]
+	\arrow[from=3-1, to=3-2]
+	\arrow[from=3-2, to=3-3]
+	\arrow[from=3-3, to=3-4]
+	\arrow[from=3-4, to=3-5]
+	\arrow["{d_{C(f)}}", from=2-3, to=3-3]
+	\arrow["{d_L}", from=2-2, to=3-2]
+	\arrow[from=3-2, to=4-2]
+	\arrow[from=4-2, to=4-3]
+	\arrow[from=3-3, to=4-3]
+	\arrow[dashed, maps to, from=5-4, to=7-2, bend left=90]
+	\arrow[maps to, from=7-2, to=7-3]
+	\arrow[maps to, from=6-2, to=7-2]
+	\arrow[maps to, from=6-2, to=6-3]
+	\arrow[maps to, from=5-3, to=6-3]
+	\arrow[maps to, from=6-3, to=7-3]
+	\arrow[maps to, from=5-3, to=5-4]
+\end{tikzcd}
+  \end{equation*}
+  Распишем последнее поподробнее.
+  \begin{equation*}
+    d_{C(f)}(\alpha, \beta) = \begin{pmatrix}-d&0\\f&d\end{pmatrix}\begin{pmatrix}\beta\\ \alpha\end{pmatrix} = \begin{pmatrix}-d\beta + f\alpha\\d\beta\end{pmatrix}=\begin{pmatrix}0\\l\end{pmatrix}
+\end{equation*}
+Отсюда
+\begin{equation*}
+  -d\beta + f\alpha = 0, \quad d\beta=l\Rightarrow f\alpha = l,
+\end{equation*}
+где из коммутативности $\alpha = k$.
 \end{proof}
 Дадим ещё несколько определений.
 \begin{to_def}
